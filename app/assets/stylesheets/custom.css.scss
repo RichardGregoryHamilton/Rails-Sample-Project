@@ -1,0 +1,157 @@
+@import "bootstrap";
+
+.header {
+	float: right;
+}
+
+#logo {
+	float: left;
+	padding-top: 10px;
+	margin-right: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.footer {
+	display: inline-block;
+	border-top: 1px solid #eaeaea;
+  color: black;
+	bottom: 0;
+	position: fixed;
+	
+	li {
+		display: inline;
+	}
+	
+	.right {
+		float:right;
+		word-spacing: 20px;
+		margin-left: 450px;
+	}
+}
+
+#links{
+	color: black;
+}
+
+table {
+	margin-left: 400px;
+}
+
+th {
+	background-color: #FFCC99;
+	&:hover {
+		background-color: #FFFF00;
+	};
+}
+
+#title_id, #title, #genre_id, #genre, #console_id, #console, #release_id, #release {
+	width: 200;
+	text-align: justify;
+}
+
+#show, #edit, #delete {
+	margin-left: 10px;
+}
+
+#title, #console, #genre, #release {
+	background-color: #66FFFF;
+	&:hover {
+		background-color: #33FF00;
+		font-weight: bold;
+	};
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+h1, h2, h3 {
+  line-height: 1;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.newgame, .newuser, .editgame {
+	text-align: center;
+}
+
+#submit {
+	display:inline-block;
+	margin: 10px 0px 0px 600px;
+	padding: 0px 5px 0px 5px;
+	text-decoration: none;
+	&:hover {
+	  background-color: #0033CC
+	};
+}
+
+#submit, #add-game, #register, #update {
+	background-color: blue;
+	border-color: black;
+	color: #fff;
+	font-size: 1.3em;
+	height: auto;
+	width: auto;
+	&:hover {
+		background-color: #0033CC
+	};
+}
+
+.footer, #view {
+	list-style-type: none;
+}
+
+#game, #favorites, #back {
+	margin-left: 20px;
+}
+
+#favorites {
+	font-size: 1.3em;
+	background-color: red;
+	color: #000099;
+	text-decoration: none;
+}
+
+.marker {
+	font-weight: bold;
+}

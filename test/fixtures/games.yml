@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: MyString
+  console: MyString
+  genre: MyString
+  released_on: 
+
+two:
+  game: MyString
+  console: MyString
+  genre: MyString
+  released_on: 

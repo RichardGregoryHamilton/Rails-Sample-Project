@@ -1,0 +1,30 @@
+<h2>Add a new game!</h2>
+<div class = newgame>
+	<%= form_for @game do |f| %>
+	<p>
+		<%= f.label :title, class: 'marker'%></br>
+		<%= f.text_field :title %>
+	</p>
+	
+	<p>
+		<%= f.label :console, class: 'marker' %></br>
+		<%= f.text_field :console %>
+	</p>
+	
+	<p>
+		<%= f.label :genre, class: 'marker' %></br>
+		<%= f.text_field :genre %>
+	</p>
+	
+	<p>
+		<%= f.label :released_on, 'Release Date', class: 'marker' %></br>
+		<%= f.text_field :released_on %>
+	</p>
+	
+	<p>
+		<%= f.submit 'Submit Game', id: 'add-game' %>
+	</p>
+	
+	<% end %>
+
+</div>

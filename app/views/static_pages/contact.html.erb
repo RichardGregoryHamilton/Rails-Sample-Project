@@ -1,0 +1,17 @@
+<h1>Contact us</h1>
+
+<%= form_for @page do |f| %>
+
+<p>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+</p>
+
+<p>
+	<%= f.label :message %>
+	<%= f.text_area :message %>
+</p>
+
+<%= f.submit 'Send message' %>
+
+<% end %>
