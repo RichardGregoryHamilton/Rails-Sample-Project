@@ -2,10 +2,10 @@
 <table>
 	<thead>
 		<tr>
-			<th id = 'title_id'><%=link_to 'Title', :sort => 'title' %></th>
-			<th id = 'console_id'><%= link_to 'Console', :sort => 'console' %></th>
-			<th id = 'genre_id'><%= link_to 'Genre', :sort => 'genre' %></th>
-			<th id = 'release_id'><%= link_to 'Release Date', :sort => 'released_on' %></th>
+			<th id = 'title_id'><%= sortable "title" %></th>
+			<th id = 'console_id'><%= sortable "console" %></th>
+			<th id = 'genre_id'><%= sortable "genre" %></th>
+			<th id = 'release_id'><%= sortable "release date" %></th>
 		</tr>
 	</thead>
 	<tbody> 

@@ -41,18 +41,13 @@
 
 table {
 	margin-left: 400px;
-}
-
-th {
-	background-color: #FFCC99;
-	&:hover {
-		background-color: #FFFF00;
-	};
-}
-
-#title_id, #title, #genre_id, #genre, #console_id, #console, #release_id, #release {
-	width: 200;
-	text-align: justify;
+	
+	th {
+		background-color: #FFCC99;
+		&:hover {
+			background-color: #FFFF00;
+		};
+	}
 }
 
 #show, #edit, #delete {
@@ -60,6 +55,7 @@ th {
 }
 
 #title, #console, #genre, #release {
+	width: 200;
 	background-color: #66FFFF;
 	&:hover {
 		background-color: #33FF00;
@@ -120,9 +116,6 @@ p {
 	margin: 10px 0px 0px 600px;
 	padding: 0px 5px 0px 5px;
 	text-decoration: none;
-	&:hover {
-	  background-color: #0033CC
-	};
 }
 
 #submit, #add-game, #register, #update {

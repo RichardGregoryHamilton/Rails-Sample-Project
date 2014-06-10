@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
+  helper_method :sort_column, :sort_direction
   
   def index
-    @games = Game.order(params[:sort])
+    @games = Game.order(sort_column + " " + sort_direction)
   end
   
   def show
@@ -59,7 +60,19 @@ class GamesController < ApplicationController
   
   # Defining parameters
   
-  def game_params
-    params.require(:game).permit(:title, :console, :genre, :released_on)
-  end
+    def game_params
+      params.require(:game).permit(:title, :console, :genre, :released_on)
+    end
+  
+    #Sorting column 
+    
+    def sort_column
+      Game.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    end
+  
+    # Sort by direction
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end
