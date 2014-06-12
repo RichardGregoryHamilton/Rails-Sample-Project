@@ -8,10 +8,13 @@ Games::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
+  root to: 'games#welcome'
+  
   get 'users/favorites'
-  get 'static_pages/about'
   get 'static_pages/contact'
-  get 'static_pages/help'
+  
+  match '/help', to: 'games#help', via: 'get'
+  match '/about', to: 'games#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

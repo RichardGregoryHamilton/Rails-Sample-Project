@@ -4,19 +4,6 @@
 	float: right;
 }
 
-#logo {
-	float: left;
-	padding-top: 10px;
-	margin-right: 10px;
-	font-size: 1.5em;
-	font-weight: bold;
-	color: #fff;
-	text-transform: uppercase;
-	&:hover {
-		text-decoration: none;
-	}
-}
-
 .footer {
 	display: inline-block;
 	border-top: 1px solid #eaeaea;
@@ -28,14 +15,32 @@
 		display: inline;
 	}
 	
-	.right {
+	#footer-center {
 		float:right;
 		word-spacing: 20px;
 		margin-left: 450px;
+		color: black;
+	}
+	
+	#footer-right {
+		height: 35px;
+		width: 50px;
+		margin-left: 520px;
 	}
 }
 
-#links{
+#logo {
+	float: left;
+	padding-top: 10px;
+	margin-right: 10px;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#links {
 	color: black;
 }
 
@@ -54,7 +59,7 @@ table {
 	margin-left: 10px;
 }
 
-#title, #console, #genre, #release {
+#title, #console, #genre, #released_on {
 	width: 200;
 	background-color: #66FFFF;
 	&:hover {
@@ -69,6 +74,7 @@ html {
 
 body {
   padding-top: 60px;
+	background-color: #C0C0C0 ;
 }
 
 section {
@@ -86,10 +92,19 @@ textarea {
 	}
 }
 
+.center-text, #paragraphs {
+	margin-left: 350px;
+}
+
+#definitions {
+	margin-left: 350px;
+	list-style-type: none;
+}
+
 h1, h2, h3 {
   line-height: 1;
-	text-align: center;
 	margin-bottom: 30px;
+	color: #999;
 }
 
 h1 {
@@ -99,7 +114,6 @@ h1 {
 h2 {
   font-size: 1.2em;
   font-weight: normal;
-  color: #999;
 }
 
 p {
@@ -107,7 +121,7 @@ p {
   line-height: 1.7em;
 }
 
-.newgame, .newuser, .editgame {
+h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
 	text-align: center;
 }
 
@@ -115,10 +129,9 @@ p {
 	display:inline-block;
 	margin: 10px 0px 0px 600px;
 	padding: 0px 5px 0px 5px;
-	text-decoration: none;
 }
 
-#submit, #add-game, #register, #update {
+#submit, #add-game, #login, #register, #update {
 	background-color: blue;
 	border-color: black;
 	color: #fff;
@@ -128,6 +141,22 @@ p {
 	&:hover {
 		background-color: #0033CC
 	};
+}
+
+#link-to-signup, #favorites, #submit {
+	text-decoration: none;
+}
+
+#link-to-signup, #logo {
+	color: #fff;
+}
+
+#link-to-signup {
+	font-size: 1.4em;
+	background-color: #990000;
+	height: auto;
+	width: auto;
+	border: 3px solid #FFCC00;
 }
 
 .footer, #view {
@@ -142,9 +171,24 @@ p {
 	font-size: 1.3em;
 	background-color: red;
 	color: #000099;
-	text-decoration: none;
 }
 
-.marker {
+#logo, .marker {
 	font-weight: bold;
+}
+
+#myCarousel {
+	margin-top:50px;
+	margin-left:425px;
+  height: 300px;
+  width: 510px;
+}
+
+img {
+	height:300px;
+	width:500px;
+	border:3px solid gold;
+	&:hover {
+		border: 3px solid blue;
+	};
 }

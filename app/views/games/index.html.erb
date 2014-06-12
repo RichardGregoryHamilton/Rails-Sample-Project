@@ -1,5 +1,7 @@
 <h1>Games Database</h1>
+
 <table>
+	
 	<thead>
 		<tr>
 			<th id = 'title_id'><%= sortable "title" %></th>
@@ -8,26 +10,38 @@
 			<th id = 'release_id'><%= sortable "release date" %></th>
 		</tr>
 	</thead>
+	
 	<tbody> 
+		
 		<% @games.each do |game| %>
+		
 		<tr>
 			<td id = 'title'><%= game.title %></td>
 			<td id = 'console'><%= game.console %></td>
 			<td id = 'genre'><%= game.genre %></td>
-			<td id = 'release'><%= game.released_on %></td>
-			<% if signed_in? %>
-				<td><%= link_to 'Show', game, id: 'show' %></td>
-				<td><%= link_to 'Edit', edit_game_path(game), id: 'edit' %></td>
-				<td><%= link_to 'Delete', game, method: :delete, id: 'delete' %></td>
-			</div>
-			<% end %>
+			<td id = 'released_on'><%= game.released_on %></td>
+			
+			
+				<div>
+					<td><%= link_to 'Show', game, id: 'show' %></td>
+					<td><%= link_to 'Edit', edit_game_path(game), id: 'edit' %></td>
+					<td><%= link_to 'Delete', game, method: :delete, id: 'delete' %></td>
+				</div>
+				
+	
+			
 		</tr>
+		
 		<% end %>
+		
 	</tbody>
+	
 </table>
 
 <% if signed_in? %>
+
 	<p>
 		<%= link_to 'Add a new game', new_game_path, id: 'submit' %>
 	</p>
+	
 <% end %>

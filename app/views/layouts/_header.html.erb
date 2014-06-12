@@ -5,7 +5,7 @@
       <nav>
         <ul class='nav pull-right'>
           <li><%= link_to 'Home',    games_path %></li>
-          <li><%= link_to 'Help',    static_pages_help_path %></li>
+          <li><%= link_to 'Help',    help_path %></li>
 					<% if signed_in? %>
 						<li><%= link_to 'Profile', user_path(current_user) %></li>
 						<li><%= link_to 'Favorites', users_favorites_path %></li>

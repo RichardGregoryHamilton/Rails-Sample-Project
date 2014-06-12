@@ -1,9 +1,11 @@
 <h2>Add a new game!</h2>
 
-<div class = newgame>
+<div class = new-game>
+	
 	<%= form_for @game do |f| %>
+	
 	<p>
-		<span><%= f.label :title, class: 'marker'%></span></br>
+		<%= f.label :title, class: 'marker'%></br>
 		<%= f.text_field :title %>
 	</p>
 	

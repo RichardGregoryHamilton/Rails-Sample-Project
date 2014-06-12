@@ -56,6 +56,17 @@ class GamesController < ApplicationController
     end
   end
   
+  # Defining static pages
+  
+  def welcome
+  end
+  
+  def about
+  end
+  
+  def help
+  end
+  
   private
   
   # Defining parameters

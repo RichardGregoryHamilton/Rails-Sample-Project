@@ -1,10 +1,14 @@
 class StaticPagesController < ApplicationController
-  def about
+  
+  def show
+    @page = StaticPage.find(params[:id])
   end
-
-  def contact
+  
+  def new
+    @page = Page.new
   end
-
-  def help
+  
+  def create
+    @page = Page.find(params[:page])
   end
 end

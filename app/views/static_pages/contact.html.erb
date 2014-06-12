@@ -1,6 +1,6 @@
 <h1>Contact us</h1>
 
-<%= form_for @page do |f| %>
+<%= form_for @page, url: static_pages_contact_path do |f| %>
 
 <p>
 	<%= f.label :title %>
@@ -8,8 +8,8 @@
 </p>
 
 <p>
-	<%= f.label :message %>
-	<%= f.text_area :message %>
+	<%= f.label :email %>
+	<%= f.text_area :email %>
 </p>
 
 <%= f.submit 'Send message' %>

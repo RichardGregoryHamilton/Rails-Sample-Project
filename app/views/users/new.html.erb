@@ -1,28 +1,33 @@
 <h2>Create your account here</h2>
-<div class = "newuser" >
-<%= form_for @user do |f| %>
 
-<p>
-	<%= f.label :name, class: 'marker' %>
-	<%= f.text_field :name %>
-</p>
+<div class = "new-user">
 	
-<p>
-	<%= f.label :password, class: 'marker' %>
-	<%= f.password_field :password %>
-</p>
+	<%= form_for @user do |f| %>
 
-<p>
-	<%= f.label :password_confirmation, "Confirmation", class: 'marker' %>
-	<%= f.password_field :password_confirmation %>
-</p>
+	<p>
+		<%= f.label :name, 'Username', class: 'marker' %>
+		<%= f.text_field :name %>
+	</p>
+	
+	<p>
+		<%= f.label :password, class: 'marker' %>
+		<%= f.password_field :password %>
+	</p>
 
-<p>	
-	<%= f.label :email, class: 'marker' %>
-	<%= f.text_field :email %>
-</p>
+	<p>
+		<%= f.label :password_confirmation, "Confirmation", class: 'marker' %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+
+	<p>	
+		<%= f.label :email, class: 'marker' %>
+		<%= f.text_field :email %>
+	</p>
 	
-	<%= f.submit 'Register', id: 'register' %>
+	<p>
+		<%= f.submit 'Register', id: 'register' %>
+	</p>
+
+	<% end %>
 	
-<% end %>
 </div>
