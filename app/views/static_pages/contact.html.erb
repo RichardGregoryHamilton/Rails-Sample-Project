@@ -2,16 +2,16 @@
 
 <%= form_for @page, url: static_pages_contact_path do |f| %>
 
-<p>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-</p>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
 
-<p>
-	<%= f.label :email %>
-	<%= f.text_area :email %>
-</p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_area :email %>
+  </p>
 
-<%= f.submit 'Send message' %>
+  <%= f.submit 'Send message' %>
 
 <% end %>

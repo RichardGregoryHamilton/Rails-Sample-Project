@@ -6,14 +6,19 @@
         <ul class='nav pull-right'>
           <li><%= link_to 'Home',    games_path %></li>
           <li><%= link_to 'Help',    help_path %></li>
-					<% if signed_in? %>
-						<li><%= link_to 'Profile', user_path(current_user) %></li>
-						<li><%= link_to 'Favorites', users_favorites_path %></li>
-						<li><%= link_to 'Sign Out', signout_path, method: 'delete', id: 'signout'%></li>
-					<% else %>
-						<li><%= link_to 'Sign Up', new_user_path %>
-           	<li><%= link_to 'Sign In', signin_path %></li>
-					<% end %>
+					
+          <% if signed_in? %>
+					
+            <li><%= link_to 'Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Favorites', users_favorites_path %></li>
+            <li><%= link_to 'Sign Out', signout_path, method: 'delete', id: 'signout'%></li>
+						
+          <% else %>
+					
+            <li><%= link_to 'Sign Up', new_user_path %>
+            <li><%= link_to 'Sign In', signin_path %></li>
+						
+          <% end %>
         </ul>
       </nav>
     </div>

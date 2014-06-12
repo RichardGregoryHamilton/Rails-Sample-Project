@@ -1,31 +1,31 @@
 <h2>Log-in</h2>
 <div class = "new-session">
 	
-	<%= form_for(:session, url: sessions_path) do |f| %>
+  <%= form_for(:session, url: sessions_path) do |f| %>
 
-	<p>
-		<%= f.label :name, 'Username', class: 'marker' %>
-		<%= f.text_field :name %>
-	</p>
+  <p>
+    <%= f.label :name, 'Username', class: 'marker' %>
+    <%= f.text_field :name %>
+  </p>
 
-	<p>
-		<%= f.label :password, class: 'marker' %>
-		<%= f.text_field :password %>
-	</p>
+  <p>
+    <%= f.label :password, class: 'marker' %>
+    <%= f.text_field :password %>
+  </p>
 
-	<p>
-		<%= f.label :remember, 'Remember Me', class: 'checkbox inline' %>
-		<%= f.check_box "Remember", value: "Remember" %>
-	</p>
+  <p>
+    <%= f.label :remember, 'Remember Me', class: 'checkbox inline' %>
+    <%= f.check_box "Remember", value: "Remember" %>
+  </p>
 	
-	<p>
-		<%= f.submit "Login", id: 'login' %>
-	</p>
+  <p>
+    <%= f.submit "Login", id: 'login' %>
+  </p>
 	
-	<p>Don't have an account?</p>
+  <p>Don't have an account?</p>
 	
-	<%= link_to 'Sign Up', signup_path, id: 'link-to-signup' %>
+  <%= link_to 'Sign Up', signup_path, id: 'link-to-signup' %>
 
-	<% end %>
+  <% end %>
 	
 </div>
