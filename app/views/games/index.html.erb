@@ -2,46 +2,47 @@
 
 <table>
 	
-	<thead>
-		<tr>
-			<th id = 'title_id'><%= sortable "title" %></th>
-			<th id = 'console_id'><%= sortable "console" %></th>
-			<th id = 'genre_id'><%= sortable "genre" %></th>
-			<th id = 'release_id'><%= sortable "release date" %></th>
-		</tr>
-	</thead>
+  <thead>
+    <tr>
+      <th id = 'title_id'><%= sortable "title" %></th>
+      <th id = 'console_id'><%= sortable "console" %></th>
+      <th id = 'genre_id'><%= sortable "genre" %></th>
+      <th id = 'release_id'><%= sortable "release date" %></th>
+    </tr>
+  </thead>
 	
-	<tbody> 
+  <tbody> 
 		
-		<% @games.each do |game| %>
+    <% @games.each do |game| %>
 		
-		<tr>
-			<td id = 'title'><%= game.title %></td>
-			<td id = 'console'><%= game.console %></td>
-			<td id = 'genre'><%= game.genre %></td>
-			<td id = 'released_on'><%= game.released_on %></td>
+    <tr>
+      <td id = 'title'><%= game.title %></td>
+      <td id = 'console'><%= game.console %></td>
+      <td id = 'genre'><%= game.genre %></td>
+      <td id = 'released_on'><%= game.released_on %></td>
 			
+      <% if signed_in? %>
 			
-				<div>
-					<td><%= link_to 'Show', game, id: 'show' %></td>
-					<td><%= link_to 'Edit', edit_game_path(game), id: 'edit' %></td>
-					<td><%= link_to 'Delete', game, method: :delete, id: 'delete' %></td>
-				</div>
+        <div>
+          <td><%= link_to 'Show', game, id: 'show' %></td>
+          <td><%= link_to 'Edit', edit_game_path(game), id: 'edit' %></td>
+          <td><%= link_to 'Delete', game, method: :delete, id: 'delete' %></td>
+        </div>
 				
-	
+      <% end %>
 			
-		</tr>
+    </tr>
 		
-		<% end %>
+    <% end %>
 		
-	</tbody>
+  </tbody>
 	
 </table>
 
 <% if signed_in? %>
 
-	<p>
-		<%= link_to 'Add a new game', new_game_path, id: 'submit' %>
-	</p>
+  <p>
+    <%= link_to 'Add a new game', new_game_path, id: 'submit' %>
+  </p>
 	
 <% end %>

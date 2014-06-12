@@ -1,71 +1,71 @@
 @import "bootstrap";
 
 .header {
-	float: right;
+  float: right;
 }
 
 .footer {
-	display: inline-block;
-	border-top: 1px solid #eaeaea;
+  display: inline-block;
+  border-top: 1px solid #eaeaea;
   color: black;
-	bottom: 0;
-	position: fixed;
+  bottom: 0;
+  position: fixed;
 	
-	li {
-		display: inline;
-	}
+  li {
+    display: inline;
+  }
 	
-	#footer-center {
-		float:right;
-		word-spacing: 20px;
-		margin-left: 450px;
-		color: black;
-	}
+  #footer-center {
+    float:right;
+    word-spacing: 20px;
+    margin-left: 450px;
+    color: black;
+  }
 	
-	#footer-right {
-		height: 35px;
-		width: 50px;
-		margin-left: 520px;
-	}
+  #footer-right {
+    height: 35px;
+    width: 50px;
+    margin-left: 520px;
+  }
 }
 
 #logo {
-	float: left;
-	padding-top: 10px;
-	margin-right: 10px;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	&:hover {
-		text-decoration: none;
-	}
+  float: left;
+  padding-top: 10px;
+  margin-right: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 #links {
-	color: black;
+  color: black;
 }
 
 table {
-	margin-left: 400px;
+  margin-left: 400px;
 	
-	th {
-		background-color: #FFCC99;
-		&:hover {
-			background-color: #FFFF00;
-		};
-	}
+  th {
+    background-color: #FFCC99;
+    &:hover {
+      background-color: #FFFF00;
+    };
+  }
 }
 
 #show, #edit, #delete {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 #title, #console, #genre, #released_on {
-	width: 200;
-	background-color: #66FFFF;
-	&:hover {
-		background-color: #33FF00;
-		font-weight: bold;
-	};
+  width: 200;
+  background-color: #66FFFF;
+  &:hover {
+  background-color: #33FF00;
+    font-weight: bold;
+  };
 }
 
 html {
@@ -74,7 +74,7 @@ html {
 
 body {
   padding-top: 60px;
-	background-color: #C0C0C0 ;
+  background-color: #C0C0C0 ;
 }
 
 section {
@@ -87,24 +87,24 @@ textarea {
 
 .center {
   text-align: center;
-	h1 {
-		margin-bottom: 10px;
-	}
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 .center-text, #paragraphs {
-	margin-left: 350px;
+  margin-left: 350px;
 }
 
 #definitions {
-	margin-left: 350px;
-	list-style-type: none;
+  margin-left: 350px;
+  list-style-type: none;
 }
 
 h1, h2, h3 {
   line-height: 1;
-	margin-bottom: 30px;
-	color: #999;
+  margin-bottom: 30px;
+  color: #999;
 }
 
 h1 {
@@ -122,73 +122,73 @@ p {
 }
 
 h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
-	text-align: center;
+  text-align: center;
 }
 
 #submit {
-	display:inline-block;
-	margin: 10px 0px 0px 600px;
-	padding: 0px 5px 0px 5px;
+  display:inline-block;
+  margin: 10px 0px 0px 600px;
+  padding: 0px 5px 0px 5px;
 }
 
 #submit, #add-game, #login, #register, #update {
-	background-color: blue;
-	border-color: black;
-	color: #fff;
-	font-size: 1.3em;
-	height: auto;
-	width: auto;
-	&:hover {
-		background-color: #0033CC
-	};
+  background-color: blue;
+  border-color: black;
+  color: #fff;
+  font-size: 1.3em;
+  height: auto;
+  width: auto;
+  &:hover {
+  background-color: #0033CC
+  };
 }
 
 #link-to-signup, #favorites, #submit {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 #link-to-signup, #logo {
-	color: #fff;
+  color: #fff;
 }
 
 #link-to-signup {
-	font-size: 1.4em;
-	background-color: #990000;
-	height: auto;
-	width: auto;
-	border: 3px solid #FFCC00;
+  font-size: 1.4em;
+  background-color: #990000;
+  height: auto;
+  width: auto;
+  border: 3px solid #FFCC00;
 }
 
 .footer, #view {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 #game, #favorites, #back {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 #favorites {
-	font-size: 1.3em;
-	background-color: red;
-	color: #000099;
+  font-size: 1.3em;
+  background-color: red;
+  color: #000099;
 }
 
 #logo, .marker {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 #myCarousel {
-	margin-top:50px;
-	margin-left:425px;
+  margin-top:50px;
+  margin-left:425px;
   height: 300px;
   width: 510px;
 }
 
 img {
-	height:300px;
-	width:500px;
-	border:3px solid gold;
-	&:hover {
-		border: 3px solid blue;
-	};
+  height:300px;
+  width:500px;
+  border:3px solid gold;
+  &:hover {
+    border: 3px solid blue;
+  };
 }

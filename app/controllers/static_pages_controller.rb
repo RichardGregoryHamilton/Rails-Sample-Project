@@ -11,4 +11,5 @@ class StaticPagesController < ApplicationController
   def create
     @page = Page.find(params[:page])
   end
+  
 end

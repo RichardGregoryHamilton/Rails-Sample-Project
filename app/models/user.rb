@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   has_many :favorite_games
   has_many :favorites, through: :favorite_games
   
@@ -20,7 +21,8 @@ class User < ActiveRecord::Base
   
   private
   
-    def create_remember_token
-      self.remember_token = User.digest(User.new_remember_token)
-    end
+  def create_remember_token
+    self.remember_token = User.digest(User.new_remember_token)
+  end
+  
 end

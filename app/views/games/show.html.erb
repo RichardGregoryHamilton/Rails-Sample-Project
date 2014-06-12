@@ -1,15 +1,15 @@
 <h4 id = 'game'>Game</h4>
 <ul id = 'view'>
-	<li><strong>Title:</strong> <%= @game.title %></li>
-	<li><strong>Console:</strong> <%= @game.console %></li>
-	<li><strong>Genre:</strong> <%= @game.genre %></li>
-	<li><strong>Release Date:</strong> <%= @game.released_on %></li>
+  <li><strong>Title:</strong> <%= @game.title %></li>
+  <li><strong>Console:</strong> <%= @game.console %></li>
+  <li><strong>Genre:</strong> <%= @game.genre %></li>
+  <li><strong>Release Date:</strong> <%= @game.released_on %></li>
 </ul>
 
 <p>
-	<%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, id: 'favorites' %>
+  <%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, id: 'favorites' %>
 </p>
 
 <p>
-	<%= link_to 'Back', games_path, id: 'back' %>
+  <%= link_to 'Back', games_path, id: 'back' %>
 </p>

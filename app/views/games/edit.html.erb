@@ -2,32 +2,32 @@
 
 <div class = 'edit-game'>
 	
-	<%= form_for @game do |f| %>
+  <%= form_for @game do |f| %>
 
-		<p>
-			<%= f.label :title, class: 'marker' %></br>
-			<%= f.text_field :title %>
-		</p>
+    <p>
+      <%= f.label :title, class: 'marker' %></br>
+      <%= f.text_field :title %>
+    </p>
 	
-		<p>
-			<%= f.label :console, class: 'marker' %></br>
-			<%= f.text_field :console %>
-		</p>
+    <p>
+      <%= f.label :console, class: 'marker' %></br>
+      <%= f.text_field :console %>
+    </p>
 	
-		<p>
-			<%= f.label :genre, class: 'marker' %></br>
-			<%= f.text_field :genre %>
-		</p>
+    <p>
+      <%= f.label :genre, class: 'marker' %></br>
+      <%= f.text_field :genre %>
+    </p>
 	
-		<p>
-			<%= f.label :released_on, class: 'marker' %></br>
-			<%= f.text_field :released_on %>
-		</p>
+    <p>
+      <%= f.label :released_on, class: 'marker' %></br>
+      <%= f.text_field :released_on %>
+    </p>
 	
-		<p>
-			<%= f.submit 'Update Game', id: 'update' %>
-		</p>
+    <p>
+      <%= f.submit 'Update Game', id: 'update' %>
+    </p>
 	
-	<% end %>
+  <% end %>
 	
 </div>

@@ -69,7 +69,7 @@ class GamesController < ApplicationController
   
   private
   
-  # Defining parameters
+    # Defining parameters
   
     def game_params
       params.require(:game).permit(:title, :console, :genre, :released_on)
@@ -86,4 +86,5 @@ class GamesController < ApplicationController
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
+    
 end

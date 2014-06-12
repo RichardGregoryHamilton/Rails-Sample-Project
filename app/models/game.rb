@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+  
   belongs_to :user
   has_many :favorite_games
   has_many :favorited_by, through: :favorite_games, source: :user
@@ -6,4 +7,5 @@ class Game < ActiveRecord::Base
   validates_presence_of :title, :console, :genre, :released_on
   validates :title, uniqueness: true
   validates :released_on, length: {is: 4}
+  
 end

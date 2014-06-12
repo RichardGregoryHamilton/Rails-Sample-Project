@@ -1,7 +1,7 @@
 Games::Application.routes.draw do
   
   get "users/new"
-  resources :games do
+    resources :games do
     put :favorite, on: :member
   end
   
