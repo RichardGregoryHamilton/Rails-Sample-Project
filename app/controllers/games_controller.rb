@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   
   def update
     @game = Game.find(params[:id])
-    if @game.save
+    if @game.update_attributes(game_params)
       redirect_to @game, :notice => "Game has been updated"
     else
       render 'edit'
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    redirect_to :action => 'index'
+    redirect_to :action => 'index', :notice => "This game has been deleted"
   end
   
   # Add favorite functionality that allows users to select games as 'favorites'
@@ -67,12 +67,15 @@ class GamesController < ApplicationController
   def help
   end
   
+  def reviews
+  end
+  
   private
   
     # Defining parameters
   
     def game_params
-      params.require(:game).permit(:title, :console, :genre, :released_on)
+      params.require(:game).permit(:title, :console, :genre, :released_on, :stars)
     end
   
     #Sorting column 

@@ -5,7 +5,7 @@
 }
 
 title {
-	display: none;
+  display: none;
 }
 
 .footer {
@@ -14,22 +14,22 @@ title {
   color: black;
   bottom: 0;
   position: fixed;
-	
+  
   li {
     display: inline;
   }
-	
-	a {
-		color: black;
-	}
-	
+  
+  a {
+    color: black;
+  }
+  
   #footer-center {
     float: right;
     word-spacing: 20px;
     margin-left: 980px;
     color: black;
   }
-	
+  
   #footer-logo {
     height: 30px;
     width: 50px;
@@ -39,7 +39,6 @@ title {
 #logo {
   float: left;
   padding-top: 10px;
-  margin-right: 10px;
   font-size: 1.5em;
   text-transform: uppercase;
   &:hover {
@@ -49,7 +48,7 @@ title {
 
 table {
   margin-left: 400px;
-	
+  
   th {
     background-color: #FFCC99;
     &:hover {
@@ -104,6 +103,9 @@ h1, h2, h3 {
   line-height: 1;
   margin-bottom: 30px;
   color: #999;
+  &:hover {
+    color: blue;
+  };
 }
 
 h1 {
@@ -158,37 +160,41 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game, #avatar-description 
   border: 3px solid #FFCC00;
 }
 
-
 #profile-heading, #user-profile {
-	margin-left: 570px;
+  margin-left: 570px;
 }
-
 
 .footer, #definitions, #view, #user-profile {
   list-style-type: none;
 }
 
-#game, #favorites, #back {
+#game, #favorites, #back, #review, .rating, #review-label, #rating-label {
   margin-left: 20px;
 }
 
-#favorites {
+#favorites, #review, #back {
   font-size: 1.3em;
-  background-color: red;
+  background-color: #FF0000;
   color: #000099;
+  border: 3px solid #336600;
+  &:hover {
+    background-color: #FF3399;
+    border-color: #66FF33;
+  };
 }
 
-#logo, .marker, #profile-heading {
+#logo, .marker, #profile-heading, #review-label, #rating-label {
   font-weight: bold;
 }
 
 #profile-heading {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 #myCarousel {
   margin-top:50px;
-  margin-left:425px;
+  margin-left:auto;
+  margin-right:auto;
   height: 300px;
   width: 510px;
 }
@@ -204,14 +210,14 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game, #avatar-description 
 
 .gravatar {
   margin-left: 630px;
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #error_explanation {
   color: #f00;
   ul {
     list-style: none;
-    margin: 0 0 18px 0;
+    margin-bottom: 18px;
   }
 }
 
@@ -221,6 +227,6 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game, #avatar-description 
 }
 
 #game-reviews {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
