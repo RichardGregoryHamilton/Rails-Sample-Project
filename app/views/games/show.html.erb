@@ -1,14 +1,41 @@
+<% @title = "#{@game.title}" %>
+
 <h4 id = 'game'>Game</h4>
 <ul id = 'view'>
   <li><strong>Title:</strong> <%= @game.title %></li>
   <li><strong>Console:</strong> <%= @game.console %></li>
   <li><strong>Genre:</strong> <%= @game.genre %></li>
-  <li><strong>Release Date:</strong> <%= @game.released_on %></li>
+  <li><strong>Release Date:</strong> <%= @game.released_on %></li><br>
+	<li><strong>Rating:</strong> <%= @game.stars %> Stars</li>
+	<li><strong>Favorited:</strong></li></br>
+	<li><%= link_to 'Reviews', id: 'game-reviews' %></li>
 </ul>
 
 <p>
   <%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, id: 'favorites' %>
 </p>
+
+<%= form_for @game do |f| %>
+
+<p>
+  <%= f.label :reviewed, 'Review Game', class: 'marker' %>
+  <%= f.text_area :reviewed %>
+</p>
+
+<p>
+  <%= f.label :stars, 'Rating', class: 'marker' %>1 &#9734;
+  <%= f.radio_button :stars, '1' %> 2 &#9734;
+	<%= f.radio_button :stars, '2' %> 3 &#9734;
+  <%= f.radio_button :stars, '3' %> 4 &#9734;
+  <%= f.radio_button :stars, 4 %> 5 &#9734;
+  <%= f.radio_button :stars, 5%>
+</p>
+
+<p>
+	<%= f.submit "Review" %>
+</p>
+
+<% end %>
 
 <p>
   <%= link_to 'Back', games_path, id: 'back' %>

@@ -5,6 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.string :console
       t.string :genre
       t.integer :released_on
+      t.integer :reviewed
+      t.integer :stars
 
       t.timestamps
     end

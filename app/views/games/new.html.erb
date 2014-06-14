@@ -1,8 +1,12 @@
+<% @title = "New Game" %>
+
 <h2>Add a new game!</h2>
 
 <div class = new-game>
 	
   <%= form_for @game do |f| %>
+	
+	<%= render 'shared/game_errors' %>
 	
   <p>
     <%= f.label :title, class: 'marker'%></br>

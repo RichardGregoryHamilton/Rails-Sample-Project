@@ -1,9 +1,19 @@
-<div class = "row">
-  <aside class = "span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+<% @title = "#{@user.name}" %>
+
+<h3>User Profile</h3>
+
+<%= gravatar_for @user %>
+
+<p id = 'avatar-description'><em><%= "#{@user.name}'s avatar" %></em></p>
+<p id = 'profile-heading'><%= "#{@user.name} Statistics" %>
+
+<ul id = 'user-profile'>
+	<li><strong>Username:</strong> <%= @user.name %><li>
+	<li><strong>Email:</strong> <%= @user.email %></li>
+	<li><strong>Age:</strong</li>
+	<li><strong>Location:</strong></li><br>
+	<li><strong>Join Date:</strong> <%= @user.created_at %></li>
+	<li><strong>Member For:</strong> <%= member_for %> Days</li></br>
+	<li><strong>Reviews Written:</strong></li>
+	<li><strong>Favorite Games:</strong></li>
+</ul>

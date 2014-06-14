@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     # Sign in the user & redirect to users show page
     sign_in user
     redirect_back_or user
+    flash[:success] = "Welcome #{user.name}!"
     else
       flash.now[:danger] = 'Invalid username or password'
       render 'new'

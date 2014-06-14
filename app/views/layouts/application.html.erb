@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Games</title>
+    <title><%= @title %></title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -12,9 +12,9 @@
 
     <%= render 'layouts/header' %>
 
-    <% flash.each do |key, value| %>
+    <% flash.each do |flash, message| %>
 		
-      <div class = "alert alert-><%= key %>"><%= value %></div>
+      <div class = "alert alert-><%= flash %>"><%= message %></div>
 			
     <% end %>
 

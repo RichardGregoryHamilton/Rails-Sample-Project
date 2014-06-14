@@ -4,6 +4,10 @@
   float: right;
 }
 
+title {
+	display: none;
+}
+
 .footer {
   display: inline-block;
   border-top: 1px solid #eaeaea;
@@ -15,17 +19,20 @@
     display: inline;
   }
 	
+	a {
+		color: black;
+	}
+	
   #footer-center {
-    float:right;
+    float: right;
     word-spacing: 20px;
-    margin-left: 450px;
+    margin-left: 980px;
     color: black;
   }
 	
-  #footer-right {
-    height: 35px;
+  #footer-logo {
+    height: 30px;
     width: 50px;
-    margin-left: 520px;
   }
 }
 
@@ -38,10 +45,6 @@
   &:hover {
     text-decoration: none;
   }
-}
-
-#links {
-  color: black;
 }
 
 table {
@@ -92,14 +95,10 @@ textarea {
   }
 }
 
-.center-text, #paragraphs {
+.center-text, #paragraphs, #definitions {
   margin-left: 350px;
 }
 
-#definitions {
-  margin-left: 350px;
-  list-style-type: none;
-}
 
 h1, h2, h3 {
   line-height: 1;
@@ -121,7 +120,7 @@ p {
   line-height: 1.7em;
 }
 
-h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
+h1, h2, h3, .new-game, .new-user, .new-session, .edit-game, #avatar-description {
   text-align: center;
 }
 
@@ -159,7 +158,13 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
   border: 3px solid #FFCC00;
 }
 
-.footer, #view {
+
+#profile-heading, #user-profile {
+	margin-left: 570px;
+}
+
+
+.footer, #definitions, #view, #user-profile {
   list-style-type: none;
 }
 
@@ -173,8 +178,12 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
   color: #000099;
 }
 
-#logo, .marker {
+#logo, .marker, #profile-heading {
   font-weight: bold;
+}
+
+#profile-heading {
+	font-size: 1.2em;
 }
 
 #myCarousel {
@@ -184,11 +193,34 @@ h1, h2, h3, .new-game, .new-user, .new-session, .edit-game {
   width: 510px;
 }
 
-img {
+.carousel-image {
   height:300px;
   width:500px;
   border:3px solid gold;
   &:hover {
     border: 3px solid blue;
   };
+}
+
+.gravatar {
+  margin-left: 630px;
+	margin-bottom: 10px;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+#game-reviews {
+	color: black;
+	text-decoration: none;
 }

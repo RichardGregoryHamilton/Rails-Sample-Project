@@ -8,4 +8,19 @@ module ApplicationHelper
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
+  
+  # Create avatar for user
+  
+  def gravatar_for(user)
+      gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+      gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
+      image_tag(gravatar_url, alt: user.name, class: "gravatar")
+  end
+  
+  # Calculate Member Time in days
+  
+  def member_for
+    ((Time.now - @user.created_at)/86400).floor
+  end
+  
 end

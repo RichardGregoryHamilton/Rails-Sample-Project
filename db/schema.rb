@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20140609050208) do
     t.string   "console"
     t.string   "genre"
     t.integer  "released_on"
+    t.integer  "reviewed"
+    t.integer  "stars"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
