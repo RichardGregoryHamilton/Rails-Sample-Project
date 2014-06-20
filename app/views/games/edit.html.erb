@@ -2,7 +2,7 @@
 
 <h3>Update this Game</h3>
 
-<div class = 'edit-game'>
+<div class = 'center'>
 	
   <%= form_for @game do |f| %>
 
@@ -27,7 +27,7 @@
     </p>
 	
     <p>
-      <%= f.submit 'Update Game', id: 'update' %>
+      <%= f.submit 'Update Game', class: 'submit' %>
     </p>
 	
   <% end %>

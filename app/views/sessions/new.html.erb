@@ -1,5 +1,5 @@
 <h2>Log-in</h2>
-<div class = "new-session">
+<div class = "center">
 	
   <%= form_for(:session, url: sessions_path) do |f| %>
 	
@@ -19,12 +19,12 @@
   </p>
 	
   <p>
-    <%= f.submit "Login", id: 'login' %>
+    <%= f.submit "Login", class: 'submit' %>
   </p>
 	
   <p>Don't have an account?</p>
 	
-  <%= link_to 'Sign Up', signup_path, id: 'link-to-signup' %>
+  <%= link_to 'Sign Up', signup_path, class: 'submit' %>
 
   <% end %>
 	

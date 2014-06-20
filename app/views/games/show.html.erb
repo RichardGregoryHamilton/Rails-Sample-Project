@@ -1,6 +1,6 @@
 <% @title = "#{@game.title}" %>
 
-<h4 id = 'game'>Game</h4>
+<h4 class = 'indent'>Game</h4>
 <ul id = 'view'>
   <li><strong>Title:</strong> <%= @game.title %></li>
   <li><strong>Console:</strong> <%= @game.console %></li>
@@ -11,18 +11,18 @@
 </ul>
 
 <p>
-  <%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, id: 'favorites' %>
+  <%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, class: 'favorites' %>
 </p>
 
 <%= form_for @game do |f| %>
 
 <p>
-  <%= f.label :reviewed, 'Review Game', id: 'review-label' %>
-  <%= f.text_area :reviewed, size: '4 x 6', class: 'rating' %>
+  <%= f.label :reviewed, 'Review Game', class: 'indent' %>
+  <%= f.text_area :reviewed, size: '4 x 6', class: 'indent' %>
 </p>
 
 <p>
-  <%= f.label :stars, 'Rating', id: 'rating-label' %>
+  <%= f.label :stars, 'Rating', class: 'indent' %>
   <div class= "rating">
     1 &#9734; <%= f.radio_button :stars, '1' %>
     2 &#9734;<%= f.radio_button :stars, '2' %>
@@ -33,11 +33,11 @@
 </p>
 
 <p>
-  <%= f.submit "Review", id: 'review' %>
+  <%= f.submit "Review", class: 'favorites' %>
 </p>
 
 <% end %>
 
 <p>
-  <%= link_to 'Back', games_path, id: 'back' %>
+  <%= link_to 'Back', games_path, class: 'favorites' %>
 </p>

@@ -8,4 +8,8 @@ class Game < ActiveRecord::Base
   validates :title, uniqueness: true
   validates :released_on, length: {is: 4}
   
+  def self.all_consoles
+    %w(Atari NES SNES N64 Gamecube Wii WiiU Dreamcast Genesis PS PS2 PS3 Xbox Xbox360)
+  end
+  
 end

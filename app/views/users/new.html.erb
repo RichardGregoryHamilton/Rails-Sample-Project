@@ -2,7 +2,7 @@
 
 <h2>Create your account here</h2>
 
-<div class = "new-user">
+<div class = "center">
 
   <%= form_for @user do |f| %>
 	
@@ -29,7 +29,7 @@
   </p>
 	
   <p>
-    <%= f.submit 'Register', id: 'register' %>
+    <%= f.submit 'Register', class: 'submit' %>
   </p>
 
   <% end %>

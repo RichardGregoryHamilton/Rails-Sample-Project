@@ -2,49 +2,67 @@
 
 <h1>Games Database</h1>
 
+<p id = 'console-message'>Select a Console</p>
+
+<%= form_tag games_path, method: 'get', id: 'console-select' do %>
+
+  
+  <% @all_consoles.each do |console| %>
+
+    <div id = 'console-filter'>
+      <%= "#{console}" %>
+      <%= check_box_tag "Console[#{console}]", 1 %>
+    </div>
+    
+  <% end %>
+
+  <%= submit_tag 'Refresh', class: 'submit'%>
+
+<% end %>
+
 <table>
-	
+  
   <thead>
     <tr>
       <th id = 'title_id'><%= sortable "title" %></th>
       <th id = 'console_id'><%= sortable "console" %></th>
       <th id = 'genre_id'><%= sortable "genre" %></th>
-      <th id = 'release_id'><%= sortable "release date" %></th>
+      <th id = 'release_id'><%= sortable :released_on, "Release Date" %></th>
     </tr>
   </thead>
-	
+  
   <tbody> 
-		
+    
     <% @games.each do |game| %>
-		
+    
     <tr>
       <td id = 'title'><%= game.title %></td>
       <td id = 'console'><%= game.console %></td>
       <td id = 'genre'><%= game.genre %></td>
       <td id = 'released_on'><%= game.released_on %></td>
-			
+      
       <% if signed_in? %>
-			
+      
         <div>
-          <td><%= link_to 'Show', game, id: 'show' %></td>
-          <td><%= link_to 'Edit', edit_game_path(game), id: 'edit' %></td>
-          <td><%= link_to 'Delete', game, method: :delete, id: 'delete' %></td>
+          <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
+          <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
+          <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
         </div>
-				
+        
       <% end %>
-			
+      
     </tr>
-		
+    
     <% end %>
-		
+    
   </tbody>
-	
+  
 </table>
 
 <% if signed_in? %>
 
   <p>
-    <%= link_to 'Add a new game', new_game_path, id: 'submit' %>
+    <%= link_to 'Add a new game', new_game_path, id: 'new-record' %>
   </p>
-	
+  
 <% end %>
