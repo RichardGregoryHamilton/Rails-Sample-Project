@@ -8,6 +8,10 @@ title {
   float: right;
 }
 
+.alert-success {
+  text-align: center;
+}
+
 .footer {
   border-top: 1px solid #eaeaea;
   color: #C0C0C0;
@@ -28,12 +32,12 @@ title {
   #footer-right {
     float: right;
     word-spacing: 20px;
-    margin-left: 1010px;
+    margin-left: 712px;
     padding-top: 5px;
     color: #000000;
   }
   
-  #footer-logo {
+  .footer-logo {
     height: 30px;
     width: 50px;
   }
@@ -109,6 +113,18 @@ table {
   width: 150px;
 }
 
+.info {
+  background-color: #66FFFF;
+  &:hover {
+    font-weight: bold;
+    background-color: #33CC33;
+  };
+}
+
+.btn-primary, .btn-info {
+  border: 3px solid black !important;
+}
+
 #title, #console, #genre, #released_on {
   border-right: 3px solid #000000;
   width: 200;
@@ -147,10 +163,8 @@ textarea {
   margin-left: 350px;
 }
 
-
-h1, h2, h3 {
+h1,h2, h3 {
   line-height: 1;
-  margin-bottom: 30px;
   color: #999;
   &:hover {
     color: blue;
@@ -161,6 +175,9 @@ h1 {
   font-size: 3em;
 }
 
+h2, h3 {
+  margin-bottom: 30px;
+}
 h2, #profile-heading {
   font-size: 1.2em;
 }
@@ -170,39 +187,8 @@ p {
   line-height: 1.7em;
 }
 
-h1, h2, h3, .center, #console-message {
+h1, h2, h3, .center {
   text-align: center;
-}
-
-.submit {
-  display:inline-block;
-  margin: 10px 0px 0px 600px;
-  padding: 0px 5px 0px 5px;
-}
-
-#new-record {
-  margin-left: 600px;
-}
-
-#new-record, .submit {
-  background-color: blue;
-  border: 3px solid black;
-  height: auto;
-  width: auto;
-  color: #fff;
-  font-size: 1.3em;
-}
-
-.submit {
-  margin-left: 0;
-  
-  &:hover {
-  background-color: #0033CC
-  };
-}
-
-#favorites, #new-record, .submit {
-  text-decoration: none;
 }
 
 #profile-heading, #user-profile {
@@ -211,17 +197,6 @@ h1, h2, h3, .center, #console-message {
 
 .footer, #definitions, #view, #user-profile {
   list-style-type: none;
-}
-
-.favorites {
-  font-size: 1.3em;
-  background-color: #FF0000;
-  color: #000099;
-  border: 3px solid #336600;
-  &:hover {
-    background-color: #FF3399;
-    border-color: #66FF33;
-  };
 }
 
 #logo, .marker, #profile-heading, #console-select, #console-message {

@@ -1,6 +1,6 @@
 <% @title = "#{@game.title}" %>
 
-<h4 class = 'indent'>Game</h4>
+<h4 class = 'indent'>Game Information</h4>
 <ul id = 'view'>
   <li><strong>Title:</strong> <%= @game.title %></li>
   <li><strong>Console:</strong> <%= @game.console %></li>
@@ -10,8 +10,8 @@
   <li><strong>Favorited:</strong></li></br>
 </ul>
 
-<p>
-  <%= link_to 'Add to Favorites', favorite_game_path(@game, type: 'favorite'), method: :put, class: 'favorites' %>
+<p class = 'indent'>
+  <input class="btn btn-info" type="submit" value="Favorites">
 </p>
 
 <%= form_for @game do |f| %>
@@ -32,12 +32,12 @@
   </div>
 </p>
 
-<p>
-  <%= f.submit "Review", class: 'favorites' %>
+<p class = 'indent'>
+  <input class="btn btn-info" type="submit" value="Review">
 </p>
 
 <% end %>
 
-<p>
-  <%= link_to 'Back', games_path, class: 'favorites' %>
+<p class = 'indent'>
+  <a class="btn btn-info" href="/games" role="button">Back</a>
 </p>

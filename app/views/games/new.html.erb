@@ -2,36 +2,40 @@
 
 <h2>Add a new game!</h2>
 
-<div class = new-game>
-	
+<div class = center>
+  
   <%= form_for @game do |f| %>
-	
+  
   <%= render 'shared/game_errors' %>
-	
+  
   <p>
     <%= f.label :title, class: 'marker'%></br>
     <%= f.text_field :title %>
   </p>
-	
+  
   <p>
     <%= f.label :console, class: 'marker' %></br>
     <%= f.text_field :console %>
   </p>
-	
+  
   <p>
     <%= f.label :genre, class: 'marker' %></br>
     <%= f.text_field :genre %>
   </p>
-	
+  
   <p>
     <%= f.label :released_on, 'Release Date', class: 'marker' %></br>
     <%= f.text_field :released_on %>
   </p>
-	
+  
   <p>
-    <%= f.submit 'Submit Game', class: 'submit' %>
+    <input class="btn btn-primary" type="submit" value="Submit">
   </p>
-	
+  
+  <p>
+    <a class="btn btn-info" href="/games" role="button">Return</a>
+  </p>
+  
   <% end %>
 
 </div>

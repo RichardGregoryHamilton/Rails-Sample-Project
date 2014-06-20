@@ -7,15 +7,17 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-	
+  
   <body>
 
     <%= render 'layouts/header' %>
 
     <% flash.each do |flash, message| %>
-		
-      <div class = "alert alert-><%= flash %>"><%= message %></div>
-			
+    
+      <div class = "alert alert-success" <%= flash %>>
+        <%= message %>
+      </div>
+      
     <% end %>
 
     <%= yield %>
@@ -23,5 +25,5 @@
     <%= render 'layouts/footer' %>
 
   </body>
-	
+  
 </html>

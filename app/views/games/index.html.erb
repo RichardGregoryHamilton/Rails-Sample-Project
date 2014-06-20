@@ -2,7 +2,9 @@
 
 <h1>Games Database</h1>
 
-<p id = 'console-message'>Select a Console</p>
+<p class = 'center'>An online video games database</p>
+
+<p class = 'center'><strong>Select a Console</strong></p>
 
 <%= form_tag games_path, method: 'get', id: 'console-select' do %>
 
@@ -16,7 +18,7 @@
     
   <% end %>
 
-  <%= submit_tag 'Refresh', class: 'submit'%>
+  <input class="btn btn-primary" type="submit" value="Refresh">
 
 <% end %>
 
@@ -35,11 +37,11 @@
     
     <% @games.each do |game| %>
     
-    <tr>
-      <td id = 'title'><%= game.title %></td>
-      <td id = 'console'><%= game.console %></td>
-      <td id = 'genre'><%= game.genre %></td>
-      <td id = 'released_on'><%= game.released_on %></td>
+    <tr class ="info">
+      <td><%= game.title %></td>
+      <td><%= game.console %></td>
+      <td><%= game.genre %></td>
+      <td><%= game.released_on %></td>
       
       <% if signed_in? %>
       
@@ -61,8 +63,8 @@
 
 <% if signed_in? %>
 
-  <p>
-    <%= link_to 'Add a new game', new_game_path, id: 'new-record' %>
+  <p class = 'center'>
+    <a href="/games/new" class="btn btn-primary btn-lg active" role="button">Add a new game</a>
   </p>
   
 <% end %>
