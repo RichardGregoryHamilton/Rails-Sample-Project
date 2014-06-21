@@ -14,6 +14,8 @@ Games::Application.routes.draw do
   get 'static_pages/contact'
   
   match '/help', to: 'games#help', via: 'get'
+  match '/help/consoles', to: 'games#consoles', via: 'get'
+  match '/help/genres', to: 'games#genres', via: 'get'
   match '/about', to: 'games#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

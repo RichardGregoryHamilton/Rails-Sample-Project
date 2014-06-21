@@ -1,6 +1,6 @@
 
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: games_development
   pool: 5

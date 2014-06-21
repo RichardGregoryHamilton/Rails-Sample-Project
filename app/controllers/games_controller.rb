@@ -75,6 +75,12 @@ class GamesController < ApplicationController
   def help
   end
   
+  def consoles
+  end
+  
+  def genres
+  end
+  
   def reviews
   end
   

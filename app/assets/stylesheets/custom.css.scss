@@ -10,6 +10,10 @@ title {
 
 .alert-success {
   text-align: center;
+	&:hover {
+		font-weight: bold;
+		border: 2px solid green;
+	};
 }
 
 .footer {
@@ -27,6 +31,10 @@ title {
   
   a {
     color: #C0C0C0;
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+		};
   }
   
   #footer-right {
@@ -159,7 +167,7 @@ textarea {
   }
 }
 
-.center-text, #paragraphs, #definitions {
+.center-text, #paragraphs, .definitions {
   margin-left: 350px;
 }
 
@@ -195,7 +203,7 @@ h1, h2, h3, .center {
   margin-left: 570px;
 }
 
-.footer, #definitions, #view, #user-profile {
+.footer, .definitions, #view, #user-profile {
   list-style-type: none;
 }
 
