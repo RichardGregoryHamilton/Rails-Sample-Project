@@ -9,8 +9,9 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg' # Use postgres in production, because Heroku
   gem 'unicorn'
+  gem 'rails_12factor' # Enable static asset serving on heroku
 end
 
 group :test do
