@@ -17,13 +17,12 @@ test:
   timeout: 5000
 
 production:
-<<<<<<< HEAD
+
   adapter: postgresql
   database: games_production
   pool: 5
   timeout: 5000
-=======
+
   adapter: 
   encoding: utf8
   database: 
->>>>>>> 1a78042bf1fb778738c34fc66550f26e6d7e0a46
