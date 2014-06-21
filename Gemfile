@@ -8,6 +8,10 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
