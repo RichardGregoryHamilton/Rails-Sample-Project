@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     redirect_back_or user
     flash[:success] = "Welcome #{user.name}!"
     else
-      flash.now[:danger] = 'Invalid username or password'
       render 'new'
     end
   end

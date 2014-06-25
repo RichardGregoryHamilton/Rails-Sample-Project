@@ -11,7 +11,7 @@
           <% if signed_in? %>
           
             <li><%= link_to 'Profile', user_path(current_user) %></li>
-            <li><%= link_to 'Favorites', users_favorites_path %></li>
+            <li><%= link_to 'Favorites', '/users/:id/favorites' %></li>
             <li><%= link_to 'Sign Out', signout_path, method: 'delete', id: 'signout'%></li>
             
           <% else %>

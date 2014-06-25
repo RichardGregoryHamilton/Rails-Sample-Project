@@ -24,14 +24,18 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+  end
+  
   def update
+    @user = User.find(params[:id])
+  end
+  
+  def favorites
+    @user = User.find(current_user)
   end
   
   def destroy
-  end
-  
-  
-  def favorites
   end
   
   private

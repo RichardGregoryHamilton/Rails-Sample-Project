@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609050208) do
+ActiveRecord::Schema.define(version: 20140623015037) do
 
   create_table "favorite_games", force: true do |t|
     t.string   "game_id"
@@ -27,11 +27,18 @@ ActiveRecord::Schema.define(version: 20140609050208) do
   add_index "favorite_games", ["game_id"], name: "index_favorite_games_on_game_id"
   add_index "favorite_games", ["user_id"], name: "index_favorite_games_on_user_id"
 
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "games", force: true do |t|
     t.string   "title"
     t.string   "console"
     t.string   "genre"
-    t.integer  "released_on"
+    t.integer  "release_date"
     t.integer  "reviewed"
     t.integer  "stars"
     t.datetime "created_at"

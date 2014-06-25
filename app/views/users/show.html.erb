@@ -8,12 +8,37 @@
 <p id = 'profile-heading'><%= "#{@user.name} Statistics" %>
 
 <ul id = 'user-profile'>
-  <li><strong>Username:</strong> <%= @user.name %><li>
-  <li><strong>Email:</strong> <%= @user.email %></li>
-  <li><strong>Age:</strong</li>
-  <li><strong>Location:</strong></li><br>
-  <li><strong>Join Date:</strong> <%= @user.created_at.to_date %></li>
-  <li><strong>Member For:</strong> <%= member_for %> Days</li></br>
-  <li><strong>Reviews Written:</strong></li>
-  <li><strong>Favorite Games:</strong></li>
+  
+  <li>
+    <strong>Username:</strong> <%= @user.name %>
+  </li>
+  
+  <li>
+    <strong>Email:</strong> <%= @user.email %>
+  </li>
+  
+  <li>
+    <strong>Age:</strong
+  </li>
+  
+  <li>  
+    <strong>Location:</strong>
+  </li><br>
+  
+  <li>
+    <strong>Join Date:</strong> <%= @user.created_at.to_date %>
+  </li>
+  
+  <li>
+    <strong>Member For:</strong> <%= pluralize(member_for, 'Day') %>
+  </li></br>
+  
+  <li>
+    <strong>Favorite Games:</strong> <%= @user.games.count %>
+  </li>
+  
 </ul>
+
+<p class = 'center'>
+  <a class="btn btn-info" href='/users/:id/favorites' role="button">Favorites</a>
+</p>

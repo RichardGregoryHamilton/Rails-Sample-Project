@@ -1,22 +1,24 @@
 Games::Application.routes.draw do
   
-  get "users/new"
-    resources :games do
+  resources :games do
     put :favorite, on: :member
   end
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :contacts, only: [:new, :create]
   
-  root to: 'games#welcome'
+  root 'games#welcome'
   
-  get 'users/favorites'
-  get 'static_pages/contact'
-  
+  get "users/new" 
+    
   match '/help', to: 'games#help', via: 'get'
   match '/help/consoles', to: 'games#consoles', via: 'get'
   match '/help/genres', to: 'games#genres', via: 'get'
+  match '/help/users', to: 'games#users', via: 'get'
   match '/about', to: 'games#about', via: 'get'
+  match '/contacts', to: 'contacts#new', via: 'get'
+  match '/users/:id/favorites', to: 'users#favorites', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

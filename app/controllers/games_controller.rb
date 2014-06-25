@@ -37,7 +37,14 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
-      redirect_to @game, :flash => { :success => "This game has been updated"}
+      unless current_user.games.include?(@game)
+        @game = Game.find(params[:id])
+        current_user.games << @game
+        redirect_to @game, :flash => { :success => "Thank you! This game has been added to your Favorites List" }
+      else
+        redirect_to :action => 'index'
+        flash[:success] = 'Thank you! This game has been updated' 
+      end
     else
       render 'edit'
     end
@@ -47,21 +54,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to :action => 'index', :flash => { :success => "This game has been deleted"}
-  end
-  
-  # Add favorite functionality that allows users to select games as 'favorites'
-  
-  def favorite
-    type = params[:type]
-    if type == "favorite"
-      current_user.favorites << @game
-      redirect_to :back, notice: "#{@game.name} successfully added to your favorites!"
-    elsif type == "unfavorite"
-      current_user.favorites.delete(@game)
-      redirect_to :back, notice: "#{game.name} removed from your favorites"
-    else
-      redirect_to :back, notice: 'No change'
-    end
+    current_user.games.delete(@game)
   end
   
   # Defining static pages
@@ -81,6 +74,9 @@ class GamesController < ApplicationController
   def genres
   end
   
+  def users
+  end
+  
   def reviews
   end
   
@@ -89,7 +85,7 @@ class GamesController < ApplicationController
     # Defining parameters
   
     def game_params
-      params.require(:game).permit(:title, :console, :genre, :released_on, :stars)
+      params.require(:game).permit(:title, :console, :genre, :release_date, :stars)
     end
   
     #Sorting column 

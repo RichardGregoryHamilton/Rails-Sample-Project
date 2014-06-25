@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   
-  has_many :favorite_games
-  has_many :favorites, through: :favorite_games
-  
+  has_many :favorites, foreign_key: "user_id", dependent: :destroy
+  has_many :games, through: :favorites
+    
   has_secure_password
   before_create :create_remember_token
   
@@ -10,9 +10,10 @@ class User < ActiveRecord::Base
     
   validates_presence_of :name, :password, :email
   validates_uniqueness_of :name, :email
-  validates :name, length: { maximum: 20 }
+  validates_uniqueness_of :game, :on => :update
+  validates :name, length: { in: 3..20 }
   validates :password, length: { minimum: 6 }
-  validates :email, format: { with: VALID_EMAIL_REGEX }
+  validates :email, format: { with: VALID_EMAIL_REGEX }, length: { in: 8..50 }
   
   validates_confirmation_of :password, if: lambda { |m| m.password.present? }
   
