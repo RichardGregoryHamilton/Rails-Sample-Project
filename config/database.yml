@@ -22,7 +22,3 @@ production:
   database: games_production
   pool: 5
   timeout: 5000
-
-  adapter: 
-  encoding: utf8
-  database: 
