@@ -1,15 +1,20 @@
 <% @title = "#{@game.title}" %>
 
 <h4 class = 'indent'>Game Information</h4>
-<ul id = 'view'>
-  <li><strong>Title:</strong> <%= @game.title %></li>
-  <li><strong>Console:</strong> <%= @game.console %></li>
-  <li><strong>Genre:</strong> <%= @game.genre %></li>
-  <li><strong>Release Date:</strong> <%= @game.release_date %></li><br>
-  <li><strong>Rating:</strong> <%= pluralize(@game.stars, 'Star') %></li>
-  <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
-</ul>
 
+  <ul id = 'view'>
+    <li><strong>Title:</strong> <%= @game.title %></li>
+    <li><strong>Console:</strong> <%= @game.console %></li>
+    <li><strong>Genre:</strong> <%= @game.genre %></li>
+    <li><strong>Release Date:</strong> <%= @game.release_date %></li><br>
+    <li><strong>Rating:</strong> <%= pluralize(@game.stars, 'Star') %></li>
+    <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
+  </ul>
+  
+  <% if @game.stars >= 4 %>
+    <button class = 'top-game'>Top Game</button>
+  <% end %>
+  
 <%= form_for @game do |f| %>
 
   <p>
@@ -28,7 +33,6 @@
   </p>
 
 <% end %>
-
 <p class = 'indent'>
   <a class="btn btn-info" href="/games" role="button">Back</a>
 </p>

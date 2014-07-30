@@ -1,0 +1,34 @@
+<% @title = "Playstation 2" %>
+
+<h1>Playstation 2 Games</h1>
+
+<table class = "console-table">
+
+  <thead>
+    <tr>
+	  <th id = 'title-id'>Title</th>
+	  <th class = 'game-attributes'>Genre</th>
+	  <th>Release Date</th>
+	  <th>Rating</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Game.where(console: 'Playstation 2').each do |game| %>
+    <tr>
+	  <td> <%= game.title %></td>
+	  <td> <%= game.genre %></td>
+	  <td> <%= game.release_date %></td>
+	  <td> <%= game.stars %></td>
+	</tr>
+	<% end %>
+  </tbody>
+
+</table>
+
+<div class = 'center'
+  <p>There are <%= Game.where(console: 'Playstation 2').count %> Playstation 2 games</p>
+  <p>
+    <a href="/console-select" class="btn btn-warning btn-lg active" role="button">Consoles</a>
+  </p>
+</div>

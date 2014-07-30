@@ -24,7 +24,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to games_path, :flash => { :success => "#{@game.title} was succesfully added to this database"}
+      redirect_to games_path, :flash => { :success => "#{@game.title} was successfully added to this database"}
     else
       render 'new'
     end
@@ -37,6 +37,8 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
+	  star_ratings = []
+	  star_ratings.push(g.stars) if @game.stars_changed?
       unless current_user.games.include?(@game)
         @game = Game.find(params[:id])
         current_user.games << @game
@@ -78,6 +80,94 @@ class GamesController < ApplicationController
   end
   
   def reviews
+  end
+  
+  def high_ratings
+  end
+  
+  def select_genres
+  end
+  
+  def select_consoles
+  end
+  
+    # Console Pages
+	
+  def nes
+  end
+  
+  def snes
+  end
+  
+  def n64
+  end
+  
+  def wii
+  end
+  
+  def wii_u
+  end
+  
+  def ps
+  end
+  
+  def ps2
+  end
+  
+  def ps3
+  end
+  
+  def ps4
+  end
+  
+  def vita
+  end
+  
+  def xbox
+  end
+  
+  def xbox360
+  end
+  
+  def xbox_one
+  end
+  
+  def pc
+  end
+  
+  def atari
+  end
+  
+  def dreamcast
+  end
+  
+  def ios
+  end
+  
+  def other
+  end
+  
+  # Genre Pages
+  
+  def action
+  end
+  
+  def adventure
+  end
+  
+  def fighting
+  end
+  
+  def first_person_shooter
+  end
+  
+  def platform
+  end
+  
+  def racing
+  end
+  
+  def sports
   end
   
   private

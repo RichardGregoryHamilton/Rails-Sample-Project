@@ -8,10 +8,10 @@
   
   <thead id = 'head'>
     <tr>
-      <th id = 'title_id'><%= sortable "title" %></th>
+      <th id = 'title-id'><%= sortable "title" %></th>
       <th class = 'game-attributes'><%= sortable "console" %></th>
       <th class = 'game-attributes'><%= sortable "genre" %></th>
-      <th class = 'game-attributes'><%= sortable :release_date,  "Release Date" %></th>
+      <th class = 'game-attributes'><%= sortable :release_date, "Release Date" %></th>
     </tr>
   </thead>
   
@@ -49,6 +49,13 @@
 
   <p class = 'center'>
     <a href="/games/new" class="btn btn-primary btn-lg active" role="button">Add a new game</a>
+  </p>
+  
+  <p class = 'center'>
+	<a href="/games/<%= Game.all.sample.id %>" class="btn btn-warning btn-lg active" role="button">Random Game</a>
+	<a href="/top-rated" class="btn btn-warning btn-lg active" role="button">Top Games</a>
+	<a href="/console-select" class="btn btn-warning btn-lg active" role="button">Consoles</a>
+	<a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>
   </p>
   
 <% end %>

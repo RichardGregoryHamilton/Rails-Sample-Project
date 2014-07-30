@@ -12,10 +12,6 @@ Games::Application.routes.draw do
   
   get "users/new" 
     
-  match '/help', to: 'games#help', via: 'get'
-  match '/help/consoles', to: 'games#consoles', via: 'get'
-  match '/help/genres', to: 'games#genres', via: 'get'
-  match '/help/users', to: 'games#users', via: 'get'
   match '/about', to: 'games#about', via: 'get'
   match '/contacts', to: 'contacts#new', via: 'get'
   match '/users/:id/favorites', to: 'users#favorites', via: 'get'
@@ -23,60 +19,44 @@ Games::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   
- # match '/about', to: 'static_pages#about', via: get
-#  match '/contact', to: 'static_pages#contact', via: get
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  match '/top-rated', to: 'games#high_ratings', via: 'get'	
+  match '/console-select', to: 'games#select_consoles', via: 'get'
+  match '/genre-select', to: 'games#select_genres', via: 'get'
+  match '/help', to: 'games#help', via: 'get'
+  match '/help/consoles', to: 'games#consoles', via: 'get'
+  match '/help/genres', to: 'games#genres', via: 'get'
+  match '/help/users', to: 'games#users', via: 'get'
+  
+  match '/console-select/nes', to: 'games#nes', via: 'get'
+  match '/console-select/snes', to: 'games#snes', via: 'get'
+  match '/console-select/n64', to: 'games#n64', via: 'get'
+  match '/console-select/wii', to: 'games#wii', via: 'get'
+  match '/console-select/wii_u', to: 'games#wii_u', via: 'get'
+  
+  match '/console-select/ps', to: 'games#ps', via: 'get'
+  match '/console-select/ps2', to: 'games#ps2', via: 'get'
+  match '/console-select/ps3', to: 'games#ps3', via: 'get'
+  match '/console-select/ps4', to: 'games#ps4', via: 'get'
+  match '/console-select/vita', to: 'games#vita', via: 'get'
+  
+  match '/console-select/xbox', to: 'games#xbox', via: 'get'
+  match '/console-select/xbox360', to: 'games#xbox360', via: 'get'
+  match '/console-select/xbox_one', to: 'games#xbox_one', via: 'get'
+  match '/console-select/pc', to: 'games#pc', via: 'get'
+  
+  match '/console-select/atari', to: 'games#atari', via: 'get'
+  match '/console-select/dreamcast', to: 'games#dreamcast', via: 'get'
+  match '/console-select/ios', to: 'games#ios', via: 'get'
+  match '/console-select/other', to: 'games#other', via: 'get'
+  
+  match '/genre-select/action', to: 'games#action', via: 'get'
+  match '/genre-select/adventure', to: 'games#adventure', via: 'get'
+  match '/genre-select/fighting', to: 'games#fighting', via: 'get'
+  match '/genre-select/first_person_shooter', to: 'games#first_person_shooter', via: 'get'
+  
+  match '/genre-select/platform', to: 'games#platform', via: 'get'
+  match '/genre-select/racing', to: 'games#racing', via: 'get'
+  match '/genre-select/rpg', to: 'games#rpg', via: 'get'
+  match '/genre-select/sports', to: 'games#sports', via: 'get'
+				
 end

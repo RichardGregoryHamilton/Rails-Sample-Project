@@ -2,13 +2,21 @@
 
 <% if current_user.games.empty? %>
 
-  <div class = 'alert alert-alert'>There are no games in your Favorites List. To add some, please edit or rate a game. </div>
+  <div class = 'alert alert-alert'>
+    <img height="30px" width= "30px" src= "http://cdns2.freepik.com/free-photo/half-black-and-half-white-star-shape_318-25407.jpg">
+    There are no games in your Favorites List. To add some, please edit or rate a game. 
+	<img height="30px" width= "30px" src= "http://cdns2.freepik.com/free-photo/half-black-and-half-white-star-shape_318-25407.jpg">
+  </div>
   
 <% end %>
 
-<h1>My Favorites</h1>
+  <h1>
+    <img height="50px" width="50px" src= "http://www.fancyicons.com/download/?id=3343&t=png&s=256">
+      My Favorites
+    <img height= "50px" width = 50px" src= "https://cdn1.iconfinder.com/data/icons/SOPHISTIQUE/graphics/png/400/star.png">
+  </h1>
 
-<table class = 'favorites-table'>
+  <table class = 'favorites-table'>
   
   <thead>
     <tr>
@@ -46,5 +54,5 @@
   Please see the above legend for more info.</p>
 
 <p class = 'center'>
-  <a class="btn btn-info" href='/games' role="button">Return Home</a>
+  <a class="btn btn-info" href='/games' role="button">Return Home </a>
 </p>

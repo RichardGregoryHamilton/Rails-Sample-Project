@@ -1,0 +1,33 @@
+<% @title = "Action" %>
+
+<h1>Action games</h1>
+
+<table class = "console-table">
+
+  <thead>
+    <tr>
+	  <th id = 'title-id'>Title</th>
+	  <th class = 'game-attributes'>Console</th>
+	  <th>Release Date</th>
+	  <th>Rating</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Game.where(genre: 'Action').each do |game| %>
+    <tr>
+	  <td> <%= game.title %></td>
+	  <td> <%= game.console %></td>
+	  <td> <%= game.release_date %></td>
+	  <td> <%= game.stars %></td>
+	</tr>
+	<% end %>
+  </tbody>
+
+</table>
+
+<p class = 'center'>There are <%= Game.where(genre: 'Action').count %> Action games</p>
+
+<p class = 'center'>
+  <a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>
+</p>

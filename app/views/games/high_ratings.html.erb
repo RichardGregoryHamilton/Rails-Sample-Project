@@ -1,0 +1,35 @@
+<% @title = "Top Rated Games" %>
+
+<h1 class = 'center'> Top Rated Games</h1>
+
+<table class = "ratings-table">
+
+  <thead>
+    <tr>
+	  <th id = 'title-id'>Title</th>
+	  <th class = 'game-attributes'>Console</th>
+	  <th>Rating</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% Game.where('stars >= 4').each do |game|  %>
+	<tr>
+	  <td><%= game.title %></td>
+	  <td><%= game.console %></td>
+	  <td><%= game.stars %></td>
+	</tr>
+	<% end %>
+  </tbody>
+  
+</table>
+
+<p class = 'center'> The above table shows games with a star rating of 4 or higher. </p>
+
+<p class = 'center'>
+  <a href="/users/:id/favorites" class="btn btn-primary btn-lg active" role="button">Favorites</a>
+</p>
+
+<p class = 'center'>
+  <a href="/games" class="btn btn-primary btn-lg active" role="button">Home</a>
+</p>

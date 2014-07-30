@@ -134,6 +134,43 @@ title {
   }
 }
 
+.ratings-table, .console-table {
+  margin-left: 500px;
+  border: 3px solid #000000;
+}
+  
+.ratings-table {
+  
+  th {
+  border: 3px solid #000000;
+  background-color: #66CC99;
+  &:hover {
+    font-weight: bold;
+  };
+  }
+  
+  td {
+  border: 3px solid #000000;
+  background-color: #FFCC00;
+  &:hover {
+    font-weight: bold;
+  };
+  }
+}
+
+.console-table {
+
+  th {
+  border: 3px solid #000000;
+  background-color: #66CCCC;
+  }
+  
+  td {
+    border: 3px solid #000000;
+	background-color: #9966FF;
+  }
+}
+
 #actions {
   background-color: #000066;
   
@@ -145,11 +182,11 @@ title {
   }
 }
 
-.action, .indent, .favorites {
+.action, .indent, .favorites, .top-game {
   margin-left: 20px;
 }
 
-#title_id {
+#title-id {
   width: 250px;
   text-align: left;
 }
@@ -167,7 +204,7 @@ title {
   };
 }
 
-.btn-primary, .btn-info {
+.btn-primary, .btn-info, .btn-warning {
   border: 3px solid black !important;
 }
 
@@ -216,6 +253,7 @@ h1 {
 h2, h3 {
   margin-bottom: 30px;
 }
+
 h2, #profile-heading {
   font-size: 1.2em;
 }
@@ -233,11 +271,11 @@ h1, h2, h3, .center {
   margin-left: 570px;
 }
 
-.footer, .definitions, #view, #user-profile {
+.footer, .legend, .definitions, #view, #user-profile {
   list-style-type: none;
 }
 
-#logo, .marker, #profile-heading, #console-select, #console-message {
+#logo, .marker, #profile-heading, #console-select, #console-message, .top-game {
   font-weight: bold;
 }
 
@@ -263,7 +301,7 @@ h1, h2, h3, .center {
 
 /* Miscellaneous */
 
-.gravatar, table {
+.gravatar, .top-game, table {
   margin-bottom: 10px;
 }
 
@@ -279,16 +317,19 @@ h1, h2, h3, .center {
   }
 }
 
-.legend {
-  margin-left: 500px;
-  list-style:none;
-}
-
-.favorites-info {
-  margin-left: 500px;
-}
-
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.legend, .favorites-info {
+  margin-left: 500px;
+}
+
+.top-game {
+  background-color: #CC9900;
+  border: 3px solid #000000;
+  &:hover {
+    background-color: #FF9900;
+  };
 }
