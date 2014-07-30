@@ -58,5 +58,6 @@ Games::Application.routes.draw do
   match '/genre-select/racing', to: 'games#racing', via: 'get'
   match '/genre-select/rpg', to: 'games#rpg', via: 'get'
   match '/genre-select/sports', to: 'games#sports', via: 'get'
+  match '/genre-select/misc', to: 'games#misc', via: 'get'
 				
 end

@@ -13,9 +13,9 @@
   </thead>
   
   <tbody>
-    <% Game.where('stars >= 4').each do |game|  %>
+    <% Game.where('stars >= 4').order(stars: :desc, title: :asc).each do |game|  %>
 	<tr>
-	  <td><%= game.title %></td>
+	  <td><%= link_to "#{game.title}", game %></td>
 	  <td><%= game.console %></td>
 	  <td><%= game.stars %></td>
 	</tr>
@@ -26,8 +26,31 @@
 
 <p class = 'center'> The above table shows games with a star rating of 4 or higher. </p>
 
+<p class = 'legend'><strong>Top Consoles</strong></p>
+
+<table class = "ratings-table">
+
+  <thead>
+    <tr>
+	  <th class = 'game-attributes'>Console</th>
+	  <th>Games</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% Game.where('stars >= 4').group('console').count.sort_by{|k,v|v}.reverse.each do |game|  %>
+	<tr>
+	  <td><%= game[0] %></td>
+	  <td><%= game[1] %></td>
+	</tr>
+	<% end %>
+  </tbody>
+  
+</table>
+
+
 <p class = 'center'>
-  <a href="/users/:id/favorites" class="btn btn-primary btn-lg active" role="button">Favorites</a>
+  <a href="/users/:id/favorites" class="btn btn-primary btn-lg active" role="button">Favorites <img height = '25px' width = '25px' src="http://www.fancyicons.com/download/?id=3343&t=png&s=256"></a>
 </p>
 
 <p class = 'center'>

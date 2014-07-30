@@ -31,7 +31,7 @@
     <% @user.games.each do |game| %>
       <tr>
         <td><%= game.id %></td>
-        <td><%= game.title %></td>
+        <td><%= link_to "#{game.title}", game %></td>
         <td class = 'center'><%= game.stars %></td>
         <td class = 'center'><%= game.users.count %></td>
       </tr>
@@ -50,7 +50,7 @@
 
 <p class = 'center'><strong>Important Information</strong></p>
   
-<p class = 'favorites-info'>The above is a listing of your favorite games. By editing or reviewing a game, we automatically add it to this list! <br>
+<p class = 'legend'>The above is a listing of your favorite games. By editing or reviewing a game, we automatically add it to this list! <br>
   Please see the above legend for more info.</p>
 
 <p class = 'center'>

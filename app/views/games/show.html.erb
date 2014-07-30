@@ -11,7 +11,7 @@
     <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
   </ul>
   
-  <% if @game.stars >= 4 %>
+  <% if @game.users.count > 0 && @game.stars >= 4 %>
     <button class = 'top-game'>Top Game</button>
   <% end %>
   
@@ -20,7 +20,7 @@
   <p>
     <%= f.label :stars, 'Rating', class: 'indent' %>
     <div class= "rating">
-      1 &#9734; <%= f.radio_button :stars, '1' %>
+      1 &#9734;<%= f.radio_button :stars, '1' %>
       2 &#9734;<%= f.radio_button :stars, '2' %>
       3 &#9734;<%= f.radio_button :stars, '3' %>
       4 &#9734;<%= f.radio_button :stars, '4' %>
@@ -34,5 +34,5 @@
 
 <% end %>
 <p class = 'indent'>
-  <a class="btn btn-info" href="/games" role="button">Back</a>
+  <a class="btn btn-info" href="/games" role="button">Index</a>
 </p>

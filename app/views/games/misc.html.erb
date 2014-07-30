@@ -1,7 +1,6 @@
-<% @title = "Adventure" %>
+<% @title = "Other Genres" %>
 
-<h1>Adventure games</h1>
-
+<h1>Miscellaneous Games</h1>
 <table class = "console-table">
 
   <thead>
@@ -14,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% Game.where(genre: 'Adventure').each do |game| %>
+    <% Game.where(genre: 'Music').each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.console %></td>
@@ -26,7 +25,7 @@
 
 </table>
 
-<p class = 'center'>There are <%= Game.where(genre: 'Adventure').count %> Adventure games</p>
+<p class = 'center'>There are <%= Game.where(genre: 'Music').count %> games</p>
 
 <p class = 'center'>
   <a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>

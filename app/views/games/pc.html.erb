@@ -16,7 +16,7 @@
   <tbody>
     <% Game.where(console: 'PC').each do |game| %>
     <tr>
-	  <td> <%= game.title %></td>
+	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.genre %></td>
 	  <td> <%= game.release_date %></td>
 	  <td> <%= game.stars %></td>
