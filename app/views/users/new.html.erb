@@ -2,36 +2,37 @@
 
 <h2>Create your account here</h2>
 
-<div class = "center">
+<div class = 'register-form'>
+  <div class = "center">
 
-  <%= form_for @user do |f| %>
+    <%= form_for @user do |f| %>
   
-<%= render 'shared/user_errors' %>
+    <%= render 'shared/user_errors' %>
 
-  <p>
-    <%= f.label :name, 'Username', class: 'marker' %>
-    <%= f.text_field :name %>
-  </p>
+    <p>
+      <%= f.label :name, 'Username', class: 'marker' %>
+      <%= f.text_field :name %>
+    </p>
   
-  <p>
-    <%= f.label :password, class: 'marker' %>
-    <%= f.password_field :password %>
-  </p>
+    <p>
+      <%= f.label :password, class: 'marker' %>
+      <%= f.password_field :password %>
+    </p>
 
-  <p>
-    <%= f.label :password_confirmation, "Confirmation", class: 'marker' %>
-    <%= f.password_field :password_confirmation %>
-  </p>
+    <p>
+      <%= f.label :password_confirmation, "Confirmation", class: 'marker' %>
+      <%= f.password_field :password_confirmation %>
+    </p>
 
-  <p> 
-    <%= f.label :email, class: 'marker' %>
-    <%= f.text_field :email %>
-  </p>
+    <p> 
+      <%= f.label :email, class: 'marker' %>
+      <%= f.text_field :email %>
+    </p>
   
-  <p>
-    <input class="btn btn-primary" type="submit" value="Register">
-  </p>
+    <p>
+      <input class="btn btn-primary" type="submit" value="Register">
+    </p>
 
-  <% end %>
-  
+    <% end %>
+  </div>
 </div>

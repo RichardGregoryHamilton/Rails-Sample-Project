@@ -1,6 +1,6 @@
 <% @title = "Xbox" %>
 
-<h1>Xbox Games</h1>
+<h3>Xbox Games</h3>
 
 <table class = "console-table">
 
@@ -20,6 +20,13 @@
 	  <td> <%= game.genre %></td>
 	  <td> <%= game.release_date %></td>
 	  <td> <%= game.stars %></td>
+	  <div>
+        <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
+        <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
+        <% if delete_privilege %>
+          <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
+        <% end %>
+      </div>
 	</tr>
 	<% end %>
   </tbody>
@@ -27,8 +34,8 @@
 </table>
 
 <div class = 'center'
-  <p>There are <%= Game.where(console: 'Xbox').count %> Xbox games</p>
+  <p>We found <%= pluralize(Game.where(console: 'Xbox').count, 'Xbox game') %></p>
   <p>
-    <a href="/console-select" class="btn btn-warning btn-lg active" role="button">Consoles</a>
+    <a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
   </p>
 </div>

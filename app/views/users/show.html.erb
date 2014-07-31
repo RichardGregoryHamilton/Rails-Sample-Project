@@ -2,43 +2,46 @@
 
 <h3>User Profile</h3>
 
-<%= gravatar_for @user %>
+<div class = 'profile-box'>
+  
+  <%= gravatar_for @user %>
 
-<p class = 'center'><em><%= "#{@user.name}'s avatar" %></em></p>
-<p id = 'profile-heading'><%= "#{@user.name} Statistics" %>
+  <p class = 'center'><em><%= "#{@user.name}'s avatar" %></em></p>
+  <p id = 'profile-heading'><%= "#{@user.name} Statistics" %>
 
-<ul id = 'user-profile'>
+  <ul id = 'user-profile'>
   
-  <li>
-    <strong>Username:</strong> <%= @user.name %>
-  </li>
+    <li>
+      <strong>Username:</strong> <%= @user.name %>
+    </li>
   
-  <li>
-    <strong>Email:</strong> <%= @user.email %>
-  </li>
+    <li>
+      <strong>Email:</strong> <%= @user.email %>
+    </li>
   
-  <li>
-    <strong>Age:</strong
-  </li>
+    <li>
+      <strong>Age:</strong
+    </li>
   
-  <li>  
-    <strong>Location:</strong>
-  </li><br>
+    <li>  
+      <strong>Location:</strong>
+    </li><br>
   
-  <li>
-    <strong>Join Date:</strong> <%= @user.created_at.to_date %>
-  </li>
+    <li>
+      <strong>Join Date:</strong> <%= @user.created_at.to_date %>
+    </li>
   
-  <li>
-    <strong>Member For:</strong> <%= pluralize(member_for, 'Day') %>
-  </li></br>
+    <li>
+      <strong>Member For:</strong> <%= pluralize(member_for, 'Day') %>
+    </li></br>
   
-  <li>
-    <strong>Favorite Games:</strong> <%= @user.games.count %>
-  </li>
+    <li>
+      <strong>Favorite Games:</strong> <%= @user.games.count %>
+    </li>
   
-</ul>
+  </ul>
 
-<p class = 'center'>
-  <a class="btn btn-info" href='/users/:id/favorites' role="button">Favorites <img height="35px" width="30px" src="http://www.fancyicons.com/download/?id=3343&t=png&s=256"></a>
-</p>
+  <p class = 'center'>
+    <a class="btn btn-info" href='/users/:id/favorites' role="button">Favorites <img height="35px" width="30px" src="http://www.fancyicons.com/download/?id=3343&t=png&s=256"></a>
+  </p>
+</div>

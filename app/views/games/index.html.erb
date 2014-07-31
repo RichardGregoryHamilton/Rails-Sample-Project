@@ -2,7 +2,7 @@
 
 <h1>Games Database</h1>
 
-<p class = 'center'>An online video games database</p>
+<p class = 'center'>Your #1 source for video game information</p>
 
 <table class = 'games-table'>
   
@@ -17,10 +17,10 @@
   
   <tbody> 
     
-    <% @games.each do |game| %>
+    <% Game.first(10).each do |game| %>
     
     <tr class ="info">
-      <td><%= game.title %></td>
+      <td><%= link_to "#{game.title}", game %></td>
       <td><%= game.console %></td>
       <td><%= game.genre %></td>
       <td><%= game.release_date %></td>
@@ -54,8 +54,8 @@
   <p class = 'center'>
 	<a href="/games/<%= Game.all.sample.id %>" class="btn btn-warning btn-lg active" role="button">Random Game</a>
 	<a href="/top-rated" class="btn btn-warning btn-lg active" role="button">Top Games</a>
-	<a href="/console-select" class="btn btn-warning btn-lg active" role="button">Consoles</a>
-	<a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>
+	<a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
+	<a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
   </p>
   
 <% end %>

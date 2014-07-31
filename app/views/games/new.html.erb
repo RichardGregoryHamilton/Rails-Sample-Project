@@ -1,41 +1,45 @@
 <% @title = "New Game" %>
 
-<h2>Add a new game!</h2>
+<h3>Add a New Game</h3>
 
-<div class = center>
+<div class = 'edit-form'>
+  <div class = center>
   
-  <%= form_for @game do |f| %>
+    <%= form_for @game do |f| %>
   
-  <%= render 'shared/game_errors' %>
+    <%= render 'shared/game_errors' %>
   
-  <p>
-    <%= f.label :title, class: 'marker'%></br>
-    <%= f.text_field :title %>
-  </p>
+    <p>
+      <%= f.label :title, class: 'marker'%></br>
+      <%= f.text_field :title %>
+    </p>
   
-  <p>
-    <%= f.label :console, class: 'marker' %></br>
-    <%= f.text_field :console %>
-  </p>
+    <p>
+      <%= f.label :console, class: 'marker' %></br>
+      <%= f.text_field :console %>
+    </p>
   
-  <p>
-    <%= f.label :genre, class: 'marker' %></br>
-    <%= f.text_field :genre %>
-  </p>
+    <p>
+      <%= f.label :genre, class: 'marker' %></br>
+      <%= f.text_field :genre %>
+    </p>
   
-  <p>
-    <%= f.label :release_date, class: 'marker' %></br>
-    <%= f.text_field :release_date %>
-  </p>
+    <p>
+      <%= f.label :release_date, 'Release Date', class: 'marker' %></br>
+      <%= f.text_field :release_date %>
+    </p>
   
-  <p>
-    <input class="btn btn-primary" type="submit" value="Submit">
-  </p>
+    <p>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </p>
   
-  <p>
-    <a class="btn btn-info" href="/games" role="button">Return</a>
-  </p>
+  </br>
   
-  <% end %>
+    <p>
+      <a class="btn btn-info" href="/games" role="button">Return</a>
+    </p>
+  
+    <% end %>
 
+  </div>
 </div>

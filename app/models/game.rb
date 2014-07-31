@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   
   GAMES = ['Atari', 'NES', 'Nintendo', 'SNES', 'Super Nintendo', 'Super Famicon', 'N64', 'Nintendo64', 'Gamecube', 
-'Wii', 'Wii U', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'PS', 'Playstation2', 'PS2', 'Playstation3', 'PS3',
+'Wii', 'Wii U', 'GBC', 'GBA', 'DS', 'Nintendo DS', 'TurboExpress', 'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'PS', 'Playstation2', 'PS2', 'Playstation3', 'PS3',
 'Playstation4', 'PS4', 'Xbox', 'Xbox360', 'XboxOne', 'PC', 'IOS', 'IPhone']
 
   GENRES = ['Action', 'Action Adventure', 'Action RPG', 'Adventure', 'Arcade', 

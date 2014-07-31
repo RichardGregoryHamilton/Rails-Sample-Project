@@ -1,6 +1,7 @@
 <% @title = "Other Genres" %>
 
-<h1>Miscellaneous Games</h1>
+<h3>Miscellaneous Games</h3>
+
 <table class = "console-table">
 
   <thead>
@@ -13,20 +14,27 @@
   </thead>
 
   <tbody>
-    <% Game.where(genre: 'Music').each do |game| %>
+    <% Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.console %></td>
 	  <td> <%= game.release_date %></td>
 	  <td> <%= game.stars %></td>
+	  <div>
+        <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
+        <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
+        <% if delete_privilege %>
+          <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
+        <% end %>
+      </div>
 	</tr>
 	<% end %>
   </tbody>
 
 </table>
 
-<p class = 'center'>There are <%= Game.where(genre: 'Music').count %> games</p>
+<p class = 'center'>We found <%= pluralize(Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).count, 'game') %></p>
 
 <p class = 'center'>
-  <a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>
+  <a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
 </p>

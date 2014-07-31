@@ -1,6 +1,6 @@
 <% @title = "RPG" %>
 
-<h1>RPG games</h1>
+<h3>RPG Games</h3>
 
 <table class = "console-table">
 
@@ -26,8 +26,9 @@
 
 </table>
 
-<p class = 'center'>There are <%= Game.where(genre: 'RPG').count %> RPG games</p>
-
-<p class = 'center'>
-  <a href="/genre-select" class="btn btn-warning btn-lg active" role="button">Genres</a>
-</p>
+<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(genre: 'RPG').count, 'RPG game') %></p>
+  <p>
+    <a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
+  </p>
+</div>

@@ -67,28 +67,11 @@ title {
   display: inline-block;
 }
 
-#console-select {
-  margin-left: 440px;
-  background-color: #CC3399;
-  word-spacing: 3px;
-  border: 3px solid #336600;
-  width: 550px;
-  height: 55px;
-  &:hover {
-    background-color: #FF66FF;
-    border-color: #99FFCC;
-  };
-}
-
 /* tables and columns */
 
 .favorites-table {
   margin-left: 500px;
   margin-top: 50px;
-  
-  tr, td, th {
-    border: 3px solid black;
-  }
   
   th {
     background-color: #CC6633;
@@ -100,56 +83,54 @@ title {
   td {
     background-color: #3366CC;
     color: #000000;
-	
-	a {
-	  color: #000000;
-	  &:hover {
-	   text-decoration: none;
-	   };
-	 }
 	 
     &:hover {
-      font-weight: bold;
       background-color: #3399FF;
     };
   }
 }
 
-#game_num {
-  width: 100px;
-}
-
-#game {
-  width: 250px;
-}
-
 .games-table {
   margin-left: 300px;
-  border: 3px solid #000000;
  
   th {
     background-color: #FFCC99;
-    border: 3px solid #000000;
     &:hover {
       background-color: #FFFF00;
       border-color: #660000;
     };
   }
-  
-  td {
-    border-top: 3px solid #000000;
-  }
 }
 
-.console-table, .favorites-table, .ratings-table {
-  margin-left: 500px;
+.console-table, .favorites-table, .games-table, .ratings-table {
   border: 3px solid #000000;
+  
+  th {
+    border: 3px solid #000000;   
+  }
+  
+  td {
+    border: 3px solid #000000;
+	&:hover {
+	  font-weight: bold;
+	};
+	
+	a {
+	  color: #000000;
+	  &:hover {
+	    text-decoration: none;
+	  };
+	}
+  }
+}
+  
+.favorites-table, .ratings-table {
+  margin-left: 500px;
 }
   
 .ratings-table {
   
   th {
-    border: 3px solid #000000;
     background-color: #66CC99;
     &:hover {
       font-weight: bold;
@@ -157,40 +138,24 @@ title {
   }
   
   td {
-    border: 3px solid #000000;
     background-color: #FFCC00;
     color: #000000;
 	
-    a {
-      color: #000000;
-	  &:hover {
-	    text-decoration: none;
-	  };
-    }
     &:hover {
       font-weight: bold;
-	  text-decoration: none;
     };
   }
 }
 
 .console-table {
-
+  margin-left: 400px;
+  
   th {
-  border: 3px solid #000000;
-  background-color: #66CCCC;
+    background-color: #66CCCC;
   }
   
   td {
-    border: 3px solid #000000;
 	background-color: #9966FF;
-	
-	a{
-	  color: #000000;
-	  &:hover {
-	    text-decoration: none;
-      };
-	}
   }
 }
 
@@ -208,14 +173,19 @@ title {
 .action, .indent, .favorites, .top-game {
   margin-left: 20px;
 }
-
-#title-id {
+#game, #title-id {
   width: 250px;
+}
+
+#title-id, .game-attributes {
   text-align: left;
 }
 
+#game_num {
+  width: 100px;
+}
+
 .game-attributes {
-  text-align: left;
   width: 150px;
 }
 
@@ -227,7 +197,7 @@ title {
   };
 }
 
-.btn-primary, .btn-info, .btn-warning {
+.btn-primary, .btn-info, .btn-success, .btn-warning, .btn-danger {
   border: 3px solid black !important;
 }
 
@@ -298,7 +268,7 @@ h1, h2, h3, .center {
   list-style-type: none;
 }
 
-#logo, .marker, #profile-heading, #console-select, #console-message, .top-game {
+#logo, .marker, #profile-heading, #console-message, .top-game {
   font-weight: bold;
 }
 
@@ -310,13 +280,14 @@ h1, h2, h3, .center {
 }
 
 #myCarousel {
-  margin-top:50px;
+  margin-top:30px;
   margin-left:auto;
   margin-right:auto;
 }
 
 .carousel-image {
   border:3px solid gold;
+  border-right: 3px solid gold;
   &:hover {
     border: 3px solid blue;
   };
@@ -356,4 +327,30 @@ h1, h2, h3, .center {
   &:hover {
     background-color: #FF9900;
   };
+}
+
+.console-selection {
+  border: 3px groove #000000;
+  background-color: #CCCC99;
+  margin-left: 440px;
+  margin-right: 440px;
+  height: 350px;
+  &:hover {
+    background-color: #CCFF00;
+  };
+}
+
+.edit-form, .register-form {
+  border: 3px groove #000000;
+  background-color: #FFFFCC;
+  margin-left: 525px;
+  margin-right: 525px;
+}
+
+.edit-form {
+  height: 450px;
+}
+
+.register-form {
+  height: 350px;
 }
