@@ -20,7 +20,15 @@
     <% Game.first(10).each do |game| %>
     
     <tr class ="info">
-      <td><%= link_to "#{game.title}", game %></td>
+	
+	  <% if signed_in? %>
+        <td><%= link_to "#{game.title}", game %></td>
+	  <% end %>
+	  
+	  <% unless signed_in? %>
+	    <td><%= game.title %></td>
+	  <% end %>
+	  
       <td><%= game.console %></td>
       <td><%= game.genre %></td>
       <td><%= game.release_date %></td>

@@ -28,5 +28,4 @@ module ApplicationHelper
   def delete_privilege
     current_user.games.count >= 5 || ((Time.now - current_user.created_at)/86400).floor >= 14
   end
-  
 end

@@ -91,7 +91,7 @@ class GamesController < ApplicationController
   def select_consoles
   end
   
-    # Console Pages
+ # Console Pages
 	
   def nes
   end
