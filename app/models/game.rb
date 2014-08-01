@@ -29,7 +29,7 @@ class Game < ActiveRecord::Base
   # Conversion methods for user input
   
   def convert_console
-	self.console = self.console.titleize unless self.console == ('IOS')
+	self.console = self.console.titleize unless self.console == 'IOS'
   end
   
   def convert_genre
@@ -41,12 +41,12 @@ class Game < ActiveRecord::Base
   end
   
   def convert_nes
-    self.console = self.console.gsub('nes', 'Nintendo')
+    self.console = self.console.gsub('nes', 'Nintendo') unless self.console == 'snes' || self.console == 'genesis'
   end
   
   def convert_snes
-    self.console = self.console.gsub('snes', 'Super Nintendo')
-  end
+    self.console = self.console.gsub('snes', 'Super Nintendo')  end
+
   
   def convert_n64
     self.console = self.console.gsub('n64', 'Nintendo 64')
