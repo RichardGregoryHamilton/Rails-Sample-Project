@@ -1,6 +1,6 @@
-<% @title = "Xbox360" %>
+<% @title = "Xbox 360" %>
 
-<h3>Xbox360 Games</h3>
+<h3>Xbox 360 Games</h3>
 
 <table class = "console-table">
 
@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% Game.where(console: 'Xbox360').each do |game| %>
+    <% Game.where(console: 'Xbox 360').each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.genre %></td>
@@ -34,7 +34,7 @@
 </table>
 
 <div class = 'center'
-  <p>We found <%= pluralize(Game.where(console: 'Xbox360').count, 'Xbox360 game') %></p>
+  <p>We found <%= pluralize(Game.where(console: 'Xbox 360').count, 'Xbox 360 game') %></p>
   <p>
     <a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
   </p>

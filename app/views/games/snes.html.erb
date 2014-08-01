@@ -1,6 +1,6 @@
-<% @title = "SNES" %>
+<% @title = "Super Nintendo" %>
 
-<h3>SNES Games</h3>
+<h3>Super Nintendo Games</h3>
 
 <table class = "console-table">
 
@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% Game.where(console: 'SNES').each do |game| %>
+    <% Game.where(console: 'Super Nintendo').each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.genre %></td>
@@ -34,7 +34,7 @@
 </table>
 
 <div class = 'center'
-  <p>We found <%= pluralize(Game.where(console: 'SNES').count, 'SNES game') %></p>
+  <p>We found <%= pluralize(Game.where(console: 'Super Nintendo').count, 'Super Nintendo game') %></p>
   <p>
     <a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
   </p>
