@@ -11,9 +11,7 @@
     <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
   </ul>
   
-  <% if @game.users.count > 0 && @game.stars >= 4 %>
-    <button class = 'top-game'>Top Game</button>
-  <% end %>
+
   
 <%= form_for @game do |f| %>
 
