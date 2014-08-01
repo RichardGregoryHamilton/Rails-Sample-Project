@@ -29,7 +29,7 @@ class Game < ActiveRecord::Base
   # Conversion methods for user input
   
   def convert_console
-	self.console = self.console.titleize unless self.console == 'IOS'
+	self.console = self.console.titleize unless self.console == 'IOS' || self.console == 'PC'
   end
   
   def convert_genre
