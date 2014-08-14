@@ -20,11 +20,15 @@
     </li>
   
     <li>
-      <strong>Age:</strong
+      <strong>Age:</strong> <%= user_age %>
+    </li>
+	
+	<li>
+      <strong>Birthday:</strong> <%= @user.birthday %>
     </li>
   
     <li>  
-      <strong>Location:</strong>
+      <strong>Location:</strong> <%= @user.location %>
     </li><br>
   
     <li>
@@ -42,6 +46,7 @@
   </ul>
 
   <p class = 'center'>
-    <a class="btn btn-info" href='/users/:id/favorites' role="button">Favorites <img height="35px" width="30px" src="http://www.fancyicons.com/download/?id=3343&t=png&s=256"></a>
+    <%= link_to 'Favorites', favorites_path(current_user), :class => "btn btn-info" %>
   </p>
+  
 </div>

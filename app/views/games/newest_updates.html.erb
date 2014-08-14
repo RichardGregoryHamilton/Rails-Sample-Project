@@ -1,0 +1,29 @@
+<% @title = "Newest Updates" %>
+
+<h3 class = 'center'> Newest Updates</h3>
+
+<table class = "games-table">
+
+  <thead>
+    <tr>
+	  <th id = 'title-id'>Title</th>
+	  <th class = 'game-attributes'>Genre</th>
+	  <th class = 'game-attributes'>Console</th>
+	  <th class = 'game-attributes'>Release Date</th>
+	  <th>Rating</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% Game.last(15).each do |game|  %>
+	<tr class = 'info'>
+	  <td><%= link_to "#{game.title}", game %></td>
+	  <td><%= game.genre %></td>
+	  <td><%= game.console %></td>
+	  <td><%= game.release_date %></td>
+	  <td><%= game.rating %></td>
+	</tr>
+	<% end %>
+  </tbody>
+  
+</table>

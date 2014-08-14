@@ -23,9 +23,10 @@ module ApplicationHelper
     ((Time.now - @user.created_at)/86400).floor
   end
   
-  # In order to delete games, users must either have edited 5 games or been a member for 2 weeks
+  # Calculate a User's age
   
-  def delete_privilege
-    current_user.games.count >= 5 || ((Time.now - current_user.created_at)/86400).floor >= 14
+  def user_age
+    Time.now.year - (@user.birthday.split(/[-\/.]/).rotate(-1).join('-').to_date.year) if @user.birthday
   end
+ 
 end

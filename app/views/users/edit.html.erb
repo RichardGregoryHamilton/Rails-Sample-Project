@@ -1,0 +1,35 @@
+<% @title = "Edit Profile" %>
+
+<h2>Update your information here</h2>
+
+  <div class = "center">
+
+    <%= form_for @user do |f| %>
+
+    <p>
+      <%= f.label :name, 'Username', class: 'marker' %>
+      <%= f.text_field :name %>
+    </p>
+
+    <p> 
+      <%= f.label :email, class: 'marker' %>
+      <%= f.text_field :email %>
+    </p>
+	
+	<p> 
+      <%= f.label :birthday, class: 'marker' %>
+      <%= f.text_field :birthday %>
+    </p>
+	
+	<p> 
+      <%= f.label :location, class: 'marker' %>
+      <%= f.text_field :location %>
+    </p>
+  
+    <p>
+      <input class="btn btn-primary" type="submit" value="Update">
+    </p>
+
+    <% end %>
+	
+</div>

@@ -18,17 +18,25 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Congratulations #{@user.name}! You have successfully created an account"
-      redirect_to @user
+      redirect_to games_path
     else
       render 'new'
     end
   end
   
   def edit
+    @user = User.find(params[:id])
   end
   
   def update
     @user = User.find(params[:id])
+	
+	if @user.update_attributes(user_params)
+	  redirect_to @user
+	  flash[:success] = "Your profile has been updated"
+	else
+	  render 'edit'
+	end
   end
   
   def favorites
@@ -41,7 +49,7 @@ class UsersController < ApplicationController
   private
   
     def user_params
-     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+     params.require(:user).permit(:name, :email, :password, :password_confirmation, :location, :birthday)
    end
  
    def signed_in_user

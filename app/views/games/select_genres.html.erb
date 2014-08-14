@@ -5,24 +5,22 @@
 <p class = 'center'> You can then find games for that genre</p>
 
 <div class = 'center'>
-  <a class="btn btn-warning btn-large" href="/action" role ="button">Action</a>
-  <a class="btn btn-warning btn-large" href="/adventure" role ="button">Adventure</a>
-  <a class="btn btn-warning btn-large" href="/fighting" role = "button">Fighting</a>
-  <a class="btn btn-warning btn-large" href="/first_person_shooter" role ="button">First Person Shooter</a>
+  <%= link_to 'Action', action_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'Adventure', adventure_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'Fighting', fighting_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'First Person Shooter', first_person_shooter_path, :class => "btn btn-warning btn-large" %>
 </div>
 
 </br>
 
 <div class = 'center'> 
-  <a class="btn btn-danger btn-large" href="/platform" role ="button" >Platform</a>
-  <a class="btn btn-danger btn-large" href="/racing" role ="button" >Racing</a>
-  <a class="btn btn-danger btn-large" href="/rpg" role ="button" >RPG</a>
-  <a class="btn btn-danger btn-large" href="/sports" role ="button" >Sports</a>
-  <a class="btn btn-danger btn-large" href="/misc" role ="button" >Misc</a>
+  <%= link_to 'Platform', platform_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'Racing', racing_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'RPG', rpg_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'Sports', sports_path, :class => "btn btn-warning btn-large" %>
+  <%= link_to 'Misc', misc_path, :class => "btn btn-warning btn-large" %>
 </div>
 
 </br>
 
-<p class = 'center'>
-  <a href="/games" class="btn btn-info btn-lg active" role="button">Index</a>
-</p>
+<p class = 'center'><%= link_to "Index", games_path, :class => "btn btn-info btn-lg active" %></p>

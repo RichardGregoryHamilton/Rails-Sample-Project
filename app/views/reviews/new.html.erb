@@ -1,0 +1,28 @@
+<% @title = "New Review" %>
+
+<h3>New Review</h3>
+
+  <div class = 'center'>
+  
+    <%= form_for [:game, @review] do |f| %>
+
+      <p>
+        <%= f.hidden_field :username, :value => "#{current_user.name}" %>
+      </p>
+ 
+      <p>
+        <%= f.label :body, "Review", :class => 'marker' %><br />
+        <%= f.text_area :body, :rows => "10", :cols => "10" %>
+      </p>
+ 
+      <p>
+        <%= f.submit "Submit Review", :class => 'btn btn-success' %>
+      </p>
+  
+    <% end %>
+
+  </div>
+
+<div class = 'center'>
+  <%= link_to 'Back', games_path, :class => "btn btn-info" %>
+</div>

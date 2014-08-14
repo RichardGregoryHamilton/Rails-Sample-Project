@@ -1,0 +1,49 @@
+<% @title = "#{@game.title} Reviews" %>
+
+<% if @game.reviews.count == 0 %>
+
+  <div class = 'alert alert-alert'>
+    There are no reviews for <%= "#{@game.title}" %>. You can be the first to review.
+  </div>
+  
+<% end %>
+
+<h3>Reviews for <%= "#{@game.title}" %></h3>
+
+<div class = "table-border">
+<table class = "reviews-table">
+  <thead>
+    <tr>
+	  <th id = 'review-id'>Review</th>
+	  <th>Posted By</th>
+	  <th><th>
+	</tr>
+  </thead>
+  
+  <tbody>
+    <% @game.reviews.each do |review| %>
+	
+    <tr>
+	  <td><%= review.body %></td>
+	  <td><%= review.username %></td>
+	  
+	  <% if current_user.name == review.username %>
+
+	    <td><%= link_to 'Edit', edit_game_review_path(@game, review) %></td>
+	    <td><%= link_to 'Delete', [review.game, review], method: :delete, class: 'action' %></td>
+	  
+	  <% end %>
+	</tr>
+	
+	<% end %>
+	
+  </tbody>
+</table>
+</div>
+
+</br>
+
+<div class = 'center'>
+  <p><%= link_to 'New Review', new_game_review_path(@game), :class => "btn btn-success" %></p>
+  <p><%= link_to 'Back', game_path(@game), :class => "btn btn-info" %></p>
+</div>

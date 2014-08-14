@@ -1,36 +1,46 @@
 <% @title = "#{@game.title}" %>
 
-<h4 class = 'indent'>Game Information</h4>
+<h4 class = 'game-information'>Game Information</h4>
 
-  <ul id = 'view'>
+  <ul class = 'game-information'>
     <li><strong>Title:</strong> <%= @game.title %></li>
     <li><strong>Console:</strong> <%= @game.console %></li>
     <li><strong>Genre:</strong> <%= @game.genre %></li>
     <li><strong>Release Date:</strong> <%= @game.release_date %></li><br>
-    <li><strong>Rating:</strong> <%= pluralize(@game.stars, 'Star') %></li>
+    <li><strong>Rating:</strong> <%= pluralize(@game.rating, 'Star') %></li>
     <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
   </ul>
-  
 
+  <div class = 'game-information'>
+    <% if @game.rating > 4 %>
+  
+      <button class = 'top-game'>Top Game</button>
+  
+    <% end %>
+	
+  </div>
   
 <%= form_for @game do |f| %>
 
+<div class = 'game-information'>
   <p>
-    <%= f.label :stars, 'Rating', class: 'indent' %>
+    <%= f.label :stars, 'Rating' %>
     <div class= "rating">
       1 &#9734;<%= f.radio_button :stars, '1' %>
       2 &#9734;<%= f.radio_button :stars, '2' %>
       3 &#9734;<%= f.radio_button :stars, '3' %>
       4 &#9734;<%= f.radio_button :stars, '4' %>
       5 &#9734;<%= f.radio_button :stars, '5' %>
-    </div>
+	</div>
   </p>
 
-  <p class = 'indent'>
-   <input class="btn btn-info" type="submit" value="Review">
+  <p><input class="btn btn-success" type="submit" value="Rate"></p>
+  
+  <p>
+    <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
 
-<% end %>
-<p class = 'indent'>
-  <a class="btn btn-info" href="/games" role="button">Index</a>
-</p>
+  <% end %>
+
+  <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>
+</div>

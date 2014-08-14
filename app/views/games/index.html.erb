@@ -1,6 +1,6 @@
 <% @title = "Games" %>
 
-<h1>Games Database</h1>
+<h1><span class = 'logo-one'>Game</span><span class = 'logo-two'>Sunset</span></h1>
 
 <p class = 'center'>Your #1 source for video game information</p>
 
@@ -21,26 +21,18 @@
     
     <tr class ="info">
 	
-	  <% if signed_in? %>
-        <td><%= link_to "#{game.title}", game %></td>
-	  <% end %>
-	  
-	  <% unless signed_in? %>
-	    <td><%= game.title %></td>
-	  <% end %>
-	  
+      <td><%= link_to "#{game.title}", game %></td>	  
       <td><%= game.console %></td>
       <td><%= game.genre %></td>
       <td><%= game.release_date %></td>
       
-      <% if signed_in? %>
-      
         <div>
           <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
-          <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
-          <% if delete_privilege %>
+		  
+		  <% if signed_in? && current_user.admin? %>
+		  
+            <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
             <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
-          <% end %>
         </div>
         
       <% end %>
@@ -53,17 +45,24 @@
   
 </table>
 
-<% if signed_in? %>
+<% if signed_in? && current_user.admin? %>
 
   <p class = 'center'>
-    <a href="/games/new" class="btn btn-primary btn-lg active" role="button">Add a new game</a>
+    <%= link_to "Add a new game", new_game_path, :class => "btn btn-primary btn-lg active" %>
   </p>
-  
-  <p class = 'center'>
-	<a href="/games/<%= Game.all.sample.id %>" class="btn btn-warning btn-lg active" role="button">Random Game</a>
-	<a href="/top-rated" class="btn btn-warning btn-lg active" role="button">Top Games</a>
-	<a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
-	<a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
-  </p>
-  
+
 <% end %>
+
+  </br>
+  
+  <p class = 'center'><strong>Navigation</strong></p>
+  
+  <div class = 'bar'>
+    <p class = 'center'>
+      <%= link_to "Latest Updates", updated_path, :class => "btn btn-warning btn-lg active" %> 
+	  <%= link_to "Top Games", top_rated_path, :class => "btn btn-warning btn-lg active" %>
+	  <a href="/games/<%= Game.all.sample.id %>" class="btn btn-warning btn-lg active" role="button">Random Game</a>
+	  <%= link_to "Consoles", consoles_path, :class => "btn btn-warning btn-lg active" %>
+	  <%= link_to "Genres", genres_path, :class => "btn btn-warning btn-lg active" %>
+    </p>
+  </div>

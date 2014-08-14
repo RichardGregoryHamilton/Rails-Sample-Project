@@ -35,10 +35,12 @@ class GamesController < ApplicationController
   end
   
   def update
-    @game = Game.find(params[:id])
-    if @game.update_attributes(game_params)
-	  star_ratings = []
-	  star_ratings.push(g.stars) if @game.stars_changed?
+   @game = Game.find(params[:id])
+
+  stars = game_params.delete(:stars)
+
+  if @game.update_attributes(game_params)
+    @game.add_rating stars
       unless current_user.games.include?(@game)
         @game = Game.find(params[:id])
         current_user.games << @game
@@ -55,34 +57,16 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    redirect_to :action => 'index', :flash => { :success => "This game has been deleted"}
+    redirect_to :action => 'index', :flash => { :success => "This game has been deleted" }
     current_user.games.delete(@game)
   end
   
   # Defining static pages
   
-  def welcome
-  end
-  
-  def about
-  end
-  
-  def help
-  end
-  
-  def consoles
-  end
-  
-  def genres
-  end
-  
-  def users
-  end
-  
-  def reviews
-  end
-  
   def high_ratings
+  end
+  
+  def newest_updates
   end
   
   def select_genres

@@ -4,26 +4,11 @@
 
 <table class = "console-table">
 
-  <thead>
-    <tr>
-	  <th id = 'title-id'>Title</th>
-	  <th class = 'game-attributes'>Console</th>
-	  <th>Release Date</th>
-	  <th>Rating</th>
-    </tr>
-  </thead>
+ <table class = "console-table">
 
-  <tbody>
-    <% Game.where(genre: 'RPG').each do |game| %>
-    <tr>
-	  <td> <%= link_to "#{game.title}", game %></td>
-	  <td> <%= game.console %></td>
-	  <td> <%= game.release_date %></td>
-	  <td> <%= game.stars %></td>
-	</tr>
-	<% end %>
-  </tbody>
-
+  <%= render :partial => "genre_table_head" %>
+  <%= render :partial => "genre_table_body" %>
+  
 </table>
 
 <div class = 'center'>

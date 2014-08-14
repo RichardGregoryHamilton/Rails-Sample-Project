@@ -13,16 +13,15 @@ title {
 
 /* Header and Footer */
 
-.header {
-  float: right;
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
 }
 
 .footer {
-  border-top: 1px solid #eaeaea;
   color: #C0C0C0;
   background-color: #000000;
   bottom: 0;
-  margin-left: -7px;
+  margin-left: -1px;
   margin-bottom: 0;
   position: fixed;
   
@@ -40,16 +39,23 @@ title {
   
   #footer-right {
     float: right;
-    word-spacing: 20px;
-    margin-left: 712px;
-    padding-top: 5px;
+    margin-left: 520px;
     color: #000000;
   }
   
-  .footer-logo {
-    height: 30px;
-    width: 50px;
+  .footer-link {
+    margin-right: 15px;
   }
+}
+
+.logo-one {
+  color: #FF6600;
+  text-shadow: 2px 2px #000;
+}
+
+.logo-two {
+  color: #CC3399;
+  text-shadow: 2px 2px #000;
 }
 
 #logo {
@@ -57,7 +63,6 @@ title {
   color: #fff;
   padding-top: 10px;
   font-size: 1.5em;
-  text-transform: uppercase;
   &:hover {
     text-decoration: none;
   }
@@ -119,6 +124,7 @@ title {
 	  color: #000000;
 	  &:hover {
 	    text-decoration: none;
+		color: #C0C0C0;
 	  };
 	}
   }
@@ -159,6 +165,19 @@ title {
   }
 }
 
+.reviews-table {
+  th {
+  text-align: left;
+  }
+}
+
+.table-border {
+  border: 2px solid #000;
+  margin: 0px 375px;
+  padding: 15px;
+  background-color: #CCFFFF;
+}
+
 #actions {
   background-color: #000066;
   
@@ -175,6 +194,10 @@ title {
 }
 #game, #title-id {
   width: 250px;
+}
+
+#review-id {
+  width: 300px;
 }
 
 #title-id, .game-attributes {
@@ -199,6 +222,7 @@ title {
 
 .btn-primary, .btn-info, .btn-success, .btn-warning, .btn-danger {
   border: 3px solid black !important;
+  color: white !important;
 }
 
 /* HTML Elements */
@@ -233,7 +257,7 @@ textarea {
 
 h1,h2, h3 {
   line-height: 1;
-  color: #999;
+  color: #000000;
   &:hover {
     color: blue;
   };
@@ -322,7 +346,7 @@ h1, h2, h3, .center {
 
 .top-game {
   background-color: #CC9900;
-  border: 3px solid #000000;
+  border: 3px solid gold;
   
   &:hover {
     background-color: #FF9900;
@@ -332,8 +356,7 @@ h1, h2, h3, .center {
 .console-selection {
   border: 3px groove #000000;
   background-color: #CCCC99;
-  margin-left: 440px;
-  margin-right: 440px;
+  margin: 0px 440px;
   height: 350px;
   &:hover {
     background-color: #CCFF00;
@@ -343,8 +366,7 @@ h1, h2, h3, .center {
 .edit-form, .register-form {
   border: 3px groove #000000;
   background-color: #FFFFCC;
-  margin-left: 520px;
-  margin-right: 520px;
+  margin: 0px 520px;
 }
 
 .edit-form {
@@ -353,4 +375,52 @@ h1, h2, h3, .center {
 
 .register-form {
   height: 360px;
+}
+
+.bar {
+  background-color: #FF0000;
+  border: 3px groove #000000;
+  margin: 0px 380px;
+  padding-top: 10px;
+  &:hover {
+    background-color: #990000;
+  };
+}
+
+.terms-heading, .terms-list, .game-information {
+  list-style: none;
+}
+
+.terms-heading, .terms-section {
+  border: 3px solid #000000;
+}
+
+.terms-heading {
+  margin: 0px 500px;
+  padding: 5px 0px;
+  background-color: #99CC66;
+}
+
+.terms-section {
+  margin: 0px 280px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  background-color: #99CC66;
+  }
+
+  .game-information {
+    margin-left: 600px;
+  }
+
+  .sections-list {
+    margin-left: 105px;
+	a {
+	&:hover {
+	text-decoration: none;
+	};
+	}
+  }
+  
+textarea {
+  width: 500px;
 }

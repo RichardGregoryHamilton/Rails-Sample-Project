@@ -2,30 +2,11 @@
 
 <h3>Update this Game</h3>
 
-<div class = 'edit-form'>
   <div class = 'center'>
   
     <%= form_for @game do |f| %>
 
-      <p>
-        <%= f.label :title, class: 'marker' %>
-        <%= f.text_field :title %>
-      </p>
-  
-      <p>
-        <%= f.label :console, class: 'marker' %>
-        <%= f.text_field :console %>
-      </p>
-  
-      <p>
-        <%= f.label :genre, class: 'marker' %>
-        <%= f.text_field :genre %>
-      </p>
-  
-      <p>
-        <%= f.label :release_date, 'Release Date', class: 'marker' %>
-        <%= f.text_field :release_date %>
-      </p>
+    <%= render "form", :f => f %>
   
       <p>
         <input class="btn btn-primary" type="submit" value="Update Game">
@@ -33,7 +14,6 @@
 	
 	  <% end %>
 
-    <a class="btn btn-info" href="/games" role="button">Return Home</a>
+	<%= link_to 'Return Home', games_path, :class => "btn btn-info" %>
+	
   </div>
-</div>
-  

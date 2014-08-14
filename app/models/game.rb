@@ -1,8 +1,12 @@
 class Game < ActiveRecord::Base
   
-  before_validation :convert_playstation, :convert_nes, :convert_snes, :convert_n64, :convert_iphone, :convert_xbox, 
-  :convert_gameboy, :convert_gameboy_2, :convert_console, :convert_genre
-  
+  before_validation :console_conversions,:convert_console, :convert_genre
+	
+	after_initialize do |game|
+      game.ratings_count ||= 0
+      game.rating_total ||= 0
+    end
+	
   CONSOLES = ['Atari', 'Nintendo', 'Super Nintendo', 'Nintendo 64', 'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance', 'Turbo Express',
   'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Xbox', 'Xbox 360',
   'Xbox One', 'PC', 'IOS', 'Vita']
@@ -14,6 +18,7 @@ class Game < ActiveRecord::Base
   belongs_to :user
   has_many :favorites
   has_many :users, through: :favorites
+  has_many :reviews, dependent: :destroy
   
   validates_presence_of :title, :console, :genre, :release_date
   validates :title, uniqueness: true, length: {maximum: 50}
@@ -26,6 +31,30 @@ class Game < ActiveRecord::Base
     %w(Atari NES SNES N64 Gamecube Wii WiiU Dreamcast Genesis PS PS2 PS3 Xbox Xbox360)
   end
   
+  # Algorithm to rate games
+  
+  def ratings_count
+    self[:ratings_count] || 0
+  end
+
+  def ratings_total
+    self[:rating_total] || 0
+  end
+
+  def add_rating(rating)
+    return if rating.nil? || rating == 0
+
+    self.ratings_count += 1
+    self.rating_total += rating.to_i
+    self.stars = (self.rating_total.to_f / self.ratings_count)
+    self.save
+  end
+
+  def rating
+    return 0 if self.ratings_count == 0
+    (self.rating_total.to_f / self.ratings_count).round(2)
+  end
+  
   # Conversion methods for user input
   
   def convert_console
@@ -36,36 +65,15 @@ class Game < ActiveRecord::Base
     self.genre = self.genre.titleize unless self.genre == 'RPG'
   end
   
-  def convert_playstation
-    self.console = self.console.gsub('ps', 'Playstation')
-  end
-  
-  def convert_nes
-    self.console = self.console.gsub('nes', 'Nintendo') unless self.console == 'snes' || self.console == 'genesis'
-  end
-  
-  def convert_snes
-    self.console = self.console.gsub('snes', 'Super Nintendo')  end
-
-  
-  def convert_n64
-    self.console = self.console.gsub('n64', 'Nintendo 64')
-  end
-  
-  def convert_gameboy
+  def console_conversions
     self.console = self.console.gsub('gba', 'Game Boy Advance')
-  end
-  
-  def convert_gameboy_2
-    self.console = self.console.gsub('gbc', 'Game Boy Color')
-  end
-  
-  def convert_iphone
-    self.console = self.console.gsub('iphone', 'IOS')
-  end
-  
-  def convert_xbox
-    self.console = self.console.gsub('Xbox360', 'Xbox 360')
+	self.console = self.console.gsub('gbc', 'Game Boy Color')
+	self.console = self.console.gsub('n64', 'Nintendo 64')
+	self.console = self.console.gsub('snes', 'Super Nintendo')
+	self.console = self.console.gsub('nes', 'Nintendo') unless self.console == 'snes' || self.console == 'genesis'
+	self.console = self.console.gsub('iphone', 'IOS')
+	self.console = self.console.gsub('Xbox360', 'Xbox 360')
+	self.console = self.console.gsub('ps', 'Playstation')
   end
   
 end

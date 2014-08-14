@@ -4,7 +4,7 @@
 
   <div class = 'alert alert-alert'>
     <img height="30px" width= "30px" src= "http://cdns2.freepik.com/free-photo/half-black-and-half-white-star-shape_318-25407.jpg">
-    There are no games in your Favorites List. To add some, please edit or rate a game. 
+    There are no games in your Favorites List. To add some, please rate a game. 
 	<img height="30px" width= "30px" src= "http://cdns2.freepik.com/free-photo/half-black-and-half-white-star-shape_318-25407.jpg">
   </div>
   
@@ -32,7 +32,7 @@
       <tr>
         <td><%= game.id %></td>
         <td><%= link_to "#{game.title}", game %></td>
-        <td class = 'center'><%= game.stars %></td>
+        <td class = 'center'><%= game.rating %></td>
         <td class = 'center'><%= game.users.count %></td>
       </tr>
     <% end %>
@@ -50,7 +50,7 @@
 
 <p class = 'center'><strong>Important Information</strong></p>
   
-<p class = 'legend'>The above is a listing of your favorite games. By editing or reviewing a game, we automatically add it to this list! <br>
+<p class = 'legend'>The above is a listing of your favorite games. By reviewing a game, we automatically add it to this list! <br>
   Please see the above legend for more info.</p>
 
 <p class = 'center'>

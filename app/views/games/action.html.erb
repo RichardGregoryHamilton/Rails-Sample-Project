@@ -4,33 +4,9 @@
 
 <table class = "console-table">
 
-  <thead>
-    <tr>
-	  <th id = 'title-id'>Title</th>
-	  <th class = 'game-attributes'>Console</th>
-	  <th>Release Date</th>
-	  <th>Rating</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% Game.where(genre: 'Action').each do |game| %>
-    <tr>
-	  <td> <%= link_to "#{game.title}", game %></td>
-	  <td> <%= game.console %></td>
-	  <td> <%= game.release_date %></td>
-	  <td> <%= game.stars %></td>
-	  <div>
-        <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
-        <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
-        <% if delete_privilege %>
-          <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
-        <% end %>
-      </div>
-	</tr>
-	<% end %>
-  </tbody>
-
+  <%= render :partial => "genre_table_head" %>
+  <%= render :partial => "genre_table_body" %>
+  
 </table>
 
 <div class = 'center'>
