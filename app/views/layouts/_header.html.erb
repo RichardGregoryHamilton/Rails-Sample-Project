@@ -9,7 +9,6 @@
   <div class='navbar-inner'>
       <nav>
         <ul class='nav pull-right'">
-		  <% if signed_in? %>
 		  
 		  <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games</a>
@@ -25,8 +24,6 @@
             </ul>
            </li>
 		   
-		   <% end %>
-		   
 		  <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Help</a>
             <ul class="dropdown-menu" role="menu">
@@ -37,6 +34,7 @@
            </li>
           
           <% if signed_in? %>
+		  
 			<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile</a>
               <ul class="dropdown-menu" role="menu">
