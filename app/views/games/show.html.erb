@@ -20,7 +20,8 @@
 	
   </div>
   
-  
+<% if signed_in? %>
+
 <%= form_for @game do |f| %>
 
 <div class = 'game-information'>
@@ -37,6 +38,8 @@
 
   <p><input class="btn btn-success" type="submit" value="Rate"></p>
   
+<% end %>
+
   <p>
     <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
