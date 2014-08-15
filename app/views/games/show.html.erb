@@ -10,6 +10,7 @@
     <li><strong>Rating:</strong> <%= pluralize(@game.rating, 'Star') %></li>
     <li><strong>Favorited:</strong> By <%= pluralize(@game.users.count, 'User') %></li></br>
   </ul>
+<<<<<<< HEAD
 
   <div class = 'game-information'>
     <% if @game.rating > 4 %>
@@ -19,6 +20,12 @@
     <% end %>
 	
   </div>
+=======
+  
+  <% if @game.users.count > 0 && @game.stars >= 4 %>
+    <button class = 'top-game'>Top Game</button>
+  <% end %>
+>>>>>>> 47af0772727d7dc2cd866779a02ac1f8ecc2bd6d
   
 <%= form_for @game do |f| %>
 
