@@ -2,11 +2,12 @@
 
 <h2>Create your account here</h2>
 
-<div class = 'register-form'>
   <div class = "center">
 
     <%= form_for @user do |f| %>
 
+	<%= render 'shared/user_errors' %>
+	
     <p>
       <%= f.label :name, 'Username', class: 'marker' %>
       <%= f.text_field :name %>
@@ -33,4 +34,3 @@
 
     <% end %>
   </div>
-</div>
