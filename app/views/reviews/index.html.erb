@@ -44,6 +44,13 @@
 </br>
 
 <div class = 'center'>
-  <p><%= link_to 'New Review', new_game_review_path(@game), :class => "btn btn-success" %></p>
+
+  <% if signed_in? %>
+  
+    <p><%= link_to 'New Review', new_game_review_path(@game), :class => "btn btn-success" %></p>
+  
+  <% end %>
+  
   <p><%= link_to 'Back', game_path(@game), :class => "btn btn-info" %></p>
+  
 </div>
