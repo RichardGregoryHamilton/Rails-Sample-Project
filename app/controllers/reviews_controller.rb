@@ -19,10 +19,9 @@ class ReviewsController < ApplicationController
  
     if @review.save
       flash[:notice] = 'Review was successfully created.'
-      redirect_to @game
+      redirect_to game_reviews_path(@game)
     else
-      flash[:notice] = "Error creating review: #{@review.errors}"
-      redirect_to @game
+      render 'new'
     end
   end
 
@@ -31,10 +30,10 @@ class ReviewsController < ApplicationController
 
     if @review.update_attributes(review_params)
       flash[:notice] = "Review updated"
-      redirect_to @game
+      redirect_to game_reviews_path(@game)
     else
       flash[:error] = "There was an error updating your review"
-      redirect_to @game
+      render 'edit'
     end
   end
 

@@ -6,6 +6,8 @@
   
     <%= form_for @game do |f| %>
   
+    <%= render 'shared/game_errors' %>
+  
     <%= render "form", :f => f %>
   
     <p>

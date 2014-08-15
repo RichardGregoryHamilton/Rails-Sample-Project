@@ -329,7 +329,7 @@ h1, h2, h3, .center {
 
 #error_explanation {
   color: #f00;
-  margin-left: 500px;
+  margin-left: 450px;
   ul {
     list-style: none;
     margin-bottom: 18px;
@@ -339,7 +339,7 @@ h1, h2, h3, .center {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
-  margin-left: 568px;
+  margin-left: 560px;
 }
 
 .legend {
