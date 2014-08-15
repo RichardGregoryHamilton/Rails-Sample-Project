@@ -19,6 +19,7 @@ class Game < ActiveRecord::Base
   has_many :favorites
   has_many :users, through: :favorites
   has_many :reviews, dependent: :destroy
+  has_many :images, dependent: :destroy
   
   validates_presence_of :title, :console, :genre, :release_date
   validates :title, uniqueness: true, length: {maximum: 50}

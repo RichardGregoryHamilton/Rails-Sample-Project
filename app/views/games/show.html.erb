@@ -46,6 +46,12 @@
   <p>
     <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
+  
+  <% if signed_in? && current_user.admin? %>
+  
+    <%= link_to 'Images', game_images_path(@game), :class => "btn btn-info" %>
+  
+  <% end %>
 
 
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>

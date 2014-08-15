@@ -3,6 +3,7 @@ Games::Application.routes.draw do
   resources :games do
     put :favorite, on: :member
 	resources :reviews
+	resources :images
   end
   
   resources :users, except: [:new]

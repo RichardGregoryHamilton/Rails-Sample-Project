@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814141022) do
+ActiveRecord::Schema.define(version: 20140815171854) do
 
   create_table "favorite_games", force: true do |t|
     t.string   "game_id"
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(version: 20140814141022) do
     t.datetime "updated_at"
     t.integer  "ratings_count"
     t.integer  "rating_total"
+  end
+
+  create_table "images", force: true do |t|
   end
 
   create_table "reviews", force: true do |t|
