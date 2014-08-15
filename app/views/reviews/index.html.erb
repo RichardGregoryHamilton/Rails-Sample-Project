@@ -27,7 +27,7 @@
 	  <td><%= review.body %></td>
 	  <td><%= review.username %></td>
 	  
-	  <% if current_user.name == review.username %>
+	  <% if signed_in? && current_user.name == review.username %>
 
 	    <td><%= link_to 'Edit', edit_game_review_path(@game, review) %></td>
 	    <td><%= link_to 'Delete', [review.game, review], method: :delete, class: 'action' %></td>
