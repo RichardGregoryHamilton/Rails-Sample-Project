@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
   include ActiveModel::Validations
   validates_with MyValidator
-  before_validation :date_conversion
+  before_validation :date_conversion, :on => :update
   
   has_many :favorites, foreign_key: "user_id", dependent: :destroy
   has_many :games, through: :favorites
