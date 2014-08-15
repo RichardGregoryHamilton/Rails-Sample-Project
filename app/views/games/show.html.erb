@@ -22,29 +22,31 @@
   
 <% if signed_in? %>
 
-<%= form_for @game do |f| %>
+  <%= form_for @game do |f| %>
 
-<div class = 'game-information'>
-  <p>
-    <%= f.label :stars, 'Rating' %>
-    <div class= "rating">
-      1 &#9734;<%= f.radio_button :stars, '1' %>
-      2 &#9734;<%= f.radio_button :stars, '2' %>
-      3 &#9734;<%= f.radio_button :stars, '3' %>
-      4 &#9734;<%= f.radio_button :stars, '4' %>
-      5 &#9734;<%= f.radio_button :stars, '5' %>
-	</div>
-  </p>
-
-  <p><input class="btn btn-success" type="submit" value="Rate"></p>
+    <div class = 'game-information'>
+      <p>
+        <%= f.label :stars, 'Rating' %>
+        <div class= "rating">
+          1 &#9734;<%= f.radio_button :stars, '1' %>
+          2 &#9734;<%= f.radio_button :stars, '2' %>
+          3 &#9734;<%= f.radio_button :stars, '3' %>
+          4 &#9734;<%= f.radio_button :stars, '4' %>
+          5 &#9734;<%= f.radio_button :stars, '5' %>
+	    </div>
+      </p>
+      <p><input class="btn btn-success" type="submit" value="Rate"></p>
+    </div>
   
-<% end %>
+  <% end %>
 
+<% end %>
+  
+<div class = 'game-information'>
   <p>
     <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
 
-  <% end %>
 
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>
 </div>
