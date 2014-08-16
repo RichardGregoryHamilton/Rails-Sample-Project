@@ -154,6 +154,10 @@ class GamesController < ApplicationController
   def sports
   end
   
+  def not_found
+  render '_not_found'
+  end
+  
   private
   
     # Defining parameters

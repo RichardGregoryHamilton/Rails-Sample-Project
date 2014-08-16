@@ -21,6 +21,7 @@ Games::Application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
   match '/terms', to: 'static_pages#terms', via: 'get'
   match '/privacy', to: 'static_pages#privacy', via: 'get'
+  match '/404', to: 'errors#not_found', via: 'get'
   
   match '/contacts', to: 'contacts#new', via: 'get'
   match '/users/:id/favorites', to: 'users#favorites', via: 'get', as: :favorites
@@ -70,5 +71,7 @@ Games::Application.routes.draw do
   match '/rpg', to: 'games#rpg', via: 'get'
   match '/sports', to: 'games#sports', via: 'get'
   match '/misc', to: 'games#misc', via: 'get'
+  
+  match '*path', to: 'games#not_found', via: 'get'
 				
 end
