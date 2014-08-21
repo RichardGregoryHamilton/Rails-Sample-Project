@@ -1,5 +1,5 @@
 <tbody>
-  <% Game.where(console: @title).order(stars: :desc, title: :asc).limit(10).each do |game| %>
+  <% Game.where(console: @title).order(rating: :desc, title: :asc).limit(10).each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.genre %></td>
