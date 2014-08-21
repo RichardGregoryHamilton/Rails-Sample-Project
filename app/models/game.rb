@@ -11,9 +11,9 @@ class Game < ActiveRecord::Base
   'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Xbox', 'Xbox 360',
   'Xbox One', 'PC', 'IOS', 'Vita']
   
-  GENRES = ['Action', 'Action Adventure', 'Action RPG', 'Adventure', 'Arcade', 'Fighting', 'First Person Shooter', 'MMORPG', 'Music', 'Platform', 
-  'Platfomer', 'Puzzle','Racing', 'Rail Shooter', 'Role Playing Game', 'RPG', 'Sandbox', 'Shoot-em-up', 'Sim', 'Simulation', 
-  'Sports', 'Strategy', 'Survival Horror', 'Tactical RPG', 'Third Person Shooter', 'Tower Defense']
+  GENRES = ['Action', 'Action Adventure', 'Action RPG', 'Adventure', 'Arcade', 'Fighting', 'First Person Shooter', 'MMORPG', 'Music', 'Party', 'Platform', 
+  'Puzzle', 'Racing', 'Rail Shooter', 'Role Playing Game', 'RPG', 'Sandbox', 'Shoot-em-up', 'Sim', 'Simulation', 
+  'Sports', 'Strategy', 'Survival Horror', 'Third Person Shooter', 'Tower Defense']
 
   belongs_to :user
   has_many :favorites
@@ -22,7 +22,7 @@ class Game < ActiveRecord::Base
   has_many :images, dependent: :destroy
   
   validates_presence_of :title, :console, :genre, :release_date
-  validates :title, uniqueness: true, length: {maximum: 50}
+  validates :title, uniqueness: true, length: {maximum: 60}
   validates :release_date, length: {is: 4, :message => 'should be 4 numbers'}
   validates_inclusion_of :genre, :in => GENRES
   validates_inclusion_of :console, :in => CONSOLES
@@ -33,27 +33,19 @@ class Game < ActiveRecord::Base
   end
   
   # Algorithm to rate games
-  
-  def ratings_count
-    self[:ratings_count] || 0
-  end
-
-  def ratings_total
-    self[:rating_total] || 0
-  end
 
   def add_rating(rating)
-    return if rating.nil? || rating == 0
+    return if rating.to_i == 0
 
     self.ratings_count += 1
     self.rating_total += rating.to_i
-    self.stars = (self.rating_total.to_f / self.ratings_count)
+    self.rating = (rating_total.to_f / ratings_count).round(2)
     self.save
   end
 
   def rating
-    return 0 if self.ratings_count == 0
-    (self.rating_total.to_f / self.ratings_count).round(2)
+    return 0 if ratings_count == 0
+   (rating_total.to_f / ratings_count).round(2)
   end
   
   # Conversion methods for user input

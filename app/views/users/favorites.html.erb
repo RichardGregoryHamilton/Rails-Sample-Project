@@ -28,7 +28,7 @@
   </thead>
     
   <tbody>
-    <% @user.games.each do |game| %>
+    <% @user.games.first(30).each do |game| %>
       <tr>
         <td><%= game.id %></td>
         <td><%= link_to "#{game.title}", game %></td>
@@ -37,6 +37,7 @@
       </tr>
     <% end %>
   </tbody>
+  
 </table>
 
 <p class = 'center'><strong>Legend</strong></p>
@@ -44,7 +45,7 @@
 <ul class = 'legend'>
   <li><strong>Num</strong>: <dfn>The ID of the video game you selected.</dfn></li>
   <li><strong>Game</strong>: <dfn>Title of that game.</dfn></li>
-  <li><strong>Rating</strong>: <dfn>The rating assigned to this game by users. This is measured on a scale from 1 to 5 stars.</dfn></li>
+  <li><strong>Rating</strong>: <dfn>The rating assigned to this game by users. (Measured on a scale from 1 to 5 stars)</dfn></li>
   <li><strong>Liked By</strong>: <dfn>Number of users who have added this game to their Favorites List.</dfn></li><br>
 </ul>
 

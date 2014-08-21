@@ -4,11 +4,11 @@ title {
   display: none;
 }
 
- a {
-	&:hover {
-	  text-decoration: none;
-	};
-  }
+a {
+  &:hover {
+    text-decoration: none;
+  };
+}
   
 .alert-alert, .alert-success, .info {
   &:hover {
@@ -29,6 +29,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .footer {
   color: #C0C0C0;
   background-color: #000000;
+  width: 100%;
+  padding: 5px 5px;
   bottom: 0;
   margin-left: -1px;
   margin-bottom: 0;
@@ -47,7 +49,6 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   
   #footer-right {
     float: right;
-    margin-left: 520px;
     color: #000000;
   }
   
@@ -81,7 +82,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 .favorites-table {
 
-  margin-top: 50px;
+  margin-top: 3%;
   
   th {
     background-color: #CC6633;
@@ -193,8 +194,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .action, .indent, .favorites, .top-game {
   margin-left: 20px;
 }
+
 #game, #title-id {
-  width: 250px;
+  width: 350px;
 }
 
 #review-id {
@@ -285,7 +287,7 @@ h1, h2, h3, .center {
 }
 
 #profile-heading, #user-profile {
-  margin-left: 570px;
+  margin-left: 43%
 }
 
 .footer, .legend, .definitions, .center-text, #view, #user-profile, .terms-heading, .terms-list, .game-information {
@@ -334,7 +336,7 @@ textarea, #myCarousel, #consoleCarousel {
 
 #error_explanation {
   color: #f00;
-  margin-left: 450px;
+  margin-left: 34%;
   ul {
     list-style: none;
     margin-bottom: 18px;
@@ -344,11 +346,11 @@ textarea, #myCarousel, #consoleCarousel {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
-  margin-left: 560px;
+  margin-left: 42%;
 }
 
 .legend {
-  margin-left: 500px;
+  margin-left: 36%;
 }
 
 .top-game {
@@ -366,7 +368,7 @@ textarea, #myCarousel, #consoleCarousel {
 
 .console-selection {
   background-color: #CCCC99;
-  margin: 0px 440px;
+  margin: 0% 33%;
   height: 350px;
   &:hover {
     background-color: #CCFF00;
@@ -375,7 +377,7 @@ textarea, #myCarousel, #consoleCarousel {
 
 .bar {
   background-color: #FF0000;
-  margin: 0px 380px;
+  margin: 0% 28%;
   padding-top: 10px;
   &:hover {
     background-color: #990000;
@@ -393,15 +395,15 @@ textarea, #myCarousel, #consoleCarousel {
 }
 
 .terms-section {
-  margin: 0px 280px;
-  padding-right: 20px;
-  margin-bottom: 20px;
+  margin: 0% 17%;
+  padding-right: 2%;
+  margin-bottom: 2%;
 }
 
 .game-information {
-  margin-left: 600px;
+  margin-left: 44%;
 }
 
 .sections-list {
-  margin-left: 105px;
+  margin-left: 30%;
 }

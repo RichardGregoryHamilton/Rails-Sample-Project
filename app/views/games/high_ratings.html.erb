@@ -13,7 +13,8 @@
   </thead>
   
   <tbody>
-    <% Game.where('stars >= 4').order(stars: :desc, title: :asc).each do |game|  %>
+  
+    <% Game.where("rating >= 4.5").order(rating: :desc, title: :asc).each do |game|  %>
 	<tr>
 	  <td><%= link_to "#{game.title}", game %></td>
 	  <td><%= game.console %></td>
@@ -24,7 +25,7 @@
   
 </table>
 
-<p class = 'center'> The above table shows games with a star rating of 4 or higher. </p>
+<p class = 'center'> The above table shows games with a star rating of 4.5 or higher. </p>
 
 <p class = 'legend'><strong>Top Consoles</strong></p>
 
@@ -38,7 +39,7 @@
   </thead>
   
   <tbody>
-    <% Game.where('stars >= 4').group('console').count.sort_by{|k,v|v}.reverse.each do |game|  %>
+    <% Game.where('rating >= 4.5').group('console').count.sort_by{|k,v|v}.reverse.each do |game|  %>
 	<tr>
 	  <td><%= game[0] %></td>
 	  <td><%= game[1] %></td>

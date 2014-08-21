@@ -9,15 +9,9 @@
   
 </table>
 
-
 <div class = 'center'>
-  <%= link_to 'First Person Shooter Games', first_person_shooter_games_path, :class => 'btn btn-info' %>
-</div>
-
-</br>
-
-<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(genre: 'First Person Shooter').count, 'First Person Shooter game') %></p>
   <p>
-    <%= link_to 'Genres', genres_path, :class => 'btn btn-warning' %>
+    <%= link_to 'Back', first_person_shooter_path, :class => "btn btn-warning btn-lg active" %>
   </p>
 </div>
