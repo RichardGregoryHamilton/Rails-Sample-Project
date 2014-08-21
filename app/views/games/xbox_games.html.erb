@@ -1,0 +1,17 @@
+<% @title = "Xbox Games" %>
+
+<h3>All Xbox Games</h3>
+
+<table class = "console-table">
+
+  <%= render :partial => "console_table_head" %>
+  <%= render :partial => "new_table_body" %>
+  
+</table>
+
+<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(console: 'Xbox').count, 'Xbox game') %></p>
+  <p>
+    <%= link_to 'Xbox Home', xbox_path, :class => 'btn btn-info btn-lg active' %>
+  </p>
+</div>

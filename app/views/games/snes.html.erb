@@ -2,6 +2,8 @@
 
 <h3>Super Nintendo Games</h3>
 
+<%= render :partial => "carousel" %>
+  
 <table class = "console-table">
 
   <%= render :partial => "console_table_head" %>
@@ -9,9 +11,14 @@
   
 </table>
 
-<div class = 'center'
-  <p>We found <%= pluralize(Game.where(console: 'Super Nintendo').count, 'Super Nintendo game') %></p>
+<div class = 'center'>
+  <%= link_to 'All Games', snes_games_path, :class => 'btn btn-info' %>
+</div>
+
+</br>
+
+<div class = 'center'>
   <p>
-    <a href="/consoles" class="btn btn-warning btn-lg active" role="button">Consoles</a>
+    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
   </p>
 </div>
