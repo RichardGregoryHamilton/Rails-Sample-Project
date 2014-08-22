@@ -1,0 +1,18 @@
+<% @title = "Misc Games" %>
+
+<h3>Misc Games</h3>
+
+<table class = "console-table">
+
+  <%= render :partial => "genre_table_head" %>
+  <%= render :partial => "misc_table_body" %>
+  
+</table>
+
+
+<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).count, 'game') %></p>
+  <p>
+    <%= link_to 'Back', misc_path, :class => "btn btn-warning btn-lg active" %>
+  </p>
+</div>

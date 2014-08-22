@@ -1,0 +1,17 @@
+<% @title = "Sports" %>
+
+<h3>Sports Games</h3>
+
+<table class = "console-table">
+
+  <%= render :partial => "genre_table_head" %>
+  <%= render :partial => "genre_table_body" %>
+  
+</table>
+
+<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(genre: 'Sports').count, 'Sports game') %></p>
+  <p>
+    <%= link_to 'Back', sports_path, :class => "btn btn-warning btn-lg active" %>
+  </p>
+</div>

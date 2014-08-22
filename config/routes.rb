@@ -41,5 +41,5 @@ Games::Application.routes.draw do
     match "/#{page}", to: "games##{page}", via: 'get'
 	match "/#{page}/games", to: "games##{page}_games", via: 'get'
   end
-				
+  
 end

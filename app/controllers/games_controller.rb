@@ -64,7 +64,7 @@ class GamesController < ApplicationController
   # Defining static pages
   
   def not_found
-  render '_not_found'
+    render '_not_found'
   end
   
   private

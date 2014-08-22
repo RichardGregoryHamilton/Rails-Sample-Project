@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(version: 20140815171854) do
     t.integer  "stars"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "ratings_count"
-    t.integer  "rating_total"
+    t.decimal  "rating",        default: 0.0, null: false
+    t.integer  "ratings_count", default: 0,   null: false
+    t.integer  "rating_total",  default: 0,   null: false
   end
 
   create_table "images", force: true do |t|

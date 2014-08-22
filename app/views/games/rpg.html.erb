@@ -2,17 +2,24 @@
 
 <h3>RPG Games</h3>
 
+<%= render :partial => "carousel" %>
+
 <table class = "console-table">
 
  <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
-  <%= render :partial => "genre_table_body" %>
+  <%= render :partial => "index_table_body" %>
   
 </table>
 
 <div class = 'center'>
-  <p>We found <%= pluralize(Game.where(genre: 'RPG').count, 'RPG game') %></p>
+  <%= link_to 'RPG Games', rpg_games_path, :class => 'btn btn-info' %>
+</div>
+
+</br>
+
+<div class = 'center'>
   <p>
     <a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
   </p>

@@ -2,15 +2,22 @@
 
 <h3>Sports Games</h3>
 
+<%= render :partial => "carousel" %>
+
 <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
-  <%= render :partial => "genre_table_body" %>
+  <%= render :partial => "index_table_body" %>
   
 </table>
 
 <div class = 'center'>
-  <p>We found <%= pluralize(Game.where(genre: 'Sports').count, 'Sports game') %></p>
+  <%= link_to 'Sports Games', sports_games_path, :class => 'btn btn-info' %>
+</div>
+
+</br>
+
+<div class = 'center'>
   <p>
     <a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>
   </p>

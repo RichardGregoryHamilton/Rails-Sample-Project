@@ -2,14 +2,20 @@
 
 <h3>Miscellaneous Games</h3>
 
+<%= render :partial => "carousel" %>
+
 <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
-  <%= render :partial => "misc_table_body" %>
+  <%= render :partial => "misc_index" %>
 
 </table>
 
-<p class = 'center'>We found <%= pluralize(Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).count, 'game') %></p>
+<div class = 'center'>
+  <%= link_to 'Misc Games', misc_games_path, :class => 'btn btn-info' %>
+</div>
+
+</br>
 
 <p class = 'center'>
   <a href="/genres" class="btn btn-warning btn-lg active" role="button">Genres</a>

@@ -1,0 +1,17 @@
+<% @title = "Racing" %>
+
+<h3>Racing Games</h3>
+
+<table class = "console-table">
+
+  <%= render :partial => "genre_table_head" %>
+  <%= render :partial => "genre_table_body" %>
+  
+</table>
+
+<div class = 'center'>
+  <p>We found <%= pluralize(Game.where(genre: 'Racing').count, 'Racing game') %></p>
+  <p>
+    <%= link_to 'Back', racing_path, :class => "btn btn-warning btn-lg active" %>
+  </p>
+</div>
