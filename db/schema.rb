@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815171854) do
+ActiveRecord::Schema.define(version: 20140824173740) do
 
   create_table "favorite_games", force: true do |t|
     t.string   "game_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20140815171854) do
     t.string   "title"
     t.string   "console"
     t.string   "genre"
-    t.integer  "release_date"
+    t.string   "release_date"
     t.integer  "reviewed"
     t.integer  "stars"
     t.datetime "created_at"

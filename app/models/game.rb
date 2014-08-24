@@ -21,12 +21,13 @@ class Game < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :images, dependent: :destroy
   
+  VALID_DATE_REGEX = /\A(([1-9]|1[012])[-\/.]([1-9]|[12][0-9]|3[01])[-\/.](19|20)\d\d)|((1[012]|0[1-9])(3[01]|2\d|1\d|0[1-9])(19|20)\d\d)|((1[012]|0[1-9])[-\/](3[01]|2\d|1\d|0[1-9])[-\/](19|20)\d\d)\z/
+  
   validates_presence_of :title, :console, :genre, :release_date
   validates :title, uniqueness: true, length: {maximum: 60}
-  validates :release_date, length: {is: 4, :message => 'should be 4 numbers'}
   validates_inclusion_of :genre, :in => GENRES
   validates_inclusion_of :console, :in => CONSOLES
-  validates_inclusion_of :release_date, :in => (1950..(Time.now.year + 10)), :message => "is not in a logical time range"
+  validates :release_date, format: { with: VALID_DATE_REGEX }
   
   def self.all_consoles
     %w(Atari NES SNES N64 Gamecube Wii WiiU Dreamcast Genesis PS PS2 PS3 Xbox Xbox360)
