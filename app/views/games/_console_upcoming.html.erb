@@ -1,0 +1,23 @@
+<tbody>
+  <% Game.where(console: @title).select {|game| (game.release_date.length > 4) && (game.release_date.split(/[\/]/).rotate(-1).join('/').to_date > Time.now)}.
+	  sort_by {|game| Date.strptime(game.release_date, '%m/%d/%Y')}.last(10).each do |game| %>
+	  
+	  <tr>
+	  <td> <%= link_to "#{game.title}", game %></td>
+	  <td> <%= game.genre %></td>
+	  <td> <%= game.release_date %></td>
+	  <td> <%= game.rating %></td>
+	  
+	  <% if signed_in? && current_user.admin? %>
+	  
+	  <div>
+        <td id = 'actions'><%= link_to 'Show', game, class: 'action' %></td>
+        <td id = 'actions'><%= link_to 'Edit', edit_game_path(game), class: 'action' %></td>
+        <td id = 'actions'><%= link_to 'Delete', game, method: :delete, class: 'action' %></td>
+      </div>
+	  
+	  <% end %>
+	  
+	</tr>
+  <% end %>
+</tbody>
