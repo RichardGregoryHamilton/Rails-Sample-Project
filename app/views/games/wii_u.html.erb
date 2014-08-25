@@ -11,6 +11,12 @@
   
 </table>
 
+<table class = "console-table">
+  <%= render :partial => "console_table_head" %>
+  <%= render :partial => "console_updates" %>
+</table>
+
+
 <div class = 'center'>
   <%= link_to 'All Games', wii_u_games_path, :class => 'btn btn-info' %>
 </div>
