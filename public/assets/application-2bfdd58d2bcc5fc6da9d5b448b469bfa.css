@@ -7199,17 +7199,29 @@ h1, h2, h3, .center {
 }
 
 /* Carousel */
-/* line 301, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
-#myCarousel, .carousel-image {
-  height: 300px;
+
+textarea, #myCarousel, #consoleCarousel {
   width: 500px;
 }
 
-/* line 306, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 #myCarousel {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 300px;
+}
+
+#myCarousel {
+  margin-top:30px;
+}
+
+#myCarousel, #consoleCarousel {
+  border: 3px solid gold;
+  &:hover {
+    border: 3px solid blue;
+  };
+}
+
+#consoleCarousel {
+  height: 250px;
+  margin-bottom: 50px;
 }
 
 /* line 312, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
@@ -7246,12 +7258,12 @@ h1, h2, h3, .center {
 
 /* line 339, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .field_with_errors {
-  margin-left: 560px;
+  margin-left: 42%;
 }
 
 /* line 345, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .legend {
-  margin-left: 500px;
+  margin-left: 36%;
 }
 
 /* line 349, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
@@ -7276,28 +7288,11 @@ h1, h2, h3, .center {
   background-color: #CCFF00;
 }
 
-/* line 368, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
-.edit-form, .register-form {
-  border: 3px groove #000000;
-  background-color: #FFFFCC;
-  margin: 0px 520px;
-}
-
-/* line 374, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
-.edit-form {
-  height: 450px;
-}
-
-/* line 378, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
-.register-form {
-  height: 360px;
-}
-
 /* line 382, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .bar {
   background-color: #FF0000;
   border: 3px groove #000000;
-  margin: 0px 380px;
+  margin: 0% 28%;
   padding-top: 10px;
 }
 /* line 387, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
@@ -7313,31 +7308,30 @@ h1, h2, h3, .center {
 /* line 396, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .terms-heading, .terms-section {
   border: 3px solid #000000;
+  background-color: #99CC66;
 }
 
 /* line 400, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .terms-heading {
   margin: 0px 500px;
   padding: 5px 0px;
-  background-color: #99CC66;
 }
 
 /* line 406, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .terms-section {
-  margin: 0px 280px;
-  padding-right: 20px;
-  margin-bottom: 20px;
-  background-color: #99CC66;
+  margin: 0% 17%;
+  padding-right: 2%;
+  margin-bottom: 2%;
 }
 
 /* line 413, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .game-information {
-  margin-left: 600px;
+  margin-left: 44%;
 }
 
 /* line 417, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .sections-list {
-  margin-left: 105px;
+  margin-left: 30%;
 }
 /* line 420, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .sections-list a:hover {
