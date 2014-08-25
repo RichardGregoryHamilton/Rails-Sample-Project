@@ -1,6 +1,6 @@
 <tbody>
   <% Game.where(console: @title).select {|game| (game.release_date.length > 4) && (game.release_date.split(/[\/]/).rotate(-1).join('/').to_date < Time.now)}.
-	  sort_by {|game| Date.strptime(game, '%m/%d/%Y')}.last(10).each do |game| %>
+	  sort_by {|game| Date.strptime(game.release_date, '%m/%d/%Y')}.last(10).each do |game| %>
 	  
 	  <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
