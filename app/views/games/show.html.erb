@@ -39,7 +39,6 @@
 	  <% if (@game.release_date.length > 4) && (@game.release_date.split(/[\/]/).rotate(-1).join('/').to_date < Time.now) %>
 	  
         <p><input class="btn btn-success" type="submit" value="Rate"></p>
-	  
 	  <% end %>
 	  
     </div>
