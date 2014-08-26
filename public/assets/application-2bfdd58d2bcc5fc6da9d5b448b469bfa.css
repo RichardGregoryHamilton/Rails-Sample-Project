@@ -6886,6 +6886,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   color: #C0C0C0;
   background-color: #000000;
   bottom: 0;
+  width: 100%;
+  padding: 5px 5px;
   margin-left: -1px;
   margin-bottom: 0;
   position: fixed;
@@ -6906,7 +6908,6 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 /* line 40, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .footer #footer-right {
   float: right;
-  margin-left: 520px;
   color: #000000;
 }
 /* line 46, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
