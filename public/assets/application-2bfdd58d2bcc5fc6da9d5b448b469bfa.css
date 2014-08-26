@@ -7179,7 +7179,7 @@ p {
 }
 
 /* line 283, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
-h1, h2, h3, .center {
+h1, h2, h3, h4, .center {
   text-align: center;
 }
 
@@ -7214,6 +7214,8 @@ textarea, #myCarousel, #consoleCarousel {
 
 #myCarousel, #consoleCarousel {
   border: 3px solid gold;
+  margin-left: auto;
+  margin-right: auto;
   &:hover {
     border: 3px solid blue;
   };
@@ -7229,6 +7231,7 @@ textarea, #myCarousel, #consoleCarousel {
   border: 3px solid gold;
   border-right: 3px solid gold;
 }
+
 /* line 315, C:/Users/richardhamilton/Documents/Projects/games/app/assets/stylesheets/custom.css.scss */
 .carousel-image:hover {
   border: 3px solid blue;
