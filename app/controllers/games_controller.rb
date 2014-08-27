@@ -72,7 +72,7 @@ class GamesController < ApplicationController
     # Defining parameters
   
     def game_params
-      params.require(:game).permit(:title, :console, :genre, :release_date, :stars, :rating)
+      params.require(:game).permit(:title, :console, :genre, :release_date, :stars, :rating, :description)
     end
   
     #Sorting column 
