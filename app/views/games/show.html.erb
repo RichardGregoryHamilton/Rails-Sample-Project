@@ -1,6 +1,6 @@
 <% @title = "#{@game.title}" %>
 
-<h4 class = 'game-information'>Game Information</h4>
+<h4>Game Information</h4>
 
   <ul class = 'game-information'>
     <li><strong>Title:</strong> <%= @game.title %></li>
@@ -52,7 +52,9 @@
     <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
 
-  <p class = 'center'> <%= @game.description %></p>
+  <p class = 'marker'> Description</p>
+  
+  <p> <%= @game.description %></p>
 
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>
 </div>
