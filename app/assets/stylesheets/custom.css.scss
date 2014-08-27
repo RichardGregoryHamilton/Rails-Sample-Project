@@ -134,7 +134,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   }
 }
   
-.games-table, .favorites-table, .ratings-table, .console-table, #myCarousel, #consoleCarousel, .terms-heading, .center-text, .definitions {
+.games-table, .favorites-table, .ratings-table, .console-table, #myCarousel, #consoleCarousel, .terms-heading, .center-text, .definitions, .console-description {
   margin-left: auto;
   margin-right: auto;
 }
@@ -406,4 +406,8 @@ textarea, #myCarousel, #consoleCarousel {
 
 .sections-list {
   margin-left: 30%;
+}
+
+.console-description {
+  width: 700px;
 }
