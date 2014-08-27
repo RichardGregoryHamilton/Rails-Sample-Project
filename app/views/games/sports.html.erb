@@ -4,11 +4,25 @@
 
 <%= render :partial => "carousel" %>
 
+<h4>Top Rated Games</h4>
+
 <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
   <%= render :partial => "index_table_body" %>
   
+</table>
+
+<table class = "console-table">
+  <%= render :partial => "console_table_head" %>
+  <%= render :partial => "console_updates" %>
+</table>
+
+<h4>Upcoming Games</h4>
+
+<table class = "console-table">
+  <%= render :partial => "console_table_head" %>
+  <%= render :partial => "console_upcoming" %>
 </table>
 
 <div class = 'center'>
