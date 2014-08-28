@@ -127,9 +127,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	
 	a {
 	  color: #000000;
-	  &:hover {
-		color: #C0C0C0;
-	  };
+
 	}
   }
 }
@@ -431,4 +429,8 @@ textarea, #myCarousel, #consoleCarousel {
 .articles-container {
   border: 3px solid black;
   margin: 0px 250px;
+}
+
+.article-date {
+  margin-bottom: 3px;
 }

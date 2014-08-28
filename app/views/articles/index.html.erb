@@ -3,27 +3,30 @@
 <h1>Video Game Articles and News</h1>
 
 <div class = 'articles-container'>
-<ul class = 'articles-list'>
+  <ul class = 'articles-list'>
    
-  <% @article.each do |article| %>
+    <% @article.each do |article| %>
 	
-    <li class = 'article-title'><%= link_to "#{article.title}", article %></li></br>
-	<li><%= simple_format article.body %></li>
+      <li class = 'article-title'><%= link_to "#{article.title}", article %></li>
+	  <li class = 'article-date'><em><%= article.date %></em></li>
+	  <li><%= simple_format (article.body.split('.').first + '.' + link_to(" Read More", article)) %></li>
 	  
-	<% if signed_in? && current_user.admin? %>
+	  <% if signed_in? && current_user.admin? %>
 
-	  <li class = "list-actions"><%= link_to 'Edit', edit_article_path(@article)%></li>
-	  <li class = "list-actions"><%= link_to 'Delete', article, method: :delete%></li>
+	    <li class = "list-actions"><%= link_to 'Edit', edit_article_path(article)%></li>
+	    <li class = "list-actions"><%= link_to 'Delete', article, method: :delete%></li>
 	  
-	<% end %>
+	  <% end %>
 	
-  <% end %>
+    <% end %>
 	
-</ul>
+  </ul>
 </div>
+
 <% if signed_in? && current_user.admin? %>
 
   <div class = 'center'>
     <%= link_to 'New Article', new_article_path, :class => 'btn btn-info' %>
   </div>
+  
 <% end %>

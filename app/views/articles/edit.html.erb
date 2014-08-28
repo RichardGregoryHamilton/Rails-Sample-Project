@@ -9,11 +9,17 @@
       <%= f.label :title, class: 'marker' %>
       <%= f.text_field :title %>
     </p>
+	
+	<p>
+      <%= f.label :date, class: 'marker' %>
+	  <%= f.text_field :date %>
+	</p>
   
 	<p>
       <%= f.label :body, class: 'marker' %>
 	  <%= f.text_area :body, :rows => "15" %>
 	</p>
+	
 	  
 	<p>
       <%= f.submit 'Edit', :class => 'btn btn-info' %>

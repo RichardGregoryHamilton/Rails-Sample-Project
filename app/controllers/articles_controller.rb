@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  before_action :correct_user, only: [:edit, :update]
+  
   def index
     @article = Article.all
   end
@@ -45,7 +47,11 @@ class ArticlesController < ApplicationController
   private
   
     def article_params
-	  params.require(:article).permit(:title, :body)
+	  params.require(:article).permit(:title, :body, :date)
 	end
+	
+	def correct_user
+      redirect_to(root_url) unless current_user.admin?
+    end
   
 end
