@@ -1,0 +1,29 @@
+<% @title = "Video Game Articles and News" %>
+
+<h1>Video Game Articles and News</h1>
+
+<div class = 'articles-container'>
+<ul class = 'articles-list'>
+   
+  <% @article.each do |article| %>
+	
+    <li class = 'article-title'><%= link_to "#{article.title}", article %></li></br>
+	<li><%= simple_format article.body %></li>
+	  
+	<% if signed_in? && current_user.admin? %>
+
+	  <li class = "list-actions"><%= link_to 'Edit', edit_article_path(@article)%></li>
+	  <li class = "list-actions"><%= link_to 'Delete', article, method: :delete%></li>
+	  
+	<% end %>
+	
+  <% end %>
+	
+</ul>
+</div>
+<% if signed_in? && current_user.admin? %>
+
+  <div class = 'center'>
+    <%= link_to 'New Article', new_article_path, :class => 'btn btn-info' %>
+  </div>
+<% end %>

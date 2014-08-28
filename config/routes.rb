@@ -9,6 +9,7 @@ Games::Application.routes.draw do
   resources :users, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]
   resources :contacts, only: [:new, :create]
+  resources :articles
   
   root 'static_pages#welcome'
   

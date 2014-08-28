@@ -134,7 +134,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   }
 }
   
-.games-table, .favorites-table, .ratings-table, .console-table, #myCarousel, #consoleCarousel, .terms-heading, .center-text, .definitions, .console-description {
+.games-table, .favorites-table, .ratings-table, .console-table, #myCarousel, #consoleCarousel, .terms-heading, 
+.center-text, .definitions, .console-description, .articles-list {
   margin-left: auto;
   margin-right: auto;
 }
@@ -408,6 +409,26 @@ textarea, #myCarousel, #consoleCarousel {
   margin-left: 30%;
 }
 
-.console-description {
+.console-description, .articles-list {
   width: 700px;
+}
+
+.articles-list {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.list-actions {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.articles-container {
+  border: 3px solid black;
+  margin: 0px 250px;
 }

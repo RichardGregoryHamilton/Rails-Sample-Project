@@ -1,0 +1,10 @@
+<% @title = "#{@article.title}" %>
+
+<div class = 'articles-list'>
+  <p class = 'article-title'><%= @article.title %></p>
+  <p><%= simple_format @article.body %></p>
+</div>
+
+<p class = 'center'>
+  <%= link_to 'Articles', articles_path, :class => 'btn btn-info' %>
+</p>
