@@ -38,3 +38,4 @@ gem 'simple_form'
 
 gem 'yui-compressor', '~> 0.12.0'
 gem 'rack-zippy'
+gem 'thin'
