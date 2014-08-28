@@ -9,6 +9,7 @@ Games::Application.configure do
 
   config.serve_static_assets = true
 
+  config.assets.compress = true
   config.assets.css_compressor = :yui
   config.assets.js_compressor = :uglifier
 
