@@ -11,6 +11,7 @@ module Games
 	config.exceptions_app = self.routes
 	
 	config.cache_store = :memory_store
+	config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
 	
   end
 end
