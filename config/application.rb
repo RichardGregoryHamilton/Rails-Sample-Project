@@ -9,6 +9,7 @@ module Games
  
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 	config.exceptions_app = self.routes
+	config.force_ssl = true
 	
 	config.cache_store = :memory_store
 	Rails.application.config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer, Rails.public_path)
