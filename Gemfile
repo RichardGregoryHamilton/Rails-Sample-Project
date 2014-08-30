@@ -10,6 +10,7 @@ end
 group :production do
   gem 'pg', '0.17.1' # Use postgres in production, because Heroku
   gem 'rails_12factor' # Enable static asset serving on heroku
+  gem 'heroku-deflater', :group => :production
 end
 
 group :test do
