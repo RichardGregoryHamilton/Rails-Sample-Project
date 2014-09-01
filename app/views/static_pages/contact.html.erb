@@ -1,5 +1,9 @@
 <h1>Contact us</h1>
 
+<% content_for :meta do %>
+  <meta name="description" content="Complete list of sections and pages within Gamesunset.com">
+<% end %>
+
 <%= form_for @page, url: static_pages_contact_path do |f| %>
 
   <p>

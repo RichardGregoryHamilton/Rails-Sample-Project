@@ -56,6 +56,8 @@ GEM
     execjs (2.2.1)
     ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     hike (1.2.3)
@@ -176,6 +178,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   delayed_job_active_record
+  friendly_id (~> 5.0.0)
   heroku-deflater
   jbuilder (~> 1.2)
   jquery-rails

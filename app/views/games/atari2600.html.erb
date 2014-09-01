@@ -1,0 +1,34 @@
+<% @title = "Atari 2600" %>
+
+<% content_for :meta do %>
+  <meta name="description" content="Atari 2600 Games">
+<% end %>
+
+<h3>Atari 2600 Games</h3>
+
+<%= render :partial => "carousel" %>
+
+<p class = 'console-description'> Released on September 11th, 1977, the Atari 2600 is one of the earliest video game consoles. This system made popular
+microprocessor-based hardware and ROM cartridges containing game code. The Atari 2600 was released as Atari VCS. In 1982, after the release of its successor,
+Atari 5200, Atari VCS was renamed to Atari 2600. After 30 Million sales, the Atari 2600 was discontinued on January 1st, 1992, 15 years after its launch.</p>
+
+<h4>Top Rated Games</h4>
+
+<table class = "console-table">
+
+  <%= render :partial => "console_table_head" %>
+  <%= render :partial => "console_table_body" %>
+  
+</table>
+
+<div class = 'center'>
+  <%= link_to 'All Games', atari2600_games_path, :class => 'btn btn-info' %>
+</div>
+
+</br>
+
+<div class = 'center'>
+  <p>
+    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
+  </p>
+</div>

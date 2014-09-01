@@ -1,13 +1,17 @@
 class Game < ActiveRecord::Base
+ 
+ def to_param
+   "#{id} #{title}".parameterize
+ end
   
   before_validation :console_conversions,:convert_console, :convert_genre
-	
+
 	after_initialize do |game|
       game.ratings_count ||= 0
       game.rating_total ||= 0
     end
 	
-  CONSOLES = ['Atari', 'Nintendo', 'Super Nintendo', 'Nintendo 64', 'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance', 'Nintendo DS', 
+  CONSOLES = ['Atari 2600', 'Nintendo', 'Super Nintendo', 'Nintendo 64', 'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance', 'Nintendo DS', 
   'Turbo Express', 'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Xbox', 
   'Xbox 360', 'Xbox One', 'PC', 'IOS', 'Vita']
   

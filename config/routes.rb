@@ -14,7 +14,7 @@ Games::Application.routes.draw do
   root 'static_pages#welcome'
   
   get "users/new" 
-    
+  
   match '/help', to: 'static_pages#help', via: 'get'
   match '/help/consoles', to: 'static_pages#consoles', via: 'get'
   match '/help/genres', to: 'static_pages#genres', via: 'get'
@@ -35,7 +35,7 @@ Games::Application.routes.draw do
   match '/consoles', to: 'games#select_consoles', via: 'get'
   match '/genres', to: 'games#select_genres', via: 'get'
 
-  pages = ["nes", "snes", "n64", "wii", "wii_u", "ps", "ps2", "ps3", "ps4", "vita", "xbox", "xbox360", "xbox_one", "pc", "atari", "dreamcast",
+  pages = ["nes", "snes", "n64", "wii", "wii_u", "ps", "ps2", "ps3", "ps4", "vita", "xbox", "xbox360", "xbox_one", "pc", "atari2600", "dreamcast",
   "ios", "other", "action", "adventure", "fighting", "first_person_shooter", "platform", "racing", "rpg", "sports", "misc"]
   
   pages.each do |page|

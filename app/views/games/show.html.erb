@@ -53,8 +53,9 @@
   </p>
 
   <p class = 'marker'> Description</p>
-  
-  <p> <%= @game.description %></p>
+</div>  
+  <p class = 'game-description'><%= @game.description %></p>
 
+<div class = 'game-information'>
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>
 </div>
