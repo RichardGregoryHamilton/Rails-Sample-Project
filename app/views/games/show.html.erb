@@ -54,7 +54,8 @@
 
   <p class = 'marker'> Description</p>
 </div>  
-  <p class = 'game-description'><%= @game.description %></p>
+  <p class = 'game-description'><%= @game.description || "#{@game.title} is a #{@game.genre} game for the #{@game.console}. It was released on
+  #{@game.release_date}."%></p>
 
 <div class = 'game-information'>
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>

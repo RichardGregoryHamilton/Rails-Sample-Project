@@ -3,13 +3,11 @@ class Game < ActiveRecord::Base
  def to_param
    "#{id} #{title}".parameterize
  end
-  
-  before_validation :console_conversions,:convert_console, :convert_genre
 
-	after_initialize do |game|
-      game.ratings_count ||= 0
-      game.rating_total ||= 0
-    end
+  after_initialize do |game|
+    game.ratings_count ||= 0
+    game.rating_total ||= 0
+  end
 	
   CONSOLES = ['Atari 2600', 'Nintendo', 'Super Nintendo', 'Nintendo 64', 'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance', 'Nintendo DS', 
   'Turbo Express', 'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Xbox', 
@@ -51,27 +49,6 @@ class Game < ActiveRecord::Base
   def rating
     return 0 if ratings_count == 0
    (rating_total.to_f / ratings_count).round(2)
-  end
-  
-  # Conversion methods for user input
-  
-  def convert_console
-	self.console = self.console.titleize unless self.console == 'IOS' || self.console == 'PC'
-  end
-  
-  def convert_genre
-    self.genre = self.genre.titleize unless self.genre == 'RPG'
-  end
-  
-  def console_conversions
-    self.console = self.console.gsub('gba', 'Game Boy Advance')
-	self.console = self.console.gsub('gbc', 'Game Boy Color')
-	self.console = self.console.gsub('n64', 'Nintendo 64')
-	self.console = self.console.gsub('snes', 'Super Nintendo')
-	self.console = self.console.gsub('nes', 'Nintendo') unless self.console == 'snes' || self.console == 'genesis'
-	self.console = self.console.gsub('iphone', 'IOS')
-	self.console = self.console.gsub('Xbox360', 'Xbox 360')
-	self.console = self.console.gsub('ps', 'Playstation')
   end
   
 end
