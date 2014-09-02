@@ -45,15 +45,26 @@
   
 </table>
 
-<% if signed_in? && current_user.admin? %>
+<ul class = 'legend'>
+  <li><strong>Title</strong>: The name of the game.</li>
+  <li><strong>Console</strong>: An entertainment system designed for playing video games.</li>
+  <li><strong>Genre</strong>: A way to categorize video games based on common elements.</li>
+  <li><strong>Release Date</strong>: The date a game becomes available for purchase by customers.</li>
+</ul>
+
+  </br>
+  
+  <% if signed_in? && current_user.admin? %>
 
   <p class = 'center'>
     <%= link_to "Add a new game", new_game_path, :class => "btn btn-primary btn-lg active" %>
   </p>
+  
+  <% else %>
+  
+  <p class = 'center'>This page only lists 10 games from our database. To view additional records, please click on one of the navigation links below.</p>
 
 <% end %>
-
-  </br>
   
   <p class = 'center'><strong>Navigation</strong></p>
   

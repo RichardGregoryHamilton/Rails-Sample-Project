@@ -29,9 +29,15 @@
   
 </table>
 
-<p class = 'center'> The above table shows games with a star rating of 4.5 or higher. </p>
+<div class = 'high-rated'
+  <p> A <strong>high rated game</strong> is a game with a star rating of 4.5 or higher. These games are very well received and appear in many video game rankings
+  lists. They represent less than 10% of all games listed here.<p>
+  <p> The above table shows all high rated games. Currently, there are
+  <%= "#{Game.where("rating >= 4.5").count}" %> such games.</p>
+  <p> To find out which consoles have the most high rated games, please consult the table below.</p>
+</div>
 
-<p class = 'legend'><strong>Top Consoles</strong></p>
+<p class = 'best-consoles'><strong>Top Consoles</strong></p>
 
 <table class = "ratings-table">
 
