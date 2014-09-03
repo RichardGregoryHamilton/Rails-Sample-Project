@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:new, :edit, :update]
   
   def index
     @article = Article.all
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
 	end
 	
 	def correct_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless signed_in? && current_user.admin?
     end
   
 end

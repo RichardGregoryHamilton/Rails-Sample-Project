@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   helper_method :sort_column, :sort_direction
+  before_action :correct_user, only: [:new, :destroy]
   
   def index
     @games = Game.order(sort_column + " " + sort_direction)
@@ -61,23 +62,20 @@ class GamesController < ApplicationController
     current_user.games.delete(@game)
   end
   
-  # Defining static pages
   
   private
-  
-    # Defining parameters
   
     def game_params
       params.require(:game).permit(:title, :console, :genre, :release_date, :stars, :rating, :description)
     end
-  
-    #Sorting column 
+	
+	def correct_user
+      redirect_to(root_url) unless signed_in? && current_user.admin?
+    end
     
     def sort_column
       Game.column_names.include?(params[:sort]) ? params[:sort] : "title"
     end
-  
-    # Sort by direction
     
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
