@@ -438,6 +438,14 @@ textarea, #myCarousel, #consoleCarousel {
 
 #article-body {
   font-size: 15px;
+  font-family: helvetica;
+}
+
+#article-link {
+  color: green;
+  &:visited {
+    color: purple;
+  };
 }
 
 .game-description {

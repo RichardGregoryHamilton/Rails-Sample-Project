@@ -3,7 +3,7 @@
 <div class = 'articles-list'>
   <p class = 'article-title'><%= @article.title %></p>
   <p><%= @article.date %></p>
-  <p id = 'article-body'><%= simple_format @article.body %></p>
+  <p><%= simple_format @article.body, :id => 'article-body' %></p>
 </div>
 
 <p class = 'center'>
