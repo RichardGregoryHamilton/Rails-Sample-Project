@@ -2,7 +2,7 @@
 
 <div class = 'articles-list'>
   <p class = 'article-title'><%= @article.title %></p>
-  <p><%= @article.date %></p>
+  <p><em>By GameSunset Staff - </em><%= @article.date %></p>
   <p><%= simple_format @article.body, :id => 'article-body' %></p>
 </div>
 

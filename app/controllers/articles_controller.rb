@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: [:new, :edit, :update]
   
   def index
-    @article = Article.all
+    @article = Article.all.reverse
   end
   
   def show
