@@ -4,9 +4,8 @@
   <meta name="description" content="Video Game Articles and News">
 <% end %>
 
-<h1>Video Game Articles and News</h1>
+<h1><span class = 'logo-one'>Game</span><span class = 'logo-two'>Sunset</span></h1>
 
-<div class = 'articles-container'>
   <ul class = 'articles-list'>
    
     <% @article.each do |article| %>
@@ -25,7 +24,6 @@
     <% end %>
 	
   </ul>
-</div>
 
 <% if signed_in? && current_user.admin? %>
 

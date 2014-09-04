@@ -11,7 +11,7 @@ Games::Application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :articles
   
-  root 'static_pages#welcome'
+  root 'articles#index'
   
   get "users/new" 
   
