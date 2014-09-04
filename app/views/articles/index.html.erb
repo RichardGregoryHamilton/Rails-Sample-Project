@@ -13,7 +13,7 @@
 	
       <li class = 'article-title'><%= link_to "#{article.title}", article %></li>
 	  <li class = 'article-date'><em><%= article.date %></em></li>
-	  <li><%= simple_format (article.body.split('.').first + '.' + link_to(" Read More", article)) %></li>
+	  <li id = 'article-body'><%= simple_format (article.body.split('.').first + '.' + link_to(" Read More", article)) %></li>
 	  
 	  <% if signed_in? && current_user.admin? %>
 

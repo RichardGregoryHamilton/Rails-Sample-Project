@@ -243,6 +243,7 @@ section {
 
 textarea {
   resize: vertical;
+  font-family: verdana;
 }
 
 .center {
@@ -433,6 +434,10 @@ textarea, #myCarousel, #consoleCarousel {
 
 .article-date {
   margin-bottom: 3px;
+}
+
+#article-body {
+  font-size: 15px;
 }
 
 .game-description {
