@@ -54,8 +54,9 @@
 
   <p class = 'marker'> Description</p>
 </div>  
-  <p class = 'game-description'><%= @game.description || "#{@game.title} is a #{@game.genre} game for the #{@game.console}. It was released on
-  #{@game.release_date}."%></p>
+  <p class = 'game-description'><%= @game.description || ["#{@game.title} is a #{@game.genre} #{["game", "title"].sample} for the #{@game.console}. 
+  #{["This game", "It"].sample} was released on #{@game.release_date}.", "#{["This game, released", "Released"].sample} on #{@game.release_date} for the #{@game.console}, #{@game.title} is a 
+  #{@game.genre} game."].sample %></p>
 
 <div class = 'game-information'>
   <p><%= link_to 'Index', games_path, :class => "btn btn-info" %></p>
