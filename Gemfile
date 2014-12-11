@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.0.4'
 
@@ -40,5 +40,10 @@ gem 'simple_form'
 gem 'yui-compressor', '~> 0.12.0'
 gem 'rack-zippy'
 gem 'delayed_job_active_record'
+
 gem 'friendly_id', '~> 5.0.0'
 gem 'tinymce-rails'
+gem 'paperclip', '~> 4.2'
+
+gem 'bootstrap-will_paginate'
+

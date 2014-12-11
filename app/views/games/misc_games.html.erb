@@ -2,6 +2,9 @@
 
 <h3>Misc Games</h3>
 
+<%= render :partial => "pagination_misc_header" %>
+<%= will_paginate (@g) %>
+
 <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
@@ -9,6 +12,7 @@
   
 </table>
 
+<%= will_paginate (@g) %>
 
 <div class = 'center'>
   <p>We found <%= pluralize(Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).count, 'game') %></p>

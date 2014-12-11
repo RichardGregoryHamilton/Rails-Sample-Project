@@ -6,6 +6,9 @@
 
 <h3>Action Games</h3>
 
+<%= render :partial => "pagination_genre_header" %>
+<%= will_paginate (@g) %>
+
 <table class = "console-table">
 
   <%= render :partial => "genre_table_head" %>
@@ -13,6 +16,7 @@
   
 </table>
 
+<%= will_paginate (@g) %>
 
 <div class = 'center'>
   <p>We found <%= pluralize(Game.where(genre: 'Action').count, 'Action game') %></p>

@@ -425,6 +425,7 @@ textarea, #myCarousel, #consoleCarousel {
 .list-actions {
   display: inline-block;
   margin-right: 10px;
+  max-width: 65%;
 }
 
 .articles-container {
@@ -470,4 +471,8 @@ textarea, #myCarousel, #consoleCarousel {
 
 #links a {
   color: blue;
+}
+
+.pagination {
+  margin-left: 300px;
 }

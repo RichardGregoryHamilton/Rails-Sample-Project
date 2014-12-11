@@ -4,7 +4,10 @@
   <meta name="description" content="Dreamcast Games">
 <% end %>
 
-<h3>All NES Games</h3>
+<h3>All Dreamcast Games</h3>
+
+<%= render :partial => "pagination_console_header" %>
+<%= will_paginate (@g) %>
 
 <table class = "console-table">
 
@@ -12,6 +15,8 @@
   <%= render :partial => "new_table_body" %>
   
 </table>
+
+<%= will_paginate (@g) %>
 
 <div class = 'center'>
   <p>We found <%= pluralize(Game.where(console: 'Dreamcast').count, 'Dreamcast game') %></p>

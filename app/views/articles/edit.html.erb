@@ -4,7 +4,7 @@
 
 <div class = 'center'>
   
-  <%= form_for @article do |f| %>
+  <%= form_for @article, :html => { :multipart => true } do |f| %>
 	<p>
       <%= f.label :title, class: 'marker' %>
       <%= f.text_field :title %>
@@ -14,14 +14,18 @@
       <%= f.label :date, class: 'marker' %>
 	  <%= f.text_field :date %>
 	</p>
-  
+     
+	<p>
+	  <%= f.label :avatar, class: 'marker' %>
+      <%= f.file_field :avatar %>
+	</p>
+	
 	<p>
       <%= f.label :body, class: 'marker' %>
 	  <%= f.text_area :body, :class => "tinymce", :rows => "15" %>
 	  <%= tinymce %>
 	</p>
 	
-	  
 	<p>
       <%= f.submit 'Edit', :class => 'btn btn-info' %>
     </p>
