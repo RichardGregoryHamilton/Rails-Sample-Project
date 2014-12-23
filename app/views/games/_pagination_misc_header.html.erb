@@ -1,0 +1,1 @@
+<% @g = Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).order(title: :asc).paginate(:page => params[:page], :per_page => 30) %>

@@ -1,5 +1,5 @@
 <tbody>
-  <% Game.where(console: @title.split(' ').first(2)).order(title: :asc).each do |game| %>
+  <% @g.each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.genre %></td>

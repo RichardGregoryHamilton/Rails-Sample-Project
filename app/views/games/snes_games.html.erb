@@ -6,12 +6,17 @@
 
 <h3>All SNES Games</h3>
 
+<%= render :partial => "pagination_console_header" %>
+<%= will_paginate (@g) %>
+
 <table class = "console-table">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "new_console_body" %>
   
 </table>
+
+<%= will_paginate (@g) %>
 
 <div class = 'center'>
   <p>We found <%= pluralize(Game.where(console: 'Super Nintendo').count, 'SNES game') %></p>

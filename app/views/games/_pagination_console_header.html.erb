@@ -1,0 +1,1 @@
+<% @g = Game.where(console: @title.split(' ')[0..-2].join(' ')).order(title: :asc).paginate(:page => params[:page], :per_page => 30) %>

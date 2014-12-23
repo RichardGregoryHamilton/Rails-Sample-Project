@@ -12,13 +12,14 @@
 	
       <li class = 'article-title'><%= link_to "#{article.title}", article %></li>
 	  <li class = 'article-date'><em>By GameSunset Staff - <%= article.date %></em></li>
-	  <li class = 'article-body'><%= simple_format (article.body.partition("\r\n").last.split('.').first + '.' + 
+	  <li class = 'list-actions' style="margin-bottom:8px"><%= image_tag article.avatar.url(:thumb) %></li>
+	  <li class = 'list-actions' style="vertical-align:top"><%= simple_format (article.body.partition("\r\n").last[/.{200}[^.]*\./] +
 	  link_to(" Read More", article, :id => "links")) %></li>
-	  
+
 	  <% if signed_in? && current_user.admin? %>
 
-	    <li class = "list-actions"><%= link_to 'Edit', edit_article_path(article)%></li>
-	    <li class = "list-actions"><%= link_to 'Delete', article, method: :delete%></li>
+	    <li class = 'list-actions'><%= link_to 'Edit', edit_article_path(article)%></li>
+	    <li class = 'list-actions'><%= link_to 'Delete', article, method: :delete%></li>
 	  
 	  <% end %>
 

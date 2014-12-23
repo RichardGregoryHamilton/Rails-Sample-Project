@@ -1,5 +1,5 @@
 <tbody>
-  <% Game.where(genre: ['Music', 'Party', 'Sandbox', 'Puzzle', 'Sim', 'MMORPG', 'Shoot-em-up', 'Tower Defense']).each do |game| %>
+  <% @g.each do |game| %>
     <tr>
 	  <td> <%= link_to "#{game.title}", game %></td>
 	  <td> <%= game.console %></td>
