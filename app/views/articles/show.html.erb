@@ -1,14 +1,25 @@
 <% @title = "#{@article.title}" %>
 
 <div class = 'articles-list'>
-  <p class = 'article-title'><%= @article.title %></p>
-  <p><em>By GameSunset Staff - </em><%= @article.date %></p>
-  <p><%= simple_format @article.body, :id => 'article-body' %></p>
+  
+	<p class = 'article-title bold'>
+		<%= @article.title %>
+	</p>
+  
+	<p>
+		<em>By GameSunset Staff - </em>
+		<%= @article.date %>
+	</p>
+	
+  <p>
+		<%= simple_format @article.body, :id => 'article-body' %>
+	</p>
+	
 </div>
 
 
 
-<div id="disqus_thread"></div>
+<div id="disqus_thread" class="margin-auto"></div>
   <script type="text/javascript">
     var disqus_shortname = 'gamesunset'; // required: replace example with your forum shortname
 
@@ -25,9 +36,6 @@
 
 </br>
 
-<div class = 'center'>
-  <div id="links">
-  <a href="#">Back to Top</a>
-  </div> 
+<div class = 'text-center'>
+  <button class="btn btn-primary"><a href="#">Back to Top</a></button>
 </div>
-

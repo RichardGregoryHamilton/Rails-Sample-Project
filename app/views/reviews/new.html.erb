@@ -5,7 +5,7 @@
   <div class = 'center'>
   
     <%= form_for [:game, @review] do |f| %>
-	
+  
       <p>
         <%= f.hidden_field :username, :value => "#{current_user.name}" %>
       </p>
@@ -23,6 +23,6 @@
 
   </div>
 
-<div class = 'center'>
+<p class = 'center'>
   <%= link_to 'Back', game_reviews_path, :class => "btn btn-info" %>
 </div>

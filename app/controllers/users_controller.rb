@@ -30,13 +30,13 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-	
-	if @user.update_attributes(user_params)
-	  redirect_to @user
-	  flash[:success] = "Your profile has been updated"
-	else
-	  render 'edit'
-	end
+  
+    if @user.update_attributes(user_params)
+      redirect_to @user
+      flash[:success] = "Your profile has been updated"
+    else
+      render 'edit'
+    end
   end
   
   def favorites
@@ -49,18 +49,18 @@ class UsersController < ApplicationController
   private
   
     def user_params
-     params.require(:user).permit(:name, :email, :password, :password_confirmation, :location, :birthday)
-   end
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :location, :birthday)
+    end
  
-   def signed_in_user
-     unless signed_in?
-       store_location
-       redirect_to signin_url notice: "Please sign in."
-     end
-   end
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url notice: "Please sign in."
+      end
+    end
  
-   def correct_user
-     @user = User.find(params[:id])
-     redirect_to(root_url) unless current_user?(@user)
-   end
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
 end

@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
   private
   
     def find_game
-	  @game = Game.find(params[:game_id])
-	end
+      @game = Game.find(params[:game_id])
+    end
   
 end

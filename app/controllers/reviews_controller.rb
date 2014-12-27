@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_filter :find_game, only: [:index, :create, :edit, :update, :destroy]
   
   def index
-	@review = Review.all
+    @review = Review.all
   end
 
   def new
@@ -49,10 +49,10 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
-	def find_game
-	  @game = Game.find(params[:game_id])
-	end
-	
+    def find_game
+      @game = Game.find(params[:game_id])
+    end
+  
     def review_params
       params.require(:review).permit(:username, :body, :post_id)
     end

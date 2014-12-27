@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   
   def index
     @q = Game.ransack(params[:q])
-		@games = @q.result(distinct: true)
+    @games = @q.result(distinct: true)
   end
   
   def show
@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to games_path, :flash => { :success => "#{@game.title} was successfully added to this database"}
+      redirect_to games_path, :flash => { :success => "#{@game.title} was successfully added to this database" }
     else
       render 'new'
     end
@@ -61,8 +61,8 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(:title, :console, :genre, :release_date, :stars, :rating, :description)
     end
-	
-	  def correct_user
+  
+    def correct_user
       redirect_to(root_url) unless signed_in? && current_user.admin?
     end
     

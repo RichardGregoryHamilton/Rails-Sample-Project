@@ -6,46 +6,46 @@
   
   <%= gravatar_for @user %>
 
-  <p class = 'center'><em><%= "#{@user.name}'s avatar" %></em></p>
+  <p class = 'text-center'><em><%= "#{@user.name}'s avatar" %></em></p>
   <p id = 'profile-heading'><%= "#{@user.name} Statistics" %>
 
-  <ul id = 'user-profile'>
+  <ul class="margin-auto" id = "user-profile">
   
     <li>
-      <strong>Username:</strong> <%= @user.name %>
+      <b>Username:</b> <%= @user.name %>
     </li>
   
     <li>
-      <strong>Email:</strong> <%= @user.email %>
+      <b>Email:</b> <%= @user.email %>
     </li>
   
     <li>
-      <strong>Age:</strong> <%= user_age %>
+      <b>Age:</b> <%= user_age %>
     </li>
 	
 	<li>
-      <strong>Birthday:</strong> <%= @user.birthday %>
+      <b>Birthday:</b> <%= @user.birthday %>
     </li>
   
     <li>  
-      <strong>Location:</strong> <%= @user.location %>
+      <b>Location:</b> <%= @user.location %>
     </li><br>
   
     <li>
-      <strong>Join Date:</strong> <%= @user.created_at.to_date %>
+      <b>Join Date:</b> <%= @user.created_at.to_date %>
     </li>
   
     <li>
-      <strong>Member For:</strong> <%= pluralize(member_for, 'Day') %>
+      <b>Member For:</b> <%= pluralize(member_for, 'Day') %>
     </li></br>
   
     <li>
-      <strong>Favorite Games:</strong> <%= @user.games.count %>
+      <b>Favorite Games:</b> <%= @user.games.count %>
     </li>
   
   </ul>
 
-  <p class = 'center'>
+  <p class = 'text-center'>
     <%= link_to 'Favorites', favorites_path(current_user), :class => "btn btn-info" %>
   </p>
   

@@ -4,33 +4,51 @@
   <meta name="description" content="GameSunset - Video Game Articles and News">
 <% end %>
 
-<h1><span class = 'logo-one'>Game</span><span class = 'logo-two'>Sunset</span></h1>
+<h1>
+  <span class = 'logo-one'>Game</span>
+  <span class = 'logo-two'>Sunset</span>
+</h1>
 
-  <ul class = 'articles-list'>
-   
-    <% @article.each do |article| %>
-	
-      <li class = 'article-title'><%= link_to "#{article.title}", article %></li>
-	  <li class = 'article-date'><em>By GameSunset Staff - <%= article.date %></em></li>
-	  <li class = 'list-actions' style="margin-bottom:8px"><%= image_tag article.avatar.url(:thumb) %></li>
-	  <li class = 'list-actions' style="vertical-align:top"><%= simple_format (article.body.partition("\r\n").last[/.{200}[^.]*\./] +
-	  link_to(" Read More", article, :id => "links")) %></li>
+<ul class = 'articles-list no-list-style'>
 
-	  <% if signed_in? && current_user.admin? %>
+  <% @article.each do |article| %>
 
-	    <li class = 'list-actions'><%= link_to 'Edit', edit_article_path(article)%></li>
-	    <li class = 'list-actions'><%= link_to 'Delete', article, method: :delete%></li>
-	  
-	  <% end %>
+    <li class = "article-title bold">
+      <%= link_to "#{article.title}", article %>
+    </li>
+
+    <li class = 'article-date'>
+      <em>By GameSunset Staff - <%= article.date %></em>
+    </li>
+
+    <li class = 'list-actions' style="margin-bottom:8px">
+      <%= image_tag article.avatar.url(:thumb) %>
+    </li>
+    <li class = 'list-actions' style="vertical-align:top">
+      <%= simple_format (article.body.partition("\r\n").last[/.{200}[^.]*\./] +
+      link_to(" Read More", article, :id => "links")) %>
+    </li>
+
+    <% if signed_in? && current_user.admin? %>
+
+      <li class = 'list-actions'>
+        <%= link_to 'Edit', edit_article_path(article)%>
+      </li>
+
+      <li class = 'list-actions'>
+        <%= link_to 'Delete', article, method: :delete%>
+      </li>
 
     <% end %>
-	
-  </ul>
+
+  <% end %>
+
+</ul>
 
 <% if signed_in? && current_user.admin? %>
 
   <div class = 'center'>
     <%= link_to 'New Article', new_article_path, :class => 'btn btn-info' %>
   </div>
-  
+
 <% end %>

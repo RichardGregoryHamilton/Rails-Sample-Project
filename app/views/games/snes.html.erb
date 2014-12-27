@@ -11,21 +11,19 @@
 <p class = 'console-description'> The Super Nintendo is Nintendo's second home video game console and the successor to the NES. Released in North America
 on August 23, 1991, it is the best selling console of the 16-bit era. It's competition was the Sega Genesis.</p>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_table_body" %>
   
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'All Games', snes_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
-    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
-  </p>
-</div>
+<p class = 'text-center'>
+  <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
+</p>

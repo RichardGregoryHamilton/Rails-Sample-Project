@@ -2,7 +2,7 @@
 
 <h4>Game Information</h4>
 
-  <ul class = 'game-information'>
+  <ul class = 'game-information no-list-style'>
     <li><strong>Title:</strong> <%= @game.title %></li>
     <li><strong>Console:</strong> <%= @game.console %></li>
     <li><strong>Genre:</strong> <%= @game.genre %></li>
@@ -24,7 +24,7 @@
 
   <%= form_for @game do |f| %>
 
-    <div class = 'game-information'>
+    <div class = 'no-list-style'>
       <p>
         <%= f.label :stars, 'Rating' %>
         <div class= "rating">
@@ -52,7 +52,7 @@
     <%= link_to 'Reviews', game_reviews_path(@game), :class => "btn btn-info" %>
   </p>
 
-  <p class = 'marker'> Description</p>
+  <p class = 'bold'> Description</p>
 </div>  
   <p class = 'game-description'><%= @game.description || ["#{@game.title} is a #{@game.genre} #{["game", "title"].sample} for the #{@game.console}. 
   #{["This game", "It"].sample} was released on #{@game.release_date}.", "#{["This game, released", "Released"].sample} on #{@game.release_date} for the #{@game.console}, #{@game.title} is a 

@@ -10,33 +10,33 @@
 
 <h4>Top Rated Games</h4>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "genre_table_head" %>
   <%= render :partial => "index_table_body" %>
   
 </table>
 
-<table class = "console-table">
+<h4>New Releases</h4>
+
+<table class = "console-table margin-auto">
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_updates" %>
 </table>
 
 <h4>Upcoming Games</h4>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_upcoming" %>
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'First Person Shooter Games', first_person_shooter_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
-    <%= link_to 'Genres', genres_path, :class => 'btn btn-warning' %>
-  </p>
-</div>
+<p class = 'text-center'>
+  <%= link_to 'Genres', genres_path, :class => 'btn btn-warning' %>
+</p>

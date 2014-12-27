@@ -14,7 +14,7 @@ is the world's most powerful gaming console, with a GPU speed of 1.8 teraflops. 
 
 <h4>Top Rated Games</h4>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_table_body" %>
@@ -23,26 +23,24 @@ is the world's most powerful gaming console, with a GPU speed of 1.8 teraflops. 
 
 <h4>Newest Releases</h4>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_updates" %>
 </table>
 
 <h4>Upcoming Games</h4>
 
-<table class = "console-table">
+<table class = "console-table margin-auto">
   <%= render :partial => "upcoming_table_head" %>
   <%= render :partial => "console_upcoming" %>
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'All Games', ps4_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
-    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
-  </p>
-</div>
+<p class = 'text-center'>
+  <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
+</p>

@@ -14,29 +14,33 @@
 <table class = "reviews-table">
   <thead>
     <tr>
-	  <th id = 'review-id'>Review</th>
-	  <th>Posted By</th>
-	  <th><th>
-	</tr>
+    <th id = 'review-id'>Review</th>
+    <th>Posted By</th>
+    <th><th>
+  </tr>
   </thead>
   
   <tbody>
     <% @game.reviews.each do |review| %>
-	
+  
     <tr>
-	  <td><%= review.body %></td>
-	  <td><%= review.username %></td>
-	  
-	  <% if signed_in? && current_user.name == review.username %>
+    <td><%= review.body %></td>
+    <td><%= review.username %></td>
+    
+    <% if signed_in? && current_user.name == review.username %>
 
-	    <td><%= link_to 'Edit', edit_game_review_path(@game, review) %></td>
-	    <td><%= link_to 'Delete', [review.game, review], method: :delete, class: 'action' %></td>
-	  
-	  <% end %>
-	</tr>
-	
-	<% end %>
-	
+      <td>
+        <%= link_to 'Edit', edit_game_review_path(@game, review) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', [review.game, review], method: :delete, class: 'action' %>
+      </td>
+    
+    <% end %>
+  </tr>
+  
+  <% end %>
+  
   </tbody>
 </table>
 </div>
@@ -47,10 +51,14 @@
 
   <% if signed_in? %>
   
-    <p><%= link_to 'New Review', new_game_review_path(@game), :class => "btn btn-success" %></p>
+    <p>
+      <%= link_to 'New Review', new_game_review_path(@game), :class => "btn btn-success" %>
+    </p>
   
   <% end %>
   
-  <p><%= link_to 'Back', game_path(@game), :class => "btn btn-info" %></p>
+  <p>
+    <%= link_to 'Back', game_path(@game), :class => "btn btn-info" %>
+  </p>
   
 </div>

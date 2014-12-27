@@ -16,21 +16,19 @@ console with 3,870 titles.
 
 <h4>Top Rated Games</h4>
   
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_table_body" %>
   
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'All Games', ps2_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
-    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
-  </p>
-</div>
+<p class = 'text-center'>
+  <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
+</p>

@@ -8,21 +8,19 @@
 
 <%= render :partial => "carousel" %>
   
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_table_body" %>
   
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'All Games', wii_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
+  <p class="text-center">
     <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
   </p>
-</div>

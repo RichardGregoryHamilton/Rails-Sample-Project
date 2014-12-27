@@ -9,13 +9,22 @@ class Game < ActiveRecord::Base
     game.rating_total ||= 0
   end
 	
-  CONSOLES = ['Atari 2600', 'Nintendo', 'Super Nintendo', 'Nintendo 64', 'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance', 'Nintendo DS', 
-  'Turbo Express', 'Neo Geo', 'Game Gear', 'Genesis', 'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Xbox', 
-  'Xbox 360', 'Xbox One', 'PC', 'IOS', 'Vita']
+  CONSOLES = [
+							'Atari 2600', 'Nintendo', 'Super Nintendo', 'Nintendo 64',
+							'Gamecube', 'Wii', 'Wii U', 'Game Boy Color', 'Game Boy Advance',
+							'Nintendo DS', 'Turbo Express', 'Neo Geo', 'Game Gear', 'Genesis',
+							'Dreamcast', 'Saturn', 'Playstation', 'Playstation 2',
+							'Playstation 3', 'Playstation 4', 'Xbox', 'Xbox 360', 'Xbox One',
+							'PC', 'IOS', 'Vita'
+						 ]
   
-  GENRES = ['Action', 'Action Adventure', 'Action RPG', 'Adventure', 'Arcade', 'Fighting', 'First Person Shooter', 'MMORPG', 'Music', 'Party', 'Platform', 
-  'Puzzle', 'Racing', 'Rail Shooter', 'Role Playing Game', 'RPG', 'Sandbox', 'Shoot-em-up', 'Sim', 'Simulation', 
-  'Sports', 'Strategy', 'Survival Horror', 'Third Person Shooter', 'Tower Defense']
+  GENRES = [
+						'Action', 'Action Adventure', 'Action RPG', 'Adventure', 'Arcade',
+						'Fighting', 'First Person Shooter', 'MMORPG', 'Music', 'Party',
+						'Platform', 'Puzzle', 'Racing', 'Rail Shooter', 'Role Playing Game',
+						'RPG', 'Sandbox', 'Shoot-em-up', 'Sim', 'Simulation', 'Sports',
+						'Strategy', 'Survival Horror', 'Third Person Shooter', 'Tower Defense'
+					 ]
 
   belongs_to :user
   has_many :favorites

@@ -1,26 +1,30 @@
 <% @title = "Select a Genre" %>
 
-<h1>Select a genre</h1>
+<h1>Select a Genre</h1>
 
-<p class = 'center'> You can then find games for that genre</p>
+<p class = 'text-center'> You can then find games for that genre</p>
 
-<div class = 'center'>
+<div class = 'text-center'>
+
   <%= link_to 'Action', action_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'Adventure', adventure_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'Fighting', fighting_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'First Person Shooter', first_person_shooter_path, :class => "btn btn-warning btn-large" %>
+
 </div>
 
 </br>
 
-<div class = 'center'> 
+<div class = 'text-center'> 
+
   <%= link_to 'Platform', platform_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'Racing', racing_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'RPG', rpg_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'Sports', sports_path, :class => "btn btn-warning btn-large" %>
   <%= link_to 'Misc', misc_path, :class => "btn btn-warning btn-large" %>
+
 </div>
 
 </br>
 
-<p class = 'center'><%= link_to "Index", games_path, :class => "btn btn-info btn-lg active" %></p>
+<p class = 'text-center'><%= link_to "Index", games_path, :class => "btn btn-info btn-lg active" %></p>

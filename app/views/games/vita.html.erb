@@ -11,21 +11,19 @@
 <p class = 'console-description'> Released on February 22, 2012, the Playstation Vita is a handheld video game console from Sony. There have been 4 million
 units sold world wide.</p>
   
-<table class = "console-table">
+<table class = "console-table margin-auto">
 
   <%= render :partial => "console_table_head" %>
   <%= render :partial => "console_table_body" %>
   
 </table>
 
-<div class = 'center'>
+<p class = 'text-center'>
   <%= link_to 'All Games', vita_games_path, :class => 'btn btn-info' %>
-</div>
+</p>
 
 </br>
 
-<div class = 'center'>
-  <p>
-    <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
-  </p>
-</div>
+<p class="text-center">
+  <%= link_to 'Consoles', consoles_path, :class => 'btn btn-warning btn-lg active' %>
+</p>
