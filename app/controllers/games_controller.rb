@@ -3,15 +3,8 @@ class GamesController < ApplicationController
   before_action :correct_user, only: [:new, :destroy]
   
   def index
-    @games = Game.order(sort_column + " " + sort_direction)
-    
-    @all_consoles = Game.all_consoles
-    
-    @selected_consoles = params[:console] || session[:console] || {}
-    
-    if @selected_consoles == {}
-      @selected_consoles = Hash[@all_consoles.map {|console| [console, console]}]
-    end
+    @q = Game.ransack(params[:q])
+		@games = @q.result(distinct: true)
   end
   
   def show

@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.8'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -18,7 +18,7 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sprockets-rails', '~> 2.0.0'
@@ -46,4 +46,5 @@ gem 'tinymce-rails'
 gem 'paperclip', '~> 4.2'
 
 gem 'bootstrap-will_paginate'
-
+gem 'ransack'
+gem 'tzinfo-data'
