@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
   include ActiveModel::Validations
   validates_with MyValidator
-  before_validation :date_conversion, :on => :update
+  # after_save :date_conversion
   
   has_many :favorites, foreign_key: "user_id", dependent: :destroy
   has_many :games, through: :favorites
@@ -59,13 +59,12 @@ class User < ActiveRecord::Base
   VALID_DATE_REGEX = /\A(([1-9]|1[012])[-\/.]([1-9]|[12][0-9]|3[01])[-\/.](19|20)\d\d)|((1[012]|0[1-9])(3[01]|2\d|1\d|0[1-9])(19|20)\d\d)|((1[012]|0[1-9])[-\/](3[01]|2\d|1\d|0[1-9])[-\/](19|20)\d\d)\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
-  
   validates_presence_of :name, :password, :email, :on => :create
   validates_uniqueness_of :name, :email
   validates :name, length: { in: 3..20 }
   validates :password, length: { minimum: 6 }, :on => :create
   validates :email, format: { with: VALID_EMAIL_REGEX }, length: { in: 8..50 }
-  validates :birthday, format: { with: VALID_DATE_REGEX }, :on => :update
+  # validates :birthday, format: { with: VALID_DATE_REGEX }, :on => :update
   
   validates_confirmation_of :password, if: lambda { |m| m.password.present? }
   
@@ -80,7 +79,7 @@ class User < ActiveRecord::Base
   private
   
   def date_conversion
-    self.birthday = self.birthday.gsub('/', '-')
+    self.birthday = self.birthday.gsub('/', '-') if self.birthday
   end
   
   def create_remember_token

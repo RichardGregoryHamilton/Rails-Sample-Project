@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   helper_method :sort_column, :sort_direction
-  before_action :correct_user, only: [:new, :destroy]
+  #before_action :correct_user, only: [:new, :destroy]
   
   def index
     @q = Game.ransack(params[:q])

@@ -7,6 +7,13 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+	gem 'meta_request'
+end
+
 group :production do
   gem 'pg', '0.17.1' # Use postgres in production, because Heroku
   gem 'rails_12factor' # Enable static asset serving on heroku

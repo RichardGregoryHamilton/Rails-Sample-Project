@@ -54,18 +54,18 @@
 
   </br>
   
-  <% if signed_in? && current_user.admin? %> 
+ 
 
   <p class = 'center'>
     <%= link_to "Add a new game", new_game_path, :class => "btn btn-primary btn-lg active" %>
   </p>
   
  
- <% else %>
+
   
   <p class = 'center'>This page only lists 10 games from our database. To view additional records, please click on one of the navigation links below.</p>
 
-<% end %>
+
   
   <p class = 'center'><strong>Navigation</strong></p>
   
