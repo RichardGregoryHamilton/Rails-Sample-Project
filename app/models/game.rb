@@ -47,7 +47,8 @@ class Game < ActiveRecord::Base
   end
 
   def rating
-    ratings_count.zero? ? return 0 : (rating_total.to_f / ratings_count).round(2)
+    return 0 if ratings_count == 0
+    (rating_total.to_f / ratings_count).round(2)
   end
   
 end
