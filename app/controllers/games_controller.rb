@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   helper_method :sort_column, :sort_direction
-  #before_action :correct_user, only: [:new, :destroy]
+  before_action :correct_user, only: [:new, :destroy]
   
   def index
     @q = Game.ransack(params[:q])
@@ -31,11 +31,11 @@ class GamesController < ApplicationController
   def update
    @game = Game.find(params[:id])
 
-  stars = game_params.delete(:stars)
+   stars = game_params.delete(:stars)
 
-  if @game.update_attributes(game_params)
-    @game.add_rating stars
-      unless current_user.games.include?(@game)
+   if @game.update_attributes(game_params)
+     @game.add_rating stars
+       unless current_user.games.include?(@game)
         @game = Game.find(params[:id])
         current_user.games << @game
         redirect_to @game, :flash => { :success => "Thank you! This game has been added to your Favorites List" }
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
       params.require(:game).permit(:title, :console, :genre, :release_date, :stars, :rating, :description)
     end
 	
-	def correct_user
+	  def correct_user
       redirect_to(root_url) unless signed_in? && current_user.admin?
     end
     

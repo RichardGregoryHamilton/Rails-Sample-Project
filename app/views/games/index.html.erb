@@ -2,7 +2,7 @@
 
 <h1><span class = 'logo-one'>Game</span><span class = 'logo-two'>Sunset</span></h1>
 
-<p class = 'center'>Your #1 source for video game information</p>
+<p class = 'text-center'>Your #1 source for video game information</p>
 
 <table class = 'games-table'>
   
@@ -54,18 +54,17 @@
 
   </br>
   
- 
+  <% if signed_in? && current_user.admin? %> 
 
   <p class = 'center'>
     <%= link_to "Add a new game", new_game_path, :class => "btn btn-primary btn-lg active" %>
   </p>
   
- 
-
+ <% else %>
   
   <p class = 'center'>This page only lists 10 games from our database. To view additional records, please click on one of the navigation links below.</p>
 
-
+<% end %>
   
   <p class = 'center'><strong>Navigation</strong></p>
   
